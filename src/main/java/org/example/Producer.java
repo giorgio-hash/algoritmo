@@ -3,12 +3,12 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class Producer implements Runnable{
 
-    private Buffer buffer;
+    private BufferIF buffer;
     private final Object lock = new Object(); // Internal lock
 
     //POLLING
-    private final BlockingQueue<String> queue = new LinkedBlockingQueue<>();
-    public Producer(Buffer buffer) {
+    private final BlockingQueue<Object> queue = new LinkedBlockingQueue<>();
+    public Producer(BufferIF buffer) {
         this.buffer = buffer;
     }
 
@@ -32,35 +32,16 @@ public class Producer implements Runnable{
             synchronized(lock){
                 try {
                     if(!queue.isEmpty()){
-                        buffer.insert(queue.poll());
-                        stampa("polling producer");
+                        buffer.insertInBuffer((OrdinePQ) queue.poll());
+                        Printer.stampa("polling producer",queue);
                     }
                 } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
             }
         }
     }
 
-
-
-    private void stampa(String mex){
-        System.out.println(mex+"|| "+stampa_coda());
-    }
-    private void stampa(){
-        System.out.println(stampa_coda());
-    }
-
-
-    public String stampa_coda(){
-        StringBuilder result = new StringBuilder();
-        for (String element : queue) {
-            result.append(element).append(",");
-        }
-        // Remove the trailing comma
-        if (!result.isEmpty()) {
-            result.deleteCharAt(result.length() - 1);
-        }
-        return "[" + result.toString() + "]";
-    }
 }

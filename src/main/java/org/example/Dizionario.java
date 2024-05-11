@@ -1,0 +1,62 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
+
+public class Dizionario {
+
+    private Map<Integer, OrdinePQ> floatMap; // {id : priorita}
+    private ArrayList<Boolean>  chiaviDisponibili;
+    private final int MAX_SIZE = 10;
+
+    // Costruttore
+    public Dizionario() {
+        floatMap = new HashMap<>();
+        chiaviDisponibili = new ArrayList<>();
+        // Aggiungi le chiavi al pool
+        for(int i = 0; i <= MAX_SIZE ; i++){
+            chiaviDisponibili.add(true);
+        }
+    }
+
+    // Metodo per aggiungere una parola e il suo significato al dizionario
+    public int aggiungiOrdine(OrdinePQ ordinePQ) throws Exception {
+        int i = 1;
+        while(!chiaviDisponibili.get(i) && i <= MAX_SIZE){
+            i+=1;
+        }
+        if(chiaviDisponibili.get(i)){
+            chiaviDisponibili.set(i,false);
+            floatMap.put(i, ordinePQ);
+        }
+        else{
+            throw new Exception("Non ci sono più chiavi disponibili.");
+        }
+        return i;
+    }
+
+    // Metodo per rimuovere una chiave dal dizionario
+    public Optional<OrdinePQ> rimuoviOrdine(int chiave) {
+        // Aggiungi la chiave corrispondente alla lista delle chiavi disponibili
+        chiaviDisponibili.set(chiave, true);
+        // Rimuovi l'elemento dalla mappa
+        return Optional.ofNullable(floatMap.remove(chiave));
+    }
+
+    // Metodo per cercare la priorita di un id
+    public Optional<OrdinePQ> cercaOrdine(int chiave) {
+        return Optional.ofNullable(floatMap.get(chiave));
+    }
+
+    public int getSize(){
+        return floatMap.size();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        floatMap.forEach((key, value) -> stringBuilder.append("Chiave: ").append(key).append(", Valore: ").append(value));
+        return stringBuilder.toString();
+    }
+}
+

@@ -1,8 +1,10 @@
+import java.util.LinkedList;
+
 public class Checker implements Runnable{
 
-    Buffer buffer;
+    CheckerIF buffer;
 
-    public Checker(Buffer buffer) {
+    public Checker(CheckerIF buffer) {
         this.buffer = buffer;
     }
 
@@ -18,7 +20,12 @@ public class Checker implements Runnable{
             }
 
             try {
-                buffer.control();
+                LinkedList<OrdinePQ> list = buffer.getWindow();
+                for(OrdinePQ ordinePQ : list){
+                    // ordinePQ.aggiornaPriorita();
+                    // aggiorna buffer (la priority queue)
+                    System.out.println("controllo: " + ordinePQ);
+                }
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

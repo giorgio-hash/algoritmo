@@ -1,89 +1,106 @@
 import java.util.LinkedList;
-import java.util.Queue;
+import java.util.Optional;
 import java.util.concurrent.Semaphore;
 
-public class Buffer {
-
-    private Semaphore FULL;
-    private Semaphore EMPTY;
-    private Semaphore BUSY;
+public class Buffer implements BufferIF, CheckerIF {
 
 
-    private final int BUFFER_SIZE;
-    private final Queue<String> queue = new LinkedList<>();
+    // Dichiarazione dei semafori per sincronizzare l'accesso al buffer
+    private Semaphore FULL;   // Semaforo per indicare che il buffer è pieno
+    private Semaphore EMPTY;  // Semaforo per indicare che il buffer è vuoto
+    private Semaphore BUSY;   // Semaforo per gestire l'accesso esclusivo al buffer
 
-    public Buffer(int max_val) {
-        this.BUFFER_SIZE = max_val;
-        EMPTY = new Semaphore(BUFFER_SIZE);
-        FULL = new Semaphore(0);
-        BUSY = new Semaphore(1);
+    private IndexMinPQ<Double> indexMinPQ;
+
+    private Dizionario dizionario;
+
+    private final int BUFFER_SIZE = 10;
+
+    private final int WINDOW_SIZE = 5;
+
+    private int iterator;
+
+
+
+    public Buffer() {
+        this.indexMinPQ = new IndexMinPQ<>(BUFFER_SIZE);
+        this.dizionario = new Dizionario();
+        this.iterator = 1;
+
+        EMPTY = new Semaphore(BUFFER_SIZE);  // Inizializzazione del semaforo EMPTY con il numero massimo di permessi
+        FULL = new Semaphore(0);             // Inizializzazione del semaforo FULL con 0 permessi iniziali (buffer vuoto)
+        BUSY = new Semaphore(1);             // Inizializzazione del semaforo BUSY con 1 permesso (accesso esclusivo)
+
     }
 
-    public void insert(Object item) throws InterruptedException {
+    @Override
+    public void insertInBuffer(OrdinePQ ordinePQ) throws Exception {
+        EMPTY.acquire();  // Acquisizione del semaforo EMPTY (si blocca se il buffer è pieno)
+        BUSY.acquire();   // Acquisizione del semaforo BUSY per eseguire l'accesso esclusivo al buffer
 
-        EMPTY.acquire();
-        BUSY.acquire();
+        indexMinPQ.insert(dizionario.aggiungiOrdine(ordinePQ),ordinePQ.getValorePriorita());
 
-        if(item instanceof String)
-            queue.add((String) item);
+        Printer.stampa("inserimento" + ordinePQ,indexMinPQ);
 
-        stampa("inserimento");
-
-        if(queue.size() == BUFFER_SIZE)
+        if(dizionario.getSize() == BUFFER_SIZE)
         {
-            stampa("pieno!");
-        }
-        BUSY.release();
-        FULL.release();
-    }
-
-    public Object extract() throws InterruptedException {
-
-        FULL.acquire();
-        BUSY.acquire();
-
-        System.out.println("estrazione");
-        Object out = queue.poll();
-
-        if(FULL.availablePermits() == 0) {
-            FULL.release();
-            System.out.println("posto libero");
+            Printer.stampa("pieno!",indexMinPQ);
         }
 
-        BUSY.release();
-        EMPTY.release();
+        BUSY.release();  // Rilascio del semaforo BUSY (fine dell'accesso esclusivo)
+        FULL.release();  // Rilascio del semaforo FULL per segnalare che il buffer contiene un elemento in più
+    }
 
-        return out;
+    @Override
+    public Optional<OrdinePQ> getMinPQ() throws InterruptedException {
+
+        FULL.acquire();  // Acquisizione del semaforo FULL (si blocca se il buffer è vuoto)
+        BUSY.acquire();  // Acquisizione del semaforo BUSY per eseguire l'accesso esclusivo al buffer
+
+        int i = indexMinPQ.delMin();
+        // System.out.println("estrazione " + i + " " + dizionario.cercaOrdine(i));
+        Printer.stampa("estrazione: " + i,indexMinPQ);
+
+        BUSY.release();  // Rilascio del semaforo BUSY (fine dell'accesso esclusivo)
+        EMPTY.release(); // Rilascio del semaforo EMPTY per segnalare che il buffer ha un posto libero in più
+
+        return dizionario.rimuoviOrdine(i);
+
     }
 
 
-    public void control() throws InterruptedException {
-        BUSY.acquire();
+    @Override
+    public LinkedList<OrdinePQ> getWindow() throws InterruptedException {
 
-        stampa("controllo");
+        BUSY.acquire();  // Acquisizione del semaforo BUSY per eseguire un controll
 
-        BUSY.release();
-
-    }
-
-
-    private void stampa(String mex){
-        System.out.println(mex+"|| "+stampa_coda());
-    }
-    private void stampa(){
-        System.out.println(stampa_coda());
-    }
+        System.out.println("controllo...");
+        System.out.println("ordini presenti nel buffer: " + dizionario.toString());
 
 
-    public String stampa_coda(){
-        StringBuilder result = new StringBuilder();
-        for (String element : queue) {
-            result.append(element).append(",");
+
+        int size = dizionario.getSize();
+        int window = WINDOW_SIZE;
+        LinkedList<OrdinePQ> list = new LinkedList<>();
+        if (size<WINDOW_SIZE){
+            window = size;
         }
-        // Remove the trailing comma
-        if (!result.isEmpty()) {
-            result.deleteCharAt(result.length() - 1);
+        while(window > 0) {
+            if (dizionario.cercaOrdine(iterator).isPresent()) {
+                list.add(dizionario.cercaOrdine(iterator).get());
+                window -=1;
+            }
+            if(iterator <= BUFFER_SIZE - 1) {
+                iterator += 1;
+            }
+            else {
+                iterator = 1;
+            }
         }
-        return "[" + result.toString() + "]";
+
+        BUSY.release();  // Rilascio del semaforo BUSY dopo il controllo
+
+        return list;
     }
+
 }

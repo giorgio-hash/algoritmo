@@ -1,15 +1,15 @@
 public class Consumer implements Runnable{
 
-    Buffer buffer;
+    BufferIF buffer;
 
-    public Consumer(Buffer buffer) {
+    public Consumer(BufferIF buffer) {
         this.buffer = buffer;
     }
 
     @Override
     public void run() {
 
-        String out = null;
+        Object out = null;
         while(true){
             try {
                 Thread.sleep(1000);
@@ -18,7 +18,7 @@ public class Consumer implements Runnable{
             }
 
             try {
-                out = (String) buffer.extract();
+                out = buffer.getMinPQ();
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
