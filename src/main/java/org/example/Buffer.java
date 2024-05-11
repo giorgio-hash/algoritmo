@@ -4,7 +4,7 @@ import java.util.concurrent.Semaphore;
 
 public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
 
-
+    private static Buffer INSTANCE; // Singleton class
     // Dichiarazione dei semafori per sincronizzare l'accesso al buffer
     private Semaphore FULL;   // Semaforo per indicare che il buffer è pieno
     private Semaphore EMPTY;  // Semaforo per indicare che il buffer è vuoto
@@ -22,7 +22,7 @@ public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
 
 
 
-    public Buffer() {
+    private Buffer() {
         this.indexMinPQ = new IndexMinPQ<>(BUFFER_SIZE);
         this.dizionario = new Dizionario();
         this.iterator = 1;
@@ -31,6 +31,13 @@ public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
         FULL = new Semaphore(0);             // Inizializzazione del semaforo FULL con 0 permessi iniziali (buffer vuoto)
         BUSY = new Semaphore(1);             // Inizializzazione del semaforo BUSY con 1 permesso (accesso esclusivo)
 
+    }
+
+    public static Buffer getInstance() {
+        if(INSTANCE == null) {
+            INSTANCE = new Buffer();
+        }
+        return INSTANCE;
     }
 
     @Override

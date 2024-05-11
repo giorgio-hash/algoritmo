@@ -31,8 +31,9 @@ public class Producer implements Runnable{
             synchronized(lock){
                 try {
                     if(!queue.isEmpty()){
-                        buffer.insertInBuffer(queue.poll());
-                        // TODO: Assegnare la priorita all'ordine
+                        OrdinePQ ordinePQ = queue.poll();
+                        GestionePriorita.setPriorita(ordinePQ); // TODO: Assegnare la priorita all'ordine
+                        buffer.insertInBuffer(ordinePQ);
                         //Printer.stampa("polling producer",queue); // ! : lancia una eccezione
                     }
                 } catch (InterruptedException e) {

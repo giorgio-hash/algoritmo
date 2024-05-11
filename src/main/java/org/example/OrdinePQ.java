@@ -1,4 +1,5 @@
 import java.sql.Timestamp;
+import java.time.Duration;
 
 public class OrdinePQ {
     /**
@@ -33,11 +34,10 @@ public class OrdinePQ {
 
     /**
      * Attributo urgenza del cliente
-     * 0 : espresso non urgenza
-     * 1 : espresso urgenza
-     * 2 : default
+     * False : espresso non urgenza
+     * True : espresso urgenza
      */
-    private Integer urgenzaCliente;
+    private Boolean urgenzaCliente;
 
     /**
      * Parametro ingrediente principale specifico del piatto dell'ordine
@@ -52,14 +52,14 @@ public class OrdinePQ {
     /**
      * parametro tempo di preparazione del piatto
      */
-    private Timestamp tDiPreparazione;
+    private Duration tp;
 
     /**
      * parametro numero ordine effettuato dal cliente
      */
     private int numOrdineEffettuato;
 
-    public OrdinePQ(int id, int idComanda, String idPiatto, Integer stato, Timestamp tOrdinazione, Integer urgenzaCliente, IngredientePrincipale ingredientePrincipale, Double valorePriorita, Timestamp tDiPreparazione, int numOrdineEffettuato) {
+    public OrdinePQ(int id, int idComanda, String idPiatto, Integer stato, Timestamp tOrdinazione, Boolean urgenzaCliente, IngredientePrincipale ingredientePrincipale ,Double valorePriorita, Duration tp, int numOrdineEffettuato) {
         this.id = id;
         this.idComanda = idComanda;
         this.idPiatto = idPiatto;
@@ -68,12 +68,21 @@ public class OrdinePQ {
         this.urgenzaCliente = urgenzaCliente;
         this.ingredientePrincipale = ingredientePrincipale;
         this.valorePriorita = valorePriorita;
-        this.tDiPreparazione = tDiPreparazione;
+        this.tp = tp;
         this.numOrdineEffettuato = numOrdineEffettuato;
     }
 
     public OrdinePQ(int id, Double valorePriorita) {
         this(id,0,null,null,null,null,null,valorePriorita,null,1);
+    }
+
+    public OrdinePQ(int id, Boolean urgenzaCliente, IngredientePrincipale ingredientePrincipale, Duration tp, int numOrdineEffettuato, Timestamp tOrdinazione) {
+        this.id = id;
+        this.urgenzaCliente = urgenzaCliente;
+        this.ingredientePrincipale = ingredientePrincipale;
+        this.tp = tp;
+        this.numOrdineEffettuato = numOrdineEffettuato;
+        this.tOrdinazione = tOrdinazione;
     }
 
     public Double getValorePriorita() {
@@ -82,6 +91,46 @@ public class OrdinePQ {
 
     public void setValorePriorita(Double valorePriorita) {
         this.valorePriorita = valorePriorita;
+    }
+
+    public Timestamp gettOrdinazione() {
+        return tOrdinazione;
+    }
+
+    public void settOrdinazione(Timestamp tOrdinazione) {
+        this.tOrdinazione = tOrdinazione;
+    }
+
+    public Boolean getUrgenzaCliente() {
+        return urgenzaCliente;
+    }
+
+    public void setUrgenzaCliente(Boolean urgenzaCliente) {
+        this.urgenzaCliente = urgenzaCliente;
+    }
+
+    public IngredientePrincipale getIngredientePrincipale() {
+        return ingredientePrincipale;
+    }
+
+    public void setIngredientePrincipale(IngredientePrincipale ingredientePrincipale) {
+        this.ingredientePrincipale = ingredientePrincipale;
+    }
+
+    public Duration getTp() {
+        return tp;
+    }
+
+    public void setTp(Duration tp) {
+        this.tp = tp;
+    }
+
+    public int getNumOrdineEffettuato() {
+        return numOrdineEffettuato;
+    }
+
+    public void setNumOrdineEffettuato(int numOrdineEffettuato) {
+        this.numOrdineEffettuato = numOrdineEffettuato;
     }
 
     @Override
