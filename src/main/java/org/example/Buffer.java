@@ -24,7 +24,7 @@ public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
 
     private Buffer() {
         this.indexMinPQ = new IndexMinPQ<>(BUFFER_SIZE);
-        this.dizionario = new Dizionario();
+        this.dizionario = new Dizionario(BUFFER_SIZE);
         this.iterator = 1;
 
         EMPTY = new Semaphore(BUFFER_SIZE);  // Inizializzazione del semaforo EMPTY con il numero massimo di permessi

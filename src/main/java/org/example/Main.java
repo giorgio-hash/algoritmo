@@ -8,8 +8,9 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
             Buffer buffer = Buffer.getInstance();
+            GestioneCode gestioneCode = new GestioneCode();
             Producer p = new Producer(buffer);
-            Consumer c = new Consumer(buffer);
+            Consumer c = new Consumer(buffer, gestioneCode);
             Checker ch = new Checker(buffer);
 
             Thread thread_p = new Thread(p);
@@ -90,6 +91,11 @@ public class Main {
                     5,
                     Timestamp.valueOf(LocalDateTime.now()));
 
+            CodaPostazione codaPasta = new CodaPostazione(IngredientePrincipale.PASTA);
+            CodaPostazione codaRiso = new CodaPostazione(IngredientePrincipale.RISO);
+            CodaPostazione codaCarne = new CodaPostazione(IngredientePrincipale.CARNE);
+            CodaPostazione codaPesce = new CodaPostazione(IngredientePrincipale.PESCE);
+
             ArrayList<OrdinePQ> list = new ArrayList<OrdinePQ>();
 
             list.add(ordine1);
@@ -117,18 +123,20 @@ public class Main {
                             throw new RuntimeException(e);
                     }
 
-                    Random random = new Random();
-                    IngredientePrincipale.CARNE.setValore(random.nextDouble());
-                    IngredientePrincipale.PESCE.setValore(random.nextDouble());
-                    IngredientePrincipale.RISO.setValore(random.nextDouble());
-                    IngredientePrincipale.PASTA.setValore(random.nextDouble());
-
             }
 
+            // ripeti
+            for(int i = 0; i < 9; i++){
 
+                    p.addToQueue(list.get(i));
 
+                    try {
+                            Thread.sleep(500);
+                    } catch (InterruptedException e) {
+                            throw new RuntimeException(e);
+                    }
 
-
+            }
 
     }
 }

@@ -4,6 +4,7 @@ import java.time.Instant;
 
 public class GestionePriorita {
 
+    // VALORE DEI PESI
     private static final float p1 = 0.25f;
     private static final float p2 = 0.15f;
     private static final float p3 = 0.20f;
@@ -16,6 +17,15 @@ public class GestionePriorita {
     private static final int sogliaMax = 5;
 
 
+    /**
+     * Calcola la priorità dell'ordine e assegnala
+     * somma pesata dei parametri:
+     * y = p1x1 + p2x2 + p3x3 + p4x4 + p5 ∗ x5
+     *
+     * @param ordinePQ ordine
+     * @return la priorità calcolata
+     * @throws Exception
+     */
     public static double setPriorita(OrdinePQ ordinePQ) throws Exception {
         double x1 = CalcolaIngredientePrincipale(ordinePQ.getIngredientePrincipale());
         double x2 = CalcolaTempoDiPreparazione(ordinePQ.getTp());
@@ -41,8 +51,8 @@ public class GestionePriorita {
     private static double CalcolaIngredientePrincipale(IngredientePrincipale ingredientePrincipale) {
         // TODO: codaPostazione(ingredientePrincipale).getGradoRiempimento();
         double x1 = ingredientePrincipale.getValore();
-        System.out.println("Gestione Priorita': x1 = " + x1);
-        return x1;
+        System.out.println("Gestione Priorita': x1 = " + (1 - x1));
+        return 1 - x1;
     }
 
     /**

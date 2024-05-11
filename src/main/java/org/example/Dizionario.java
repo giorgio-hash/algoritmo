@@ -7,10 +7,11 @@ public class Dizionario {
 
     private final Map<Integer, OrdinePQ> ordinePQMap; // {id : priorita}
     private final ArrayList<Boolean>  chiaviDisponibili;
-    private final int MAX_SIZE = 10;
+    private int MAX_SIZE = 10;
 
     // Costruttore
-    public Dizionario() {
+    public Dizionario(int BUFFER_SIZE) {
+        this.MAX_SIZE = BUFFER_SIZE;
         ordinePQMap = new HashMap<>();
         chiaviDisponibili = new ArrayList<>();
         // Aggiungi le chiavi al pool
