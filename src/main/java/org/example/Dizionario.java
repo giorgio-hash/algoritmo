@@ -22,8 +22,8 @@ public class Dizionario {
 
     // Metodo per aggiungere una parola e il suo significato al dizionario
     public int aggiungiOrdine(OrdinePQ ordinePQ) throws Exception {
-        int i = 1;
-        while(!chiaviDisponibili.get(i) && i <= MAX_SIZE){
+        int i = 0;
+        while(!chiaviDisponibili.get(i) && i < MAX_SIZE){
             i+=1;
         }
         if(chiaviDisponibili.get(i)){
