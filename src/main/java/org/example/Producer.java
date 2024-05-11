@@ -3,16 +3,16 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class Producer implements Runnable{
 
-    private BufferIF buffer;
+    private final ProducerIF buffer;
     private final Object lock = new Object(); // Internal lock
 
     //POLLING
-    private final BlockingQueue<Object> queue = new LinkedBlockingQueue<>();
-    public Producer(BufferIF buffer) {
+    private final BlockingQueue<OrdinePQ> queue = new LinkedBlockingQueue<>();
+    public Producer(ProducerIF buffer) {
         this.buffer = buffer;
     }
 
-    public void addToQueue(String value) {
+    public void addToQueue(OrdinePQ value) {
         synchronized (lock) {
             queue.offer(value); // Add to the queue
         }
@@ -28,12 +28,12 @@ public class Producer implements Runnable{
                 throw new RuntimeException(e);
             }
 
-
             synchronized(lock){
                 try {
                     if(!queue.isEmpty()){
-                        buffer.insertInBuffer((OrdinePQ) queue.poll());
-                        Printer.stampa("polling producer",queue);
+                        buffer.insertInBuffer(queue.poll());
+                        // TODO: Assegnare la priorita all'ordine
+                        //Printer.stampa("polling producer",queue); // ! : lancia una eccezione
                     }
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);

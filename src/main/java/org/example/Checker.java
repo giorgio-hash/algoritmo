@@ -14,13 +14,16 @@ public class Checker implements Runnable{
         while(true){
 
             try {
-                Thread.sleep(5000);
+                Thread.sleep(2000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
 
             try {
                 LinkedList<OrdinePQ> list = buffer.getWindow();
+                if(list.isEmpty()){
+                    System.out.println("nulla da controllare");
+                }
                 for(OrdinePQ ordinePQ : list){
                     // ordinePQ.aggiornaPriorita();
                     // aggiorna buffer (la priority queue)

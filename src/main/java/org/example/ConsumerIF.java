@@ -1,13 +1,7 @@
 import java.util.Optional;
 
-public interface BufferIF {
+public interface ConsumerIF {
 
-    /**
-     *  Inserisci l'ordine all'interno del buffer.
-     *
-     * @param ordinePQ ordine da inserire.
-     */
-    void insertInBuffer(OrdinePQ ordinePQ) throws Exception;
 
     /**
      * Rimuovi l'ordine a priorità più elevata dal buffer.

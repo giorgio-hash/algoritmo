@@ -2,7 +2,7 @@ import java.util.LinkedList;
 import java.util.Optional;
 import java.util.concurrent.Semaphore;
 
-public class Buffer implements BufferIF, CheckerIF {
+public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
 
 
     // Dichiarazione dei semafori per sincronizzare l'accesso al buffer
@@ -16,7 +16,7 @@ public class Buffer implements BufferIF, CheckerIF {
 
     private final int BUFFER_SIZE = 10;
 
-    private final int WINDOW_SIZE = 5;
+    private final int WINDOW_SIZE = 3;
 
     private int iterator;
 
@@ -76,8 +76,6 @@ public class Buffer implements BufferIF, CheckerIF {
 
         System.out.println("controllo...");
         System.out.println("ordini presenti nel buffer: " + dizionario.toString());
-
-
 
         int size = dizionario.getSize();
         int window = WINDOW_SIZE;

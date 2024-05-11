@@ -1,15 +1,17 @@
+import java.util.Optional;
+
 public class Consumer implements Runnable{
 
-    BufferIF buffer;
+    ConsumerIF buffer;
 
-    public Consumer(BufferIF buffer) {
+    public Consumer(ConsumerIF buffer) {
         this.buffer = buffer;
     }
 
     @Override
     public void run() {
 
-        Object out = null;
+        Optional<OrdinePQ> out = Optional.empty();
         while(true){
             try {
                 Thread.sleep(1000);
@@ -22,8 +24,7 @@ public class Consumer implements Runnable{
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-
-            System.out.println("estratto: "+out);
+            out.ifPresent(ordinePQ -> System.out.println("estratto: " + ordinePQ));
         }
     }
 }

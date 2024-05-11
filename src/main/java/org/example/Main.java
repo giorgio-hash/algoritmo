@@ -103,12 +103,15 @@ public class Main {
             Thread thread_ch = new Thread(ch);
 
 
-            OrdinePQ ordine1 = new OrdinePQ(1524,-0.5);
-            OrdinePQ ordine2 = new OrdinePQ(3645,-0.7);
-            OrdinePQ ordine3 = new OrdinePQ(2154,-0.2);
-            OrdinePQ ordine4 = new OrdinePQ(1000,-0.5);
-            OrdinePQ ordine5 = new OrdinePQ(5445,-0.9);
-            OrdinePQ ordine6 = new OrdinePQ(1054,-0.1);
+            OrdinePQ ordine1 = new OrdinePQ(1524,-0.50);
+            OrdinePQ ordine2 = new OrdinePQ(3645,-0.70);
+            OrdinePQ ordine3 = new OrdinePQ(2154,-0.20);
+            OrdinePQ ordine4 = new OrdinePQ(1000,-0.50);
+            OrdinePQ ordine5 = new OrdinePQ(5445,-0.95);
+            OrdinePQ ordine6 = new OrdinePQ(1054,-0.10);
+            OrdinePQ ordine7 = new OrdinePQ(1212,-0.77);
+            OrdinePQ ordine8 = new OrdinePQ(8888,-0.15);
+            OrdinePQ ordine9 = new OrdinePQ(2222,-0.25);
 
             ArrayList<OrdinePQ> list = new ArrayList<OrdinePQ>();
 
@@ -118,7 +121,9 @@ public class Main {
             list.add(ordine4);
             list.add(ordine5);
             list.add(ordine6);
-
+            list.add(ordine7);
+            list.add(ordine8);
+            list.add(ordine9);
 
 
             thread_p.start();
@@ -127,9 +132,20 @@ public class Main {
 
 
 
-            for(int i = 0; i < 6; i++){
+//            for(int i = 0; i < 9; i++){
+//
+//                    buffer.insertInBuffer(list.get(i));
+//
+//                    try {
+//                            Thread.sleep(500);
+//                    } catch (InterruptedException e) {
+//                            throw new RuntimeException(e);
+//                    }
+//            }
 
-                    buffer.insertInBuffer(list.get(i));
+            for(int i = 0; i < 9; i++){
+
+                    p.addToQueue(list.get(i));
 
                     try {
                             Thread.sleep(500);
