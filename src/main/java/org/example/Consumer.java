@@ -14,7 +14,7 @@ public class Consumer implements Runnable{
         Optional<OrdinePQ> out = Optional.empty();
         while(true){
             try {
-                Thread.sleep(1000);
+                Thread.sleep(3000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

@@ -12,11 +12,11 @@ public class GestionePriorita {
 
     private static final Duration tpmax = Duration.ofMinutes(10).plusSeconds(30); // tempo di preparazione massimo
     private static final Duration tmin= Duration.ofMinutes(1).plusSeconds(10); // tempo di preparazione minimo
-    private static final Duration tempo_max_in_attesa = Duration.ofMinutes(10); // tempo massimo in attesa
+    private static final Duration tempo_max_in_attesa = Duration.ofMinutes(1); // tempo massimo in attesa
     private static final int sogliaMax = 5;
 
 
-    public static void setPriorita(OrdinePQ ordinePQ) throws Exception {
+    public static double setPriorita(OrdinePQ ordinePQ) throws Exception {
         double x1 = CalcolaIngredientePrincipale(ordinePQ.getIngredientePrincipale());
         double x2 = CalcolaTempoDiPreparazione(ordinePQ.getTp());
         double x3 = CalcolaUrgenzaDelCliente(ordinePQ.getUrgenzaCliente());
@@ -29,9 +29,9 @@ public class GestionePriorita {
             throw new Exception("valore priorita non valido");
         }
         ordinePQ.setValorePriorita(y*-1);
+        return y*(-1);
     }
 
-    // TODO: collegare la ricerca di x1 in base allo stato della coda postazione in cucina associata
     /**
      * Funzione che calcola il parametro x1 riferito all’ingrediente principale
      *
@@ -40,7 +40,7 @@ public class GestionePriorita {
      */
     private static double CalcolaIngredientePrincipale(IngredientePrincipale ingredientePrincipale) {
         // TODO: codaPostazione(ingredientePrincipale).getGradoRiempimento();
-        double x1 = 0.5;
+        double x1 = ingredientePrincipale.getValore();
         System.out.println("Gestione Priorita': x1 = " + x1);
         return x1;
     }

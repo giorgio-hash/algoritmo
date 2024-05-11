@@ -1,4 +1,6 @@
+import java.util.AbstractMap;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.Semaphore;
 
@@ -20,8 +22,6 @@ public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
 
     private int iterator;
 
-
-
     private Buffer() {
         this.indexMinPQ = new IndexMinPQ<>(BUFFER_SIZE);
         this.dizionario = new Dizionario();
@@ -30,7 +30,6 @@ public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
         EMPTY = new Semaphore(BUFFER_SIZE);  // Inizializzazione del semaforo EMPTY con il numero massimo di permessi
         FULL = new Semaphore(0);             // Inizializzazione del semaforo FULL con 0 permessi iniziali (buffer vuoto)
         BUSY = new Semaphore(1);             // Inizializzazione del semaforo BUSY con 1 permesso (accesso esclusivo)
-
     }
 
     public static Buffer getInstance() {
@@ -75,9 +74,8 @@ public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
 
     }
 
-
     @Override
-    public LinkedList<OrdinePQ> getWindow() throws InterruptedException {
+    public LinkedList<Map.Entry<Integer, OrdinePQ>> getWindow() throws InterruptedException {
 
         BUSY.acquire();  // Acquisizione del semaforo BUSY per eseguire un controll
 
@@ -86,13 +84,13 @@ public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
 
         int size = dizionario.getSize();
         int window = WINDOW_SIZE;
-        LinkedList<OrdinePQ> list = new LinkedList<>();
+        LinkedList<Map.Entry<Integer, OrdinePQ>> list = new LinkedList<>();
         if (size<WINDOW_SIZE){
             window = size;
         }
         while(window > 0) {
             if (dizionario.cercaOrdine(iterator).isPresent()) {
-                list.add(dizionario.cercaOrdine(iterator).get());
+                list.add(new AbstractMap.SimpleEntry<>(iterator, dizionario.cercaOrdine(iterator).get()));
                 window -=1;
             }
             if(iterator <= BUFFER_SIZE - 1) {
@@ -106,6 +104,11 @@ public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
         BUSY.release();  // Rilascio del semaforo BUSY dopo il controllo
 
         return list;
+    }
+
+    @Override
+    public void updatePQ(int key, double priorita){
+        indexMinPQ.changeKey(key, priorita);
     }
 
 }

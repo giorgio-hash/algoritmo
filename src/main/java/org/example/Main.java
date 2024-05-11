@@ -2,6 +2,7 @@ import java.sql.Timestamp;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -115,7 +116,17 @@ public class Main {
                     } catch (InterruptedException e) {
                             throw new RuntimeException(e);
                     }
+
+                    Random random = new Random();
+                    IngredientePrincipale.CARNE.setValore(random.nextDouble());
+                    IngredientePrincipale.PESCE.setValore(random.nextDouble());
+                    IngredientePrincipale.RISO.setValore(random.nextDouble());
+                    IngredientePrincipale.PASTA.setValore(random.nextDouble());
+
             }
+
+
+
 
 
 
