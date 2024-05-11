@@ -44,7 +44,7 @@ public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
         EMPTY.acquire();  // Acquisizione del semaforo EMPTY (si blocca se il buffer è pieno)
         BUSY.acquire();   // Acquisizione del semaforo BUSY per eseguire l'accesso esclusivo al buffer
 
-        indexMinPQ.insert(dizionario.aggiungiOrdine(ordinePQ),ordinePQ.getValorePriorita());
+        indexMinPQ.insert(dizionario.aggiungiOrdine(ordinePQ)-1,ordinePQ.getValorePriorita());
 
         Printer.stampa("inserimento" + ordinePQ,indexMinPQ);
 
@@ -70,7 +70,7 @@ public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
         BUSY.release();  // Rilascio del semaforo BUSY (fine dell'accesso esclusivo)
         EMPTY.release(); // Rilascio del semaforo EMPTY per segnalare che il buffer ha un posto libero in più
 
-        return dizionario.rimuoviOrdine(i);
+        return dizionario.rimuoviOrdine(i+1);
 
     }
 
@@ -108,7 +108,7 @@ public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
 
     @Override
     public void updatePQ(int key, double priorita){
-        indexMinPQ.changeKey(key, priorita);
+        indexMinPQ.changeKey(key-1, priorita);
     }
 
 }
