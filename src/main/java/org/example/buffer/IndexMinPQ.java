@@ -1,6 +1,6 @@
-/******************************************************************************
- *  Compilation:  javac IndexMinPQ.java
- *  Execution:    java IndexMinPQ
+package buffer; /******************************************************************************
+ *  Compilation:  javac buffer.IndexMinPQ.java
+ *  Execution:    java buffer.IndexMinPQ
  *  Dependencies: StdOut.java
  *
  *  Minimum-oriented indexed PQ implementation using a binary heap.
@@ -11,7 +11,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- *  The {@code IndexMinPQ} class represents an indexed priority queue of generic keys.
+ *  The {@code buffer.IndexMinPQ} class represents an indexed priority queue of generic keys.
  *  It supports the usual <em>insert</em> and <em>delete-the-minimum</em>
  *  operations, along with <em>delete</em> and <em>change-the-key</em>
  *  methods. In order to let the client refer to keys on the priority queue,

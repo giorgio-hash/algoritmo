@@ -1,114 +1,108 @@
+import buffer.Buffer;
+import entities.CodaPostazione;
+import entities.GestioneCode;
+import entities.IngredientePrincipale;
+import entities.OrdinePQ;
+import threads.Checker;
+import threads.Consumer;
+import threads.Producer;
+
+import java.sql.Timestamp;
+import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-/**
-        BufferIF buffer = new GestioneBuffer();
 
-        OrdinePQ ordine1 = new OrdinePQ(1524,-0.5);
-        OrdinePQ ordine2 = new OrdinePQ(3645,-0.7);
-        OrdinePQ ordine3 = new OrdinePQ(2154,-0.2);
-        OrdinePQ ordine4 = new OrdinePQ(1000,-0.5);
-        OrdinePQ ordine5 = new OrdinePQ(5445,-0.9);
-        OrdinePQ ordine6 = new OrdinePQ(1054,-0.1);
-
-        buffer.insertInBuffer(ordine1);
-        buffer.insertInBuffer(ordine2);
-        buffer.insertInBuffer(ordine3);
-
-        System.out.println(buffer.getMinPQ());
-        System.out.println(buffer.getMinPQ());
-        System.out.println();
-        buffer.insertInBuffer(ordine4);
-        buffer.insertInBuffer(ordine5);
-        buffer.insertInBuffer(ordine6);
-
-        System.out.println(buffer.getMinPQ());
-        System.out.println(buffer.getMinPQ());
-        System.out.println(buffer.getMinPQ());
-        System.out.println(buffer.getMinPQ());
-        System.out.println();
-
-//        Dizionario dizionario = new Dizionario();
-
-//        OrdinePQ ordine1 = new OrdinePQ(1524,0.5);
-//        OrdinePQ ordine2 = new OrdinePQ(3645,0.7);
-//        OrdinePQ ordine3 = new OrdinePQ(2154,0.2);
-
-//        // Aggiungo alcune parole e significati al dizionario
-//        int id1 = dizionario.aggiungiOrdine(ordine1);
-//        int id2 = dizionario.aggiungiOrdine(ordine2);
-//        int id3 = dizionario.aggiungiOrdine(ordine3);
-//
-//        // Cerco il significato di alcune parole
-//        System.out.println("Il significato di 1 è: " + dizionario.cercaOrdine(id1));
-//        System.out.println("Il significato di 2 è: " + dizionario.cercaOrdine(id2));
-//        System.out.println("Il significato di 3 è: " + dizionario.cercaOrdine(id3));
-//
-//        // Rimuovo una parola dal dizionario
-//        dizionario.rimuoviOrdine(id1);
-//
-//        // Aggiungo un'altra parola
-//        dizionario.aggiungiOrdine(ordine1);
-//
-//        IndexMinPQ<Double> pq = new IndexMinPQ<>(10);
-//        pq.insert(id1,dizionario.cercaOrdine(id1).getValorePriorita());
-//        pq.insert(id2,dizionario.cercaOrdine(id2).getValorePriorita());
-//        pq.insert(id3,dizionario.cercaOrdine(id3).getValorePriorita());
-//
-//        // delete and print each key
-//        while (!pq.isEmpty()) {
-//            int i = pq.delMin();
-//            System.out.println("estrazione " + i + " " + dizionario.cercaOrdine(i));
-//            dizionario.rimuoviOrdine(i);
-//        }
-//        System.out.println();
-//
-//        id1 = dizionario.aggiungiOrdine(ordine1);
-//        id2 = dizionario.aggiungiOrdine(ordine2);
-//        id3 = dizionario.aggiungiOrdine(ordine3);
-//
-//        pq.insert(id1,dizionario.cercaOrdine(id1).getValorePriorita());
-//        pq.insert(id2,dizionario.cercaOrdine(id2).getValorePriorita());
-//        pq.insert(id3,dizionario.cercaOrdine(id3).getValorePriorita());
-//
-//        int i = pq.delMin();
-//        System.out.println("inserimento " + i + " " + dizionario.cercaOrdine(i));
-//        System.out.println();
-//
-//        OrdinePQ ordine4 = new OrdinePQ(1000,0.5);
-//        OrdinePQ ordine5 = new OrdinePQ(5445,0.9);
-//        OrdinePQ ordine6 = new OrdinePQ(1054,0.1);
-//        int id4 = dizionario.aggiungiOrdine(ordine4);
-//        int id5 = dizionario.aggiungiOrdine(ordine5);
-//        int id6 = dizionario.aggiungiOrdine(ordine6);
-//        pq.insert(id4,dizionario.cercaOrdine(id4).getValorePriorita());
-//        pq.insert(id5,dizionario.cercaOrdine(id5).getValorePriorita());
-//        pq.insert(id6,dizionario.cercaOrdine(id6).getValorePriorita());
-//        // delete and print each key
-//        while (!pq.isEmpty()) {
-//            i = pq.delMin();
-//            System.out.println(i + " " + dizionario.cercaOrdine(i));
-//        }
-//        System.out.println();
-**/
-
-            Buffer buffer = new Buffer();
+            Buffer buffer = Buffer.getInstance();
+            GestioneCode gestioneCode = new GestioneCode();
             Producer p = new Producer(buffer);
-            Consumer c = new Consumer(buffer);
+            Consumer c = new Consumer(buffer, gestioneCode);
             Checker ch = new Checker(buffer);
 
             Thread thread_p = new Thread(p);
             Thread thread_c = new Thread(c);
             Thread thread_ch = new Thread(ch);
 
+            // ORDINI CON PRIORITA' GIA' ASSEGNATA
+//            entities.OrdinePQ ordine1 = new entities.OrdinePQ(1524,-0.50);
+//            entities.OrdinePQ ordine2 = new entities.OrdinePQ(3645,-0.70);
+//            entities.OrdinePQ ordine3 = new entities.OrdinePQ(2154,-0.20);
+//            entities.OrdinePQ ordine4 = new entities.OrdinePQ(1000,-0.50);
+//            entities.OrdinePQ ordine5 = new entities.OrdinePQ(5445,-0.95);
+//            entities.OrdinePQ ordine6 = new entities.OrdinePQ(1054,-0.10);
+//            entities.OrdinePQ ordine7 = new entities.OrdinePQ(1212,-0.77);
+//            entities.OrdinePQ ordine8 = new entities.OrdinePQ(8888,-0.15);
+//            entities.OrdinePQ ordine9 = new entities.OrdinePQ(2222,-0.25);
 
-            OrdinePQ ordine1 = new OrdinePQ(1524,-0.5);
-            OrdinePQ ordine2 = new OrdinePQ(3645,-0.7);
-            OrdinePQ ordine3 = new OrdinePQ(2154,-0.2);
-            OrdinePQ ordine4 = new OrdinePQ(1000,-0.5);
-            OrdinePQ ordine5 = new OrdinePQ(5445,-0.9);
-            OrdinePQ ordine6 = new OrdinePQ(1054,-0.1);
+            OrdinePQ ordine1 = new OrdinePQ(1524,
+                    false,
+                    IngredientePrincipale.CARNE,
+                    Duration.ofMinutes(2).plusSeconds(20),
+                    1,
+                    Timestamp.valueOf(LocalDateTime.now()));
+
+            OrdinePQ ordine2 = new OrdinePQ(3645,
+                    true,
+                    IngredientePrincipale.PESCE,
+                    Duration.ofMinutes(5).plusSeconds(30),
+                    2,
+                    Timestamp.valueOf(LocalDateTime.now()));
+
+            OrdinePQ ordine3 = new OrdinePQ(2154,
+                    false,
+                    IngredientePrincipale.CARNE,
+                    Duration.ofMinutes(3).plusSeconds(40),
+                    3,
+                    Timestamp.valueOf(LocalDateTime.now()));
+
+            OrdinePQ ordine4 = new OrdinePQ(1000,
+                    false,
+                    IngredientePrincipale.RISO,
+                    Duration.ofMinutes(8).plusSeconds(40),
+                    1,
+                    Timestamp.valueOf(LocalDateTime.now()));
+
+            OrdinePQ ordine5 = new OrdinePQ(5445,
+                    false,
+                    IngredientePrincipale.PASTA,
+                    Duration.ofMinutes(5).plusSeconds(15),
+                    4,
+                    Timestamp.valueOf(LocalDateTime.now()));
+
+            OrdinePQ ordine6 = new OrdinePQ(1054,
+                    true,
+                    IngredientePrincipale.RISO,
+                    Duration.ofMinutes(2).plusSeconds(15),
+                    1,
+                    Timestamp.valueOf(LocalDateTime.now()));
+
+            OrdinePQ ordine7 = new OrdinePQ(1212,
+                    false,
+                    IngredientePrincipale.PESCE,
+                    Duration.ofMinutes(8).plusSeconds(45),
+                    3,
+                    Timestamp.valueOf(LocalDateTime.now()));
+
+            OrdinePQ ordine8 = new OrdinePQ(8888,
+                    true,
+                    IngredientePrincipale.PESCE,
+                    Duration.ofMinutes(5).plusSeconds(15),
+                    6,
+                    Timestamp.valueOf(LocalDateTime.now()));
+
+            OrdinePQ ordine9 = new OrdinePQ(2222,
+                    false,
+                    IngredientePrincipale.PESCE,
+                    Duration.ofMinutes(3).plusSeconds(55),
+                    5,
+                    Timestamp.valueOf(LocalDateTime.now()));
+
+            CodaPostazione codaPasta = new CodaPostazione(IngredientePrincipale.PASTA);
+            CodaPostazione codaRiso = new CodaPostazione(IngredientePrincipale.RISO);
+            CodaPostazione codaCarne = new CodaPostazione(IngredientePrincipale.CARNE);
+            CodaPostazione codaPesce = new CodaPostazione(IngredientePrincipale.PESCE);
 
             ArrayList<OrdinePQ> list = new ArrayList<OrdinePQ>();
 
@@ -118,27 +112,39 @@ public class Main {
             list.add(ordine4);
             list.add(ordine5);
             list.add(ordine6);
-
-
+            list.add(ordine7);
+            list.add(ordine8);
+            list.add(ordine9);
 
             thread_p.start();
             thread_ch.start();
             thread_c.start();
 
 
+            for(int i = 0; i < 9; i++){
 
-            for(int i = 0; i < 6; i++){
-
-                    buffer.insertInBuffer(list.get(i));
+                    p.addToQueue(list.get(i));
 
                     try {
                             Thread.sleep(500);
                     } catch (InterruptedException e) {
                             throw new RuntimeException(e);
                     }
+
             }
 
+            // ripeti
+            for(int i = 0; i < 9; i++){
 
+                    p.addToQueue(list.get(i));
+
+                    try {
+                            Thread.sleep(500);
+                    } catch (InterruptedException e) {
+                            throw new RuntimeException(e);
+                    }
+
+            }
 
     }
 }
