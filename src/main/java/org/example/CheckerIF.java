@@ -11,5 +11,5 @@ public interface CheckerIF {
      * @param key identificativo dell'ordine nel dizionario
      * @param priorita valore di priorità
      */
-    void updatePQ(int key, double priorita);
+    void updatePQ(int key, double priorita) throws InterruptedException;
 }

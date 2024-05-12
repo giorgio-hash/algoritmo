@@ -27,7 +27,7 @@ public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
         this.dizionario = new Dizionario(BUFFER_SIZE);
         this.iterator = 1;
 
-        EMPTY = new Semaphore(BUFFER_SIZE);  // Inizializzazione del semaforo EMPTY con il numero massimo di permessi
+        EMPTY = new Semaphore(BUFFER_SIZE-1);  // Inizializzazione del semaforo EMPTY con il numero massimo di permessi
         FULL = new Semaphore(0);             // Inizializzazione del semaforo FULL con 0 permessi iniziali (buffer vuoto)
         BUSY = new Semaphore(1);             // Inizializzazione del semaforo BUSY con 1 permesso (accesso esclusivo)
     }
@@ -108,7 +108,7 @@ public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
     }
 
     @Override
-    public void updatePQ(int key, double priorita){
+    public void updatePQ(int key, double priorita) throws InterruptedException {
         indexMinPQ.changeKey(key, priorita);
     }
 

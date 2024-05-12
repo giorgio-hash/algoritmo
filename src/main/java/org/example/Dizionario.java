@@ -7,7 +7,7 @@ public class Dizionario {
 
     private final Map<Integer, OrdinePQ> ordinePQMap; // {id : priorita}
     private final ArrayList<Boolean>  chiaviDisponibili;
-    private int MAX_SIZE = 10;
+    private int MAX_SIZE;
 
     // Costruttore
     public Dizionario(int BUFFER_SIZE) {
@@ -15,7 +15,7 @@ public class Dizionario {
         ordinePQMap = new HashMap<>();
         chiaviDisponibili = new ArrayList<>();
         // Aggiungi le chiavi al pool
-        for(int i = 0; i <= MAX_SIZE ; i++){
+        for(int i = 0; i < MAX_SIZE ; i++){
             chiaviDisponibili.add(true);
         }
     }
@@ -23,7 +23,7 @@ public class Dizionario {
     // Metodo per aggiungere una parola e il suo significato al dizionario
     public int aggiungiOrdine(OrdinePQ ordinePQ) throws Exception {
         int i = 0;
-        while(!chiaviDisponibili.get(i) && i < MAX_SIZE){
+        while(i < MAX_SIZE && !chiaviDisponibili.get(i)){
             i+=1;
         }
         if(chiaviDisponibili.get(i)){
