@@ -115,7 +115,7 @@ public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
             }
         }
 
-        BUSY.release();  // Rilascio del semaforo BUSY dopo il controllo
+        // BUSY.release();  // Rilascio del semaforo BUSY dopo il controllo
 
         return list;
     }
