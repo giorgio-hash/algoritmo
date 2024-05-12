@@ -3,6 +3,7 @@ package entities;
 import java.util.LinkedList;
 import java.util.Optional;
 import java.util.Queue;
+import java.util.concurrent.Semaphore;
 
 /**
  * Coda di una singola postazione della cucina
@@ -34,15 +35,22 @@ public class CodaPostazione {
      */
     private Queue<OrdinePQ> queue;
 
+    /**
+     * Semaforo di mutua esclusività
+     */
+    private Semaphore BUSY;
+
     public CodaPostazione(IngredientePrincipale ingredientePrincipale) {
         this.ingredientePrincipale = ingredientePrincipale;
         this.numeroOrdiniPresenti = 0;
         this.gradoRiempimento = 0.0;
         this.queue = new LinkedList<>();
         ingredientePrincipale.setValore(gradoRiempimento);
+        BUSY = new Semaphore(1);             // Inizializzazione del semaforo BUSY con 1 permesso (accesso esclusivo)
     }
 
-    public boolean insert(OrdinePQ ordineDTO) {
+    public boolean insert(OrdinePQ ordineDTO) throws InterruptedException {
+        BUSY.acquire();
         if (numeroOrdiniPresenti >= capacita)
             return false;
         boolean status = queue.offer(ordineDTO);
@@ -51,16 +59,19 @@ public class CodaPostazione {
             this.gradoRiempimento = ((double) numeroOrdiniPresenti / capacita);
             ingredientePrincipale.setValore(gradoRiempimento);
         }
+        BUSY.release();
         return status;
     }
 
-    public Optional<OrdinePQ> remove() {
+    public Optional<OrdinePQ> remove() throws InterruptedException {
+        BUSY.acquire();
         Optional<OrdinePQ> ordinePQ = Optional.ofNullable(queue.poll());
         if (ordinePQ.isPresent()) {
             this.numeroOrdiniPresenti -= 1;
             this.gradoRiempimento = ((double) numeroOrdiniPresenti / capacita);
             ingredientePrincipale.setValore(gradoRiempimento);
         }
+        BUSY.release();
         return ordinePQ;
     }
 

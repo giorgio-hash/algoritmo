@@ -140,6 +140,10 @@ public class OrdinePQ {
         this.numOrdineEffettuato = numOrdineEffettuato;
     }
 
+    public void setStato(Integer stato) {
+        this.stato = stato;
+    }
+
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();

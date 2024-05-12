@@ -33,7 +33,14 @@ public class Consumer implements Runnable{
                 try {
                     System.out.println("Consumer: chiedo l'ordine a priorità più alta dal buffer...");
                     ordinePQ = buffer.getMinPQ();
-                    ordinePQ.ifPresent(pq -> gestioneCode.push(pq));
+                    ordinePQ.ifPresent(pq -> {
+                        try {
+                            gestioneCode.push(pq);
+                        } catch (InterruptedException e) {
+                            System.out.println("Consumer: problemi nell'inserimento di: " + pq);
+                            throw new RuntimeException(e);
+                        }
+                    });
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }

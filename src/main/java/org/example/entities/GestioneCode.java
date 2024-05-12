@@ -3,13 +3,16 @@ package entities;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+import java.util.concurrent.Semaphore;
 
 // Entita' CUCINA
 public class GestioneCode {
 
-    private HashMap<String, CodaPostazione> postazioni;
+    private static GestioneCode INSTANCE; // Singleton class
 
-    public GestioneCode() {
+    private final HashMap<String, CodaPostazione> postazioni;
+
+    private GestioneCode() {
         this.postazioni = new HashMap<>();
 
         CodaPostazione codaPostazioneA = new CodaPostazione(IngredientePrincipale.RISO);
@@ -21,6 +24,13 @@ public class GestioneCode {
         postazioni.put("PASTA", codaPostazioneB);
         postazioni.put("CARNE", codaPostazioneC);
         postazioni.put("PESCE", codaPostazioneD);
+    }
+
+    public static GestioneCode getINSTANCE() {
+        if(INSTANCE == null) {
+            INSTANCE = new GestioneCode();
+        }
+        return INSTANCE;
     }
 
     public Optional<CodaPostazione> getCodaPostazione(IngredientePrincipale ingredientePrincipale) {
@@ -38,10 +48,31 @@ public class GestioneCode {
         return Optional.empty();
     }
 
-    public void push(OrdinePQ ordinePQ) throws RuntimeException {
+    public Optional<OrdinePQ> postNotifica(IngredientePrincipale ingredientePrincipale, OrdinePQ ordinePQ) throws InterruptedException {
+
+        Optional<CodaPostazione> codaPostazione = Optional.ofNullable(postazioni.get(ingredientePrincipale.toString()));
+        if(codaPostazione.isPresent()) {
+            Optional<OrdinePQ> top_queue = codaPostazione.get().element();
+            if(top_queue.isPresent() && top_queue.get().equals(ordinePQ)){
+                Optional<OrdinePQ> ordineEntity = codaPostazione.get().remove();
+                ordinePQ.setStato(3);
+                if (ordineEntity.isPresent()) {
+                    System.out.println("GestioneCode: rimosso ordine: " + ordineEntity);
+                    return ordineEntity;
+                }
+            }
+            else System.out.println("GestioneCode: Ordine non presente o coda vuota");
+        }
+        else {
+            System.out.println("GestioneCode: Coda non esiste");
+        }
+        return Optional.empty();
+    }
+
+    public void push(OrdinePQ ordinePQ) throws RuntimeException, InterruptedException {
         CodaPostazione coda_selezionata = postazioni.get(ordinePQ.getIngredientePrincipale().toString());
         coda_selezionata.insert(ordinePQ);
-        System.out.println("Coda Aggiornata: " + postazioni.get(ordinePQ.getIngredientePrincipale().toString()));
+        System.out.println("GestioneCode: Postazione Aggiornata: " + postazioni.get(ordinePQ.getIngredientePrincipale().toString()));
     }
 
     @Override
