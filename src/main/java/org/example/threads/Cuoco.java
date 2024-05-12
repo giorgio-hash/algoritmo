@@ -20,6 +20,10 @@ public class Cuoco implements Runnable{
     public void run() {
 
         while (true) {
+
+            System.out.println("Cuoco " + ingredientePrincipale.toString() + ": osservo la coda di postazione: " +
+                    gestioneCode.getCodaPostazione(ingredientePrincipale).toString());
+
             Optional<OrdinePQ> ordinePQ = gestioneCode.getOrder(ingredientePrincipale.toString());
             if (ordinePQ.isPresent()) {
                 System.out.println("Cuoco " + ingredientePrincipale.toString() + ": preparando l'ordine: " + ordinePQ);

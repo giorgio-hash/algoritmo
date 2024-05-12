@@ -58,6 +58,7 @@ public class GestioneCode {
                 ordinePQ.setStato(3);
                 if (ordineEntity.isPresent()) {
                     System.out.println("GestioneCode: rimosso ordine: " + ordineEntity);
+                    System.out.println("GestioneCode: stampa di tutte le code: " + this);
                     return ordineEntity;
                 }
             }
@@ -66,20 +67,23 @@ public class GestioneCode {
         else {
             System.out.println("GestioneCode: Coda non esiste");
         }
+        System.out.println("GestioneCode: stampa di tutte le code: " + this);
         return Optional.empty();
     }
 
-    public void push(OrdinePQ ordinePQ) throws RuntimeException, InterruptedException {
+    public boolean push(OrdinePQ ordinePQ) throws RuntimeException, InterruptedException {
         CodaPostazione coda_selezionata = postazioni.get(ordinePQ.getIngredientePrincipale().toString());
-        coda_selezionata.insert(ordinePQ);
+        boolean res = coda_selezionata.insert(ordinePQ);
         System.out.println("GestioneCode: Postazione Aggiornata: " + postazioni.get(ordinePQ.getIngredientePrincipale().toString()));
+        System.out.println("GestioneCode: stampa di tutte le code: " + this);
+        return res;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         for (Map.Entry<String, CodaPostazione> entry : postazioni.entrySet()) {
-            sb.append(entry.getKey()).append(", ").append(entry.getValue()).append(" - ");
+            sb.append("\n").append(entry.getKey()).append(", ").append(entry.getValue());
         }
         // Rimuovi l'ultima virgola e lo spazio in eccesso
         String result = sb.toString().replaceAll(", $", "");

@@ -24,7 +24,7 @@ public class Consumer implements Runnable{
         Optional<OrdinePQ> ordinePQ;
         while(true){
             try {
-                Thread.sleep(3000);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -35,8 +35,12 @@ public class Consumer implements Runnable{
                     ordinePQ = buffer.getMinPQ();
                     ordinePQ.ifPresent(pq -> {
                         try {
-                            gestioneCode.push(pq);
-                        } catch (InterruptedException e) {
+                            if(!gestioneCode.push(pq)){
+                                System.out.println("Consumer: problemi nell'inserimento di: " + pq);
+                                System.out.println("Consumer: ordine re inserito nel buffer: " + pq);
+                                buffer.insertInBuffer(pq);
+                            }
+                        } catch (Exception e) {
                             System.out.println("Consumer: problemi nell'inserimento di: " + pq);
                             throw new RuntimeException(e);
                         }

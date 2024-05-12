@@ -148,8 +148,9 @@ public class OrdinePQ {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("OrdinePQ{ id=").append(id);
+        stringBuilder.append(", ").append(ingredientePrincipale.toString());
         if(valorePriorita!=null){
-            stringBuilder.append(", valorePriorità=").append(valorePriorita*-1);
+            stringBuilder.append(", valorePriorità=").append(String.format("%.3f", valorePriorita*-1));
         }
         stringBuilder.append(" }");
         return stringBuilder.toString();

@@ -51,8 +51,10 @@ public class CodaPostazione {
 
     public boolean insert(OrdinePQ ordineDTO) throws InterruptedException {
         BUSY.acquire();
-        if (numeroOrdiniPresenti >= capacita)
+        if (numeroOrdiniPresenti >= capacita) {
+            BUSY.release();
             return false;
+        }
         boolean status = queue.offer(ordineDTO);
         if (status) {
             this.numeroOrdiniPresenti += 1;

@@ -52,63 +52,63 @@ public class Main {
             OrdinePQ ordine1 = new OrdinePQ(1524,
                     false,
                     IngredientePrincipale.CARNE,
-                    Duration.ofMinutes(2).plusSeconds(20),
+                    Duration.ofMinutes(0).plusSeconds(35),
                     1,
                     Timestamp.valueOf(LocalDateTime.now()));
 
             OrdinePQ ordine2 = new OrdinePQ(3645,
                     true,
                     IngredientePrincipale.PESCE,
-                    Duration.ofMinutes(5).plusSeconds(30),
+                    Duration.ofMinutes(0).plusSeconds(25),
                     2,
                     Timestamp.valueOf(LocalDateTime.now()));
 
             OrdinePQ ordine3 = new OrdinePQ(2154,
                     false,
                     IngredientePrincipale.CARNE,
-                    Duration.ofMinutes(3).plusSeconds(40),
+                    Duration.ofMinutes(0).plusSeconds(20),
                     3,
                     Timestamp.valueOf(LocalDateTime.now()));
 
             OrdinePQ ordine4 = new OrdinePQ(1000,
                     false,
                     IngredientePrincipale.RISO,
-                    Duration.ofMinutes(8).plusSeconds(40),
+                    Duration.ofMinutes(0).plusSeconds(30),
                     1,
                     Timestamp.valueOf(LocalDateTime.now()));
 
             OrdinePQ ordine5 = new OrdinePQ(5445,
                     false,
                     IngredientePrincipale.PASTA,
-                    Duration.ofMinutes(5).plusSeconds(15),
+                    Duration.ofMinutes(0).plusSeconds(10),
                     4,
                     Timestamp.valueOf(LocalDateTime.now()));
 
             OrdinePQ ordine6 = new OrdinePQ(1054,
                     true,
                     IngredientePrincipale.RISO,
-                    Duration.ofMinutes(2).plusSeconds(15),
+                    Duration.ofMinutes(0).plusSeconds(15),
                     1,
                     Timestamp.valueOf(LocalDateTime.now()));
 
             OrdinePQ ordine7 = new OrdinePQ(1212,
                     false,
                     IngredientePrincipale.PESCE,
-                    Duration.ofMinutes(8).plusSeconds(45),
+                    Duration.ofMinutes(0).plusSeconds(45),
                     3,
                     Timestamp.valueOf(LocalDateTime.now()));
 
             OrdinePQ ordine8 = new OrdinePQ(8888,
                     true,
                     IngredientePrincipale.PESCE,
-                    Duration.ofMinutes(5).plusSeconds(15),
+                    Duration.ofMinutes(1).plusSeconds(0),
                     6,
                     Timestamp.valueOf(LocalDateTime.now()));
 
             OrdinePQ ordine9 = new OrdinePQ(2222,
                     false,
                     IngredientePrincipale.PESCE,
-                    Duration.ofMinutes(3).plusSeconds(55),
+                    Duration.ofMinutes(0).plusSeconds(55),
                     5,
                     Timestamp.valueOf(LocalDateTime.now()));
 
