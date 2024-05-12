@@ -1,5 +1,8 @@
 package entities;
 
+import util.OrderWaitingTimeLogger;
+
+import java.sql.Timestamp;
 import java.util.LinkedList;
 import java.util.Optional;
 import java.util.Queue;
@@ -69,6 +72,7 @@ public class CodaPostazione {
         BUSY.acquire();
         Optional<OrdinePQ> ordinePQ = Optional.ofNullable(queue.poll());
         if (ordinePQ.isPresent()) {
+            OrderWaitingTimeLogger.logOrder(ordinePQ.get().gettOrdinazione());
             this.numeroOrdiniPresenti -= 1;
             this.gradoRiempimento = ((double) numeroOrdiniPresenti / capacita);
             ingredientePrincipale.setValore(gradoRiempimento);

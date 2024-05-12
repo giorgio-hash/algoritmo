@@ -104,40 +104,20 @@ public class OrdinePQ {
         return tOrdinazione;
     }
 
-    public void settOrdinazione(Timestamp tOrdinazione) {
-        this.tOrdinazione = tOrdinazione;
-    }
-
     public Boolean getUrgenzaCliente() {
         return urgenzaCliente;
-    }
-
-    public void setUrgenzaCliente(Boolean urgenzaCliente) {
-        this.urgenzaCliente = urgenzaCliente;
     }
 
     public IngredientePrincipale getIngredientePrincipale() {
         return ingredientePrincipale;
     }
 
-    public void setIngredientePrincipale(IngredientePrincipale ingredientePrincipale) {
-        this.ingredientePrincipale = ingredientePrincipale;
-    }
-
     public Duration getTp() {
         return tp;
     }
 
-    public void setTp(Duration tp) {
-        this.tp = tp;
-    }
-
     public int getNumOrdineEffettuato() {
         return numOrdineEffettuato;
-    }
-
-    public void setNumOrdineEffettuato(int numOrdineEffettuato) {
-        this.numOrdineEffettuato = numOrdineEffettuato;
     }
 
     public void setStato(Integer stato) {
