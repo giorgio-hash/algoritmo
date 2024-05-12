@@ -2,10 +2,7 @@ import buffer.Buffer;
 import entities.GestioneCode;
 import entities.IngredientePrincipale;
 import entities.OrdinePQ;
-import threads.Checker;
-import threads.Consumer;
-import threads.Cuoco;
-import threads.Producer;
+import threads.*;
 import util.GeneraOrdine;
 
 import java.util.ArrayList;
@@ -16,68 +13,59 @@ public class Main {
             Buffer buffer = Buffer.getInstance();
             GestioneCode gestioneCode = GestioneCode.getINSTANCE();
 
-            Producer p = new Producer(buffer);
-            Consumer c = new Consumer(buffer, gestioneCode);
-            Checker ch = new Checker(buffer);
+            Producer producer = new Producer(buffer);
+            Consumer consumer = new Consumer(buffer, gestioneCode, producer);
+            Checker checker = new Checker(buffer);
 
             Cuoco cuocoRiso = new Cuoco(gestioneCode, IngredientePrincipale.RISO);
             Cuoco cuocoPasta = new Cuoco(gestioneCode, IngredientePrincipale.PASTA);
             Cuoco cuocoCarne = new Cuoco(gestioneCode, IngredientePrincipale.CARNE);
             Cuoco cuocoPesce = new Cuoco(gestioneCode, IngredientePrincipale.PESCE);
 
-            Thread thread_p = new Thread(p);
-            Thread thread_c = new Thread(c);
-            Thread thread_ch = new Thread(ch);
+            //Cliente cliente = new Cliente(producer);
+
+            Thread thread_producer = new Thread(producer);
+            Thread thread_consumer = new Thread(consumer);
+            Thread thread_checker = new Thread(checker);
 
             Thread thread_cuocoRiso = new Thread(cuocoRiso);
             Thread thread_cuocoPasta = new Thread(cuocoPasta);
             Thread thread_cuocoCarne = new Thread(cuocoCarne);
             Thread thread_cuocoPesce = new Thread(cuocoPesce);
+            //Thread thread_cliente = new Thread(cliente);
 
             ArrayList<OrdinePQ> list = new ArrayList<OrdinePQ>();
 
-            // Creazione ordini
-            for (int i=0; i<10; i++){
-                    list.add(GeneraOrdine.genOrdine(i));
-            }
+//            // Creazione ordini
+//            for (int i=0; i<10; i++){
+//                    list.add(GeneraOrdine.genOrdine(i));
+//            }
 
             // Creazione ordini
             for (int i=0; i<10; i++){
                     list.add(GeneraOrdine.genOrdineRandom());
             }
 
-            thread_p.start();
-            thread_ch.start();
-            thread_c.start();
+            thread_producer.start();
+            thread_checker.start();
+            thread_consumer.start();
 
             thread_cuocoRiso.start();
             thread_cuocoPasta.start();
             thread_cuocoCarne.start();
             thread_cuocoPesce.start();
+            //thread_cliente.start();
 
-            for(int i = 0; i < 9; i++){
-
-                    p.addToQueue(list.get(i));
-
-                    try {
-                            Thread.sleep(500);
-                    } catch (InterruptedException e) {
-                            throw new RuntimeException(e);
+            // lista di ordini iniziali
+            for(int j=0; j < 2; j++) {
+                    for (int i = 0; i < 10; i++) {
+                            producer.addToQueue(list.get(i));
+                            try {
+                                    Thread.sleep(500);
+                            } catch (InterruptedException e) {
+                                    throw new RuntimeException(e);
+                            }
                     }
-
-            }
-
-            // ripeti
-            for(int i = 0; i < 9; i++){
-
-                    p.addToQueue(list.get(i));
-
-                    try {
-                            Thread.sleep(500);
-                    } catch (InterruptedException e) {
-                            throw new RuntimeException(e);
-                    }
-
             }
 
     }

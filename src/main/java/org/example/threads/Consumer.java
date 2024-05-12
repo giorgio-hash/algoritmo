@@ -10,12 +10,12 @@ public class Consumer implements Runnable{
 
     ConsumerIF buffer;
     GestioneCode gestioneCode;
-    private final Object lock = new Object(); // Internal lock
+    Producer producer;
 
-
-    public Consumer(ConsumerIF buffer, GestioneCode gestioneCode) {
+    public Consumer(ConsumerIF buffer, GestioneCode gestioneCode, Producer producer) {
         this.buffer = buffer;
         this.gestioneCode = gestioneCode;
+        this.producer = producer;
     }
 
     @Override
@@ -29,27 +29,25 @@ public class Consumer implements Runnable{
                 throw new RuntimeException(e);
             }
 
-            synchronized (lock) {
-                try {
-                    System.out.println("Consumer: chiedo l'ordine a priorità più alta dal buffer...");
-                    ordinePQ = buffer.getMinPQ();
-                    ordinePQ.ifPresent(pq -> {
-                        try {
-                            if(!gestioneCode.push(pq)){
-                                System.out.println("Consumer: problemi nell'inserimento di: " + pq);
-                                System.out.println("Consumer: ordine re inserito nel buffer: " + pq);
-                                buffer.insertInBuffer(pq);
-                            }
-                        } catch (Exception e) {
+            try {
+                System.out.println("Consumer: chiedo l'ordine a priorità più alta dal buffer...");
+                ordinePQ = buffer.getMinPQ();
+                ordinePQ.ifPresent(pq -> {
+                    try {
+                        if(!gestioneCode.push(pq)){
                             System.out.println("Consumer: problemi nell'inserimento di: " + pq);
-                            throw new RuntimeException(e);
+                            System.out.println("Consumer: reinserisco nel buffer l'ordine: " + pq);
+                            producer.addToHighPriorityQueue(pq);
                         }
-                    });
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-                ordinePQ.ifPresent(ordinePQ1 -> System.out.println("Consumer: estratto: " + ordinePQ1));
+                    } catch (Exception e) {
+                        System.out.println("Consumer: problemi nell'inserimento di: " + pq);
+                        throw new RuntimeException(e);
+                    }
+                });
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
             }
+            ordinePQ.ifPresent(ordinePQ1 -> System.out.println("Consumer: estratto: " + ordinePQ1));
         }
     }
 }
