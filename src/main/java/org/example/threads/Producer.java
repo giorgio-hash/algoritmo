@@ -37,14 +37,16 @@ public class Producer implements Runnable{
             synchronized(lock){
                 try {
                     if(!queue.isEmpty()){
+                        System.out.println("Producer: rilevato ordine in arrivo.");
                         OrdinePQ ordinePQ = queue.poll();
-                        GestionePriorita.setPriorita(ordinePQ); // TODO: Assegnare la priorita all'ordine
+                        System.out.println("Producer: calcolo della priorità per: " + ordinePQ);
+                        GestionePriorita.setPriorita(ordinePQ);
                         buffer.insertInBuffer(ordinePQ);
                         //util.Printer.stampa("polling producer",queue); // ! : lancia una eccezione
+                        System.out.println("Producer: inserimento avvenuto con successo: " + ordinePQ);
                     }
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
                 } catch (Exception e) {
+                    System.out.println("Producer: errore - inserimento non avvenuto");
                     throw new RuntimeException(e);
                 }
             }

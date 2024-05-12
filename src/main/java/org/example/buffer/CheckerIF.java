@@ -4,6 +4,7 @@ import entities.OrdinePQ;
 
 import java.util.LinkedList;
 import java.util.Map;
+import java.util.concurrent.Semaphore;
 
 public interface CheckerIF {
 
@@ -16,4 +17,11 @@ public interface CheckerIF {
      * @param priorita valore di priorità
      */
     void updatePQ(int key, double priorita) throws InterruptedException;
+
+    /**
+     * Ritorna il semaforo di muta esclusivita'
+     *
+     * @return semaforo BUSY
+     */
+    Semaphore getBusy();
 }

@@ -79,12 +79,17 @@ public class OrdinePQ {
     }
 
     public OrdinePQ(int id, Boolean urgenzaCliente, IngredientePrincipale ingredientePrincipale, Duration tp, int numOrdineEffettuato, Timestamp tOrdinazione) {
-        this.id = id;
-        this.urgenzaCliente = urgenzaCliente;
-        this.ingredientePrincipale = ingredientePrincipale;
-        this.tp = tp;
-        this.numOrdineEffettuato = numOrdineEffettuato;
-        this.tOrdinazione = tOrdinazione;
+        this(
+                id,
+                0,
+                "null",
+                null,
+                tOrdinazione,
+                urgenzaCliente,
+                ingredientePrincipale,
+                null,
+                tp,
+                numOrdineEffettuato);
     }
 
     public Double getValorePriorita() {
@@ -137,9 +142,12 @@ public class OrdinePQ {
 
     @Override
     public String toString() {
-        return "entities.OrdinePQ{" +
-                " id=" + id +
-                ", valorePriorita=" + valorePriorita*-1 +
-                '}';
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("OrdinePQ{ id=").append(id);
+        if(valorePriorita!=null){
+            stringBuilder.append(", valorePriorità=").append(valorePriorita*-1);
+        }
+        stringBuilder.append(" }");
+        return stringBuilder.toString();
     }
 }

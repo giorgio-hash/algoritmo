@@ -49,16 +49,18 @@ public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
         EMPTY.acquire();  // Acquisizione del semaforo EMPTY (si blocca se il buffer è pieno)
         BUSY.acquire();   // Acquisizione del semaforo BUSY per eseguire l'accesso esclusivo al buffer
 
+        System.out.println("***** Producer controlla il buffer *****");
         int id = dizionario.aggiungiOrdine(ordinePQ);
         indexMinPQ.insert(id, ordinePQ.getValorePriorita());
 
-        Printer.stampa("inserimento" + ordinePQ,indexMinPQ);
+        Printer.stampa("Buffer: inserimento " + ordinePQ,indexMinPQ);
 
         if(dizionario.getSize() == BUFFER_SIZE)
         {
             Printer.stampa("pieno!",indexMinPQ);
         }
 
+        System.out.println("***** Producer rilascia il buffer *****");
         BUSY.release();  // Rilascio del semaforo BUSY (fine dell'accesso esclusivo)
         FULL.release();  // Rilascio del semaforo FULL per segnalare che il buffer contiene un elemento in più
     }
@@ -69,10 +71,12 @@ public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
         FULL.acquire();  // Acquisizione del semaforo FULL (si blocca se il buffer è vuoto)
         BUSY.acquire();  // Acquisizione del semaforo BUSY per eseguire l'accesso esclusivo al buffer
 
+        System.out.println("***** Consumer controlla il buffer *****");
         int i = indexMinPQ.delMin();
         // System.out.println("estrazione " + i + " " + dizionario.cercaOrdine(i));
         Printer.stampa("estrazione: " + i,indexMinPQ);
 
+        System.out.println("***** Consumer rilascia il buffer *****");
         BUSY.release();  // Rilascio del semaforo BUSY (fine dell'accesso esclusivo)
         EMPTY.release(); // Rilascio del semaforo EMPTY per segnalare che il buffer ha un posto libero in più
 
@@ -80,10 +84,14 @@ public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
 
     }
 
+    public Semaphore getBusy() {   // Semaforo per gestire l'accesso esclusivo al buffer
+        return BUSY;
+    }
+
     @Override
     public LinkedList<Map.Entry<Integer, OrdinePQ>> getWindow() throws InterruptedException {
 
-        BUSY.acquire();  // Acquisizione del semaforo BUSY per eseguire un controll
+        //BUSY.acquire();  // Acquisizione del semaforo BUSY per eseguire un controll
 
         System.out.println("controllo...");
         System.out.println("ordini presenti nel buffer: " + dizionario.toString());

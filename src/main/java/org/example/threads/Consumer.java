@@ -21,7 +21,7 @@ public class Consumer implements Runnable{
     @Override
     public void run() {
 
-        Optional<OrdinePQ> ordinePQ = Optional.empty();
+        Optional<OrdinePQ> ordinePQ;
         while(true){
             try {
                 Thread.sleep(3000);
@@ -31,12 +31,13 @@ public class Consumer implements Runnable{
 
             synchronized (lock) {
                 try {
+                    System.out.println("Consumer: chiedo l'ordine a priorità più alta dal buffer...");
                     ordinePQ = buffer.getMinPQ();
                     ordinePQ.ifPresent(pq -> gestioneCode.push(pq));
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
-                ordinePQ.ifPresent(ordinePQ1 -> System.out.println("estratto: " + ordinePQ1));
+                ordinePQ.ifPresent(ordinePQ1 -> System.out.println("Consumer: estratto: " + ordinePQ1));
             }
         }
     }
