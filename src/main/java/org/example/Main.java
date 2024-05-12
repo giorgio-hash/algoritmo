@@ -22,7 +22,7 @@ public class Main {
             Cuoco cuocoCarne = new Cuoco(gestioneCode, IngredientePrincipale.CARNE);
             Cuoco cuocoPesce = new Cuoco(gestioneCode, IngredientePrincipale.PESCE);
 
-            //Cliente cliente = new Cliente(producer);
+            Cliente cliente = new Cliente(producer);
 
             Thread thread_producer = new Thread(producer);
             Thread thread_consumer = new Thread(consumer);
@@ -32,7 +32,7 @@ public class Main {
             Thread thread_cuocoPasta = new Thread(cuocoPasta);
             Thread thread_cuocoCarne = new Thread(cuocoCarne);
             Thread thread_cuocoPesce = new Thread(cuocoPesce);
-            //Thread thread_cliente = new Thread(cliente);
+            Thread thread_cliente = new Thread(cliente);
 
             ArrayList<OrdinePQ> list = new ArrayList<OrdinePQ>();
 
@@ -54,7 +54,7 @@ public class Main {
             thread_cuocoPasta.start();
             thread_cuocoCarne.start();
             thread_cuocoPesce.start();
-            //thread_cliente.start();
+            thread_cliente.start();
 
             // lista di ordini iniziali
             for(int j=0; j < 2; j++) {
