@@ -1,8 +1,16 @@
+import buffer.Buffer;
+import entities.CodaPostazione;
+import entities.GestioneCode;
+import entities.IngredientePrincipale;
+import entities.OrdinePQ;
+import threads.Checker;
+import threads.Consumer;
+import threads.Producer;
+
 import java.sql.Timestamp;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -18,15 +26,15 @@ public class Main {
             Thread thread_ch = new Thread(ch);
 
             // ORDINI CON PRIORITA' GIA' ASSEGNATA
-//            OrdinePQ ordine1 = new OrdinePQ(1524,-0.50);
-//            OrdinePQ ordine2 = new OrdinePQ(3645,-0.70);
-//            OrdinePQ ordine3 = new OrdinePQ(2154,-0.20);
-//            OrdinePQ ordine4 = new OrdinePQ(1000,-0.50);
-//            OrdinePQ ordine5 = new OrdinePQ(5445,-0.95);
-//            OrdinePQ ordine6 = new OrdinePQ(1054,-0.10);
-//            OrdinePQ ordine7 = new OrdinePQ(1212,-0.77);
-//            OrdinePQ ordine8 = new OrdinePQ(8888,-0.15);
-//            OrdinePQ ordine9 = new OrdinePQ(2222,-0.25);
+//            entities.OrdinePQ ordine1 = new entities.OrdinePQ(1524,-0.50);
+//            entities.OrdinePQ ordine2 = new entities.OrdinePQ(3645,-0.70);
+//            entities.OrdinePQ ordine3 = new entities.OrdinePQ(2154,-0.20);
+//            entities.OrdinePQ ordine4 = new entities.OrdinePQ(1000,-0.50);
+//            entities.OrdinePQ ordine5 = new entities.OrdinePQ(5445,-0.95);
+//            entities.OrdinePQ ordine6 = new entities.OrdinePQ(1054,-0.10);
+//            entities.OrdinePQ ordine7 = new entities.OrdinePQ(1212,-0.77);
+//            entities.OrdinePQ ordine8 = new entities.OrdinePQ(8888,-0.15);
+//            entities.OrdinePQ ordine9 = new entities.OrdinePQ(2222,-0.25);
 
             OrdinePQ ordine1 = new OrdinePQ(1524,
                     false,
