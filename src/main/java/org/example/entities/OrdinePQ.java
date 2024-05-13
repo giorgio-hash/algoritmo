@@ -135,6 +135,10 @@ public class OrdinePQ {
         this.tInCoda = tInCoda;
     }
 
+    public int getId() {
+        return id;
+    }
+
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
