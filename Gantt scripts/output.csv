@@ -1,0 +1,13 @@
+uuid,secs,id,thread,state
+2,11761000,2486,producer,end
+3,2871700,2486,consumer,end
+4,420000,6773,producer,end
+5,6288700,0,checker,end
+6,1176900,6773,consumer,end
+7,1859900,5563,producer,end
+8,269000,2288,producer,end
+9,440900,5563,consumer,end
+10,459700,9570,producer,end
+11,1842100,0,checker,end
+12,584300,2288,consumer,end
+13,298700,8112,producer,end

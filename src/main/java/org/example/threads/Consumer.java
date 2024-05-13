@@ -3,6 +3,8 @@ package threads;
 import buffer.ConsumerIF;
 import entities.GestioneCode;
 import entities.OrdinePQ;
+import util.Printer;
+import util.UniqueIdGenerator;
 
 import java.sql.Timestamp;
 import java.time.Duration;
@@ -34,6 +36,14 @@ public class Consumer implements Runnable{
 
             try {
                 System.out.println("Consumer: chiedo l'ordine a priorità più alta dal buffer...");
+
+                //stampa di log
+                //unique id per riga log
+                UniqueIdGenerator.getInstance().newGeneratedId();
+                Printer.stampaLogConsumer(UniqueIdGenerator.getInstance().getGeneratedId(),
+                        0,
+                        false);
+
                 ordinePQ = buffer.getMinPQ();
                 ordinePQ.ifPresent(pq -> {
                     try {
@@ -50,6 +60,10 @@ public class Consumer implements Runnable{
                         throw new RuntimeException(e);
                     }
                 });
+
+                Printer.stampaLogConsumer(UniqueIdGenerator.getInstance().getGeneratedId(),
+                        ordinePQ.map(OrdinePQ::getId).orElse(0),
+                        true);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
