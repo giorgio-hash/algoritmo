@@ -5,6 +5,7 @@ import entities.OrdinePQ;
 import threads.*;
 import util.GeneraOrdine;
 
+import java.time.Instant;
 import java.util.ArrayList;
 
 public class Main {
@@ -40,6 +41,9 @@ public class Main {
 //            for (int i=0; i<10; i++){
 //                    list.add(GeneraOrdine.genOrdine(i));
 //            }
+
+            //stampa di log
+            System.out.println("begin:" + System.nanoTime());
 
             // Creazione ordini
             for (int i=0; i<10; i++){

@@ -3,6 +3,8 @@ package threads;
 import buffer.CheckerIF;
 import entities.OrdinePQ;
 import util.GestionePriorita;
+import util.Printer;
+import util.UniqueIdGenerator;
 
 import java.util.LinkedList;
 import java.util.Map;
@@ -30,6 +32,13 @@ public class Checker implements Runnable{
             }
 
             Semaphore BUSY = buffer.getBusy();
+
+            //stampa di log
+            //unique id per riga log
+            UniqueIdGenerator.getInstance().newGeneratedId();
+            Printer.stampaLogChecker(UniqueIdGenerator.getInstance().getGeneratedId(),
+                    false);
+
             synchronized(lock){
                 try {
                     BUSY.acquire();
@@ -53,6 +62,9 @@ public class Checker implements Runnable{
                     BUSY.release();
                 }
             }
+
+            Printer.stampaLogChecker(UniqueIdGenerator.getInstance().getGeneratedId(),
+                    true);
 
         }
     }
