@@ -91,8 +91,6 @@ public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
     @Override
     public LinkedList<Map.Entry<Integer, OrdinePQ>> getWindow() throws InterruptedException {
 
-        //BUSY.acquire();  // Acquisizione del semaforo BUSY per eseguire un controll
-
         System.out.println("controllo...");
         System.out.println("ordini presenti nel buffer: " + dizionario.toString());
 
@@ -114,8 +112,6 @@ public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
                 iterator = 0;
             }
         }
-
-        // BUSY.release();  // Rilascio del semaforo BUSY dopo il controllo
 
         return list;
     }

@@ -16,9 +16,9 @@ public class GestionePriorita {
     private static final float p4 = 0.15f;
     private static final float p5 = 0.25f;
 
-    private static final Duration tpmax = Duration.ofMinutes(10).plusSeconds(30); // tempo di preparazione massimo
-    private static final Duration tmin= Duration.ofMinutes(1).plusSeconds(10); // tempo di preparazione minimo
-    private static final Duration tempo_max_in_attesa = Duration.ofMinutes(1); // tempo massimo in attesa
+    private static final Duration tpmax = Duration.ofMinutes(1).plusSeconds(0); // tempo di preparazione massimo
+    private static final Duration tmin= Duration.ofMinutes(0).plusSeconds(10); // tempo di preparazione minimo
+    private static final Duration tempo_max_in_attesa = Duration.ofMinutes(3); // tempo massimo in attesa
     private static final int sogliaMax = 5;
 
 

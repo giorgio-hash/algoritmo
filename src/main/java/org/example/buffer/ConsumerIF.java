@@ -14,4 +14,11 @@ public interface ConsumerIF {
      */
     Optional<OrdinePQ> getMinPQ() throws InterruptedException;
 
+    /**
+     *  Rinserisci l'ordine all'interno del buffer.
+     *
+     * @param ordinePQ ordine da re_inserire.
+     */
+    void insertInBuffer(OrdinePQ ordinePQ) throws Exception;
+
 }

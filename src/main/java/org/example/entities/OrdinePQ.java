@@ -61,6 +61,8 @@ public class OrdinePQ {
      */
     private int numOrdineEffettuato;
 
+    private Duration tInCoda;
+
     public OrdinePQ(int id, int idComanda, String idPiatto, Integer stato, Timestamp tOrdinazione, Boolean urgenzaCliente, IngredientePrincipale ingredientePrincipale , Double valorePriorita, Duration tp, int numOrdineEffettuato) {
         this.id = id;
         this.idComanda = idComanda;
@@ -72,6 +74,7 @@ public class OrdinePQ {
         this.valorePriorita = valorePriorita;
         this.tp = tp;
         this.numOrdineEffettuato = numOrdineEffettuato;
+        this.tInCoda = Duration.ZERO;
     }
 
     public OrdinePQ(int id, Double valorePriorita) {
@@ -104,48 +107,41 @@ public class OrdinePQ {
         return tOrdinazione;
     }
 
-    public void settOrdinazione(Timestamp tOrdinazione) {
-        this.tOrdinazione = tOrdinazione;
-    }
-
     public Boolean getUrgenzaCliente() {
         return urgenzaCliente;
-    }
-
-    public void setUrgenzaCliente(Boolean urgenzaCliente) {
-        this.urgenzaCliente = urgenzaCliente;
     }
 
     public IngredientePrincipale getIngredientePrincipale() {
         return ingredientePrincipale;
     }
 
-    public void setIngredientePrincipale(IngredientePrincipale ingredientePrincipale) {
-        this.ingredientePrincipale = ingredientePrincipale;
-    }
-
     public Duration getTp() {
         return tp;
-    }
-
-    public void setTp(Duration tp) {
-        this.tp = tp;
     }
 
     public int getNumOrdineEffettuato() {
         return numOrdineEffettuato;
     }
 
-    public void setNumOrdineEffettuato(int numOrdineEffettuato) {
-        this.numOrdineEffettuato = numOrdineEffettuato;
+    public void setStato(Integer stato) {
+        this.stato = stato;
+    }
+
+    public Duration gettInCoda() {
+        return tInCoda;
+    }
+
+    public void settInCoda(Duration tInCoda) {
+        this.tInCoda = tInCoda;
     }
 
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("OrdinePQ{ id=").append(id);
+        stringBuilder.append(", ").append(ingredientePrincipale.toString());
         if(valorePriorita!=null){
-            stringBuilder.append(", valorePriorità=").append(valorePriorita*-1);
+            stringBuilder.append(", valorePriorità=").append(String.format("%.3f", valorePriorita*-1));
         }
         stringBuilder.append(" }");
         return stringBuilder.toString();
