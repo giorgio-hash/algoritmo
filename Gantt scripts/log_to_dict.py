@@ -118,14 +118,11 @@ output_list_of_dicts = process_dicts(input_list_of_dicts)
 # txt output
 with open('diffs.txt', 'w') as f:
     for dict_item in output_list_of_dicts:
-        # Use json.dumps() to convert dictionary to string
-        # Each dictionary will be written on a new line
         f.write(json.dumps(dict_item) + '\n')
 
 
 # csv input
 with open('output.csv', 'w', newline='') as f:
-    # Assuming that all dictionaries in the list have the same keys
     keys = output_list_of_dicts[0].keys()
     
     writer = csv.DictWriter(f, fieldnames=keys)
@@ -135,24 +132,3 @@ with open('output.csv', 'w', newline='') as f:
     
     # Write the dictionaries into the CSV file
     writer.writerows(output_list_of_dicts)
-
-
-
-# Assuming data is your list of dictionaries
-# data = [{"uuid": "2", "secs": "243824631015800", "id": "7250", "thread": "producer", "state": "begin"}, ...]
-
-# Convert the list of dictionaries to a DataFrame
-#df = pd.DataFrame(input_list_of_dicts)
-
-# Convert 'secs' to datetime format for Gantt chart
-#df['secs'] = pd.to_datetime(df['secs'].astype(float), unit='ns')
-
-# Create two separate DataFrames for 'begin' and 'end' states
-#df_begin = df[df['state'] == 'begin'].rename(columns={'secs': 'Start'})
-#df_end = df[df['state'] == 'end'].rename(columns={'secs': 'Finish'})
-
-# Merge the 'begin' and 'end' DataFrames on 'uuid' and 'thread'
-#df_gantt = pd.merge(df_begin, df_end, on=['uuid', 'thread'])
-
-# Create a Gantt chart
-
