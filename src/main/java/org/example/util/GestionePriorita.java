@@ -44,6 +44,9 @@ public class GestionePriorita {
             throw new Exception("valore priorita non valido");
         }
         ordinePQ.setValorePriorita(y*-1);
+        if(ordinePQ.getPrioritaIniziale() == 0.0){
+            ordinePQ.setPrioritaIniziale(setPrioritaIniziale(x5, y));
+        }
         return y*(-1);
     }
 
@@ -134,6 +137,15 @@ public class GestionePriorita {
         }
         System.out.println("Gestione Priorita': x5 = " + x5);
         return x5;
+    }
+
+    private static double setPrioritaIniziale(double x5, double y) throws Exception {
+        double y1 = (y - x5 * p5)/(1-p5);
+        System.out.println("Gestione Priorita iniziale': y' = " + y1);
+        if(y1<0 || y1 >1){
+            throw new Exception("valore priorita iniziale non valido");
+        }
+        return y1*-1;
     }
 
 

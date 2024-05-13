@@ -54,33 +54,33 @@ public class GeneraOrdine {
         return new OrdinePQ(3645,
                 true,
                 IngredientePrincipale.PESCE,
-                Duration.ofMinutes(0).plusSeconds(25),
-                2,
+                Duration.ofMinutes(0).plusSeconds(30),
+                1,
                 Timestamp.valueOf(LocalDateTime.now()));
     }
 
     private static OrdinePQ genOrdine2() {
         return new OrdinePQ(2154,
-                false,
+                true,
                 IngredientePrincipale.CARNE,
-                Duration.ofMinutes(0).plusSeconds(20),
-                3,
+                Duration.ofMinutes(0).plusSeconds(30),
+                1,
                 Timestamp.valueOf(LocalDateTime.now()));
     }
 
     private static OrdinePQ genOrdine3() {
         return new OrdinePQ(5458,
                 true,
-                IngredientePrincipale.CARNE,
-                Duration.ofMinutes(0).plusSeconds(35),
-                4,
+                IngredientePrincipale.RISO,
+                Duration.ofMinutes(0).plusSeconds(30),
+                1,
                 Timestamp.valueOf(LocalDateTime.now()));
     }
 
     private static OrdinePQ genOrdine4() {
         return new  OrdinePQ(1000,
-                false,
-                IngredientePrincipale.RISO,
+                true,
+                IngredientePrincipale.PASTA,
                 Duration.ofMinutes(0).plusSeconds(30),
                 1,
                 Timestamp.valueOf(LocalDateTime.now()));

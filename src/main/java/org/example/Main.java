@@ -32,19 +32,10 @@ public class Main {
             Thread thread_cuocoPasta = new Thread(cuocoPasta);
             Thread thread_cuocoCarne = new Thread(cuocoCarne);
             Thread thread_cuocoPesce = new Thread(cuocoPesce);
-            Thread thread_cliente = new Thread(cliente);
-
-            ArrayList<OrdinePQ> list = new ArrayList<OrdinePQ>();
-
-//            // Creazione ordini
-//            for (int i=0; i<10; i++){
-//                    list.add(GeneraOrdine.genOrdine(i));
-//            }
-
-            // Creazione ordini
-            for (int i=0; i<10; i++){
-                    list.add(GeneraOrdine.genOrdineRandom());
-            }
+            Thread thread_clienteA = new Thread(cliente);
+            Thread thread_clienteB = new Thread(cliente);
+            Thread thread_clienteC = new Thread(cliente);
+            Thread thread_clienteD = new Thread(cliente);
 
             thread_producer.start();
             thread_checker.start();
@@ -54,17 +45,25 @@ public class Main {
             thread_cuocoPasta.start();
             thread_cuocoCarne.start();
             thread_cuocoPesce.start();
-            thread_cliente.start();
+            thread_clienteA.start();
+            thread_clienteB.start();
+            thread_clienteC.start();
+            thread_clienteD.start();
+
+            ArrayList<OrdinePQ> list = new ArrayList<OrdinePQ>();
+
+            // Creazione ordini iniziali
+            for (int i=1; i<5; i++){
+                    list.add(GeneraOrdine.genOrdine(i));
+            }
 
             // lista di ordini iniziali
-            for(int j=0; j < 2; j++) {
-                    for (int i = 0; i < 10; i++) {
-                            producer.addToQueue(list.get(i));
-                            try {
-                                    Thread.sleep(500);
-                            } catch (InterruptedException e) {
-                                    throw new RuntimeException(e);
-                            }
+            for (int i = 1; i < 4; i++) {
+                    producer.addToQueue(list.get(i));
+                    try {
+                            Thread.sleep(500);
+                    } catch (InterruptedException e) {
+                            throw new RuntimeException(e);
                     }
             }
 

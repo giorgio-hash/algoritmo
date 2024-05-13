@@ -34,7 +34,8 @@ public class OrderWaitingTimeLogger {
                         "urgenza," +
                         "numero_ordine_eff," +
                         "t_coda," +
-                        "priorita"); // Intestazione della colonna per il timestamp
+                        "priorita_iniz," +
+                        "priorita_fin"); // Intestazione della colonna per il timestamp
                 writer.newLine();
                 intestazione = true;
             }
@@ -50,7 +51,8 @@ public class OrderWaitingTimeLogger {
                     "," + ordinePQ.getUrgenzaCliente() +
                     "," + ordinePQ.getNumOrdineEffettuato() +
                     "," + ordinePQ.gettInCoda().toSeconds() +
-                    "," + String.format("%.0f", ordinePQ.getValorePriorita()*-100) + "%");
+                    "," + String.format("%.0f", ordinePQ.getPrioritaIniziale()*-100) +
+                    "," + String.format("%.0f", ordinePQ.getValorePriorita()*-100));
             writer.newLine();
             orderCount += 1;
             System.out.println("File csv: Scrittura completata con successo");

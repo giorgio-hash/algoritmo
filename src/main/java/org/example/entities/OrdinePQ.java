@@ -1,7 +1,10 @@
 package entities;
 
+import util.GestionePriorita;
+
 import java.sql.Timestamp;
 import java.time.Duration;
+import java.time.Instant;
 
 public class OrdinePQ {
     /**
@@ -63,6 +66,8 @@ public class OrdinePQ {
 
     private Duration tInCoda;
 
+    private double prioritaIniziale;
+
     public OrdinePQ(int id, int idComanda, String idPiatto, Integer stato, Timestamp tOrdinazione, Boolean urgenzaCliente, IngredientePrincipale ingredientePrincipale , Double valorePriorita, Duration tp, int numOrdineEffettuato) {
         this.id = id;
         this.idComanda = idComanda;
@@ -75,6 +80,7 @@ public class OrdinePQ {
         this.tp = tp;
         this.numOrdineEffettuato = numOrdineEffettuato;
         this.tInCoda = Duration.ZERO;
+        this.prioritaIniziale = 0.0;
     }
 
     public OrdinePQ(int id, Double valorePriorita) {
@@ -137,6 +143,14 @@ public class OrdinePQ {
 
     public int getId() {
         return id;
+    }
+
+    public void setPrioritaIniziale(Double prioritaIniziale){
+        this.prioritaIniziale = prioritaIniziale;
+    }
+
+    public double getPrioritaIniziale() {
+        return prioritaIniziale;
     }
 
     @Override
