@@ -4,6 +4,9 @@ import buffer.ConsumerIF;
 import entities.GestioneCode;
 import entities.OrdinePQ;
 
+import java.sql.Timestamp;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Optional;
 
 public class Consumer implements Runnable{
@@ -39,6 +42,9 @@ public class Consumer implements Runnable{
                             System.out.println("Consumer: reinserisco nel buffer l'ordine: " + pq);
                             producer.addToHighPriorityQueue(pq);
                         }
+                        Timestamp tAttuale = Timestamp.from(Instant.now());
+                        long t = tAttuale.getTime() - pq.gettOrdinazione().getTime(); // in millisecondi
+                        pq.settInCoda(Duration.ofMillis(t));
                     } catch (Exception e) {
                         System.out.println("Consumer: problemi nell'inserimento di: " + pq);
                         throw new RuntimeException(e);
