@@ -1,5 +1,7 @@
 package util;
 
+import entities.OrdinePQ;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -15,14 +17,21 @@ public class OrderWaitingTimeLogger {
     private static boolean intestazione = false;
     private static int orderCount = 1; // Numero progressivo iniziale
 
-    public static void logOrder(Timestamp orderTimeStamp) {
+    public static void logOrder(OrdinePQ ordinePQ) {
+
+        Timestamp orderTimeStamp = ordinePQ.gettOrdinazione();
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(CSV_FILE, append))) {
 
             append = true;
             // Scrivi l'intestazione solo se il file non esiste già
             if (!intestazione) {
-                writer.write("Order number,Waiting time"); // Intestazione della colonna per il timestamp
+                writer.write("Numero,Tempo di attesa," +
+                        "Ing.Principale," +
+                        "Tempo di preparazione," +
+                        "Urgenza cliente," +
+                        "Numero ordine effettuato," +
+                        "Tempo in coda"); // Intestazione della colonna per il timestamp
                 writer.newLine();
                 intestazione = true;
             }
@@ -30,7 +39,13 @@ public class OrderWaitingTimeLogger {
             Timestamp now = Timestamp.valueOf(LocalDateTime.now());
             long difference = now.getTime() - orderTimeStamp.getTime(); // millis
             double seconds = (double) difference / 1000; // seconds
-            writer.write(orderCount +"," + seconds);
+            writer.write(orderCount +
+                    "," + seconds +
+                    "," + ordinePQ.getIngredientePrincipale() +
+                    "," + ordinePQ.getTp().getSeconds() +
+                    "," + ordinePQ.getUrgenzaCliente() +
+                    "," + ordinePQ.getNumOrdineEffettuato() +
+                    "," + ordinePQ.gettInCoda().toSeconds());
             writer.newLine();
             orderCount += 1;
             System.out.println("File csv: Scrittura completata con successo");

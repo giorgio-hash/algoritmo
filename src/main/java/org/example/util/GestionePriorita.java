@@ -36,7 +36,7 @@ public class GestionePriorita {
         double x2 = CalcolaTempoDiPreparazione(ordinePQ.getTp());
         double x3 = CalcolaUrgenzaDelCliente(ordinePQ.getUrgenzaCliente());
         double x4 = CalcolaNumeroOrdineEffettuato(ordinePQ.getNumOrdineEffettuato());
-        double x5 = CalcolaTempoDiAttesa(ordinePQ.gettOrdinazione());
+        double x5 = CalcolaTempoDiAttesa(ordinePQ, ordinePQ.gettOrdinazione());
 
         double y = x1 * p1 + x2 * p2 + x3* p3 + x4 * p4 + x5 * p5;
         System.out.println("Gestione Priorita': y = " + y);
@@ -119,9 +119,10 @@ public class GestionePriorita {
      * @param tOrdinazione TimeStamp dell'istante di ordinazione dell'ordine.
      * @return parametro x5.
      */
-    private static double CalcolaTempoDiAttesa(Timestamp tOrdinazione) {
+    private static double CalcolaTempoDiAttesa(OrdinePQ ordinePQ, Timestamp tOrdinazione) {
         Timestamp tAttuale = Timestamp.from(Instant.now());
         long t = tAttuale.getTime() - tOrdinazione.getTime(); // in millisecondi
+        ordinePQ.settInCoda(Duration.ofMillis(t));
         double x5;
         if(t==0){
             x5 = 0;

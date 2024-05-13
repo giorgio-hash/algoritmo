@@ -72,7 +72,7 @@ public class CodaPostazione {
         BUSY.acquire();
         Optional<OrdinePQ> ordinePQ = Optional.ofNullable(queue.poll());
         if (ordinePQ.isPresent()) {
-            OrderWaitingTimeLogger.logOrder(ordinePQ.get().gettOrdinazione());
+            OrderWaitingTimeLogger.logOrder(ordinePQ.get());
             this.numeroOrdiniPresenti -= 1;
             this.gradoRiempimento = ((double) numeroOrdiniPresenti / capacita);
             ingredientePrincipale.setValore(gradoRiempimento);

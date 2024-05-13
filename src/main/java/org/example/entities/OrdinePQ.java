@@ -61,6 +61,8 @@ public class OrdinePQ {
      */
     private int numOrdineEffettuato;
 
+    private Duration tInCoda;
+
     public OrdinePQ(int id, int idComanda, String idPiatto, Integer stato, Timestamp tOrdinazione, Boolean urgenzaCliente, IngredientePrincipale ingredientePrincipale , Double valorePriorita, Duration tp, int numOrdineEffettuato) {
         this.id = id;
         this.idComanda = idComanda;
@@ -72,6 +74,7 @@ public class OrdinePQ {
         this.valorePriorita = valorePriorita;
         this.tp = tp;
         this.numOrdineEffettuato = numOrdineEffettuato;
+        this.tInCoda = Duration.ZERO;
     }
 
     public OrdinePQ(int id, Double valorePriorita) {
@@ -122,6 +125,14 @@ public class OrdinePQ {
 
     public void setStato(Integer stato) {
         this.stato = stato;
+    }
+
+    public Duration gettInCoda() {
+        return tInCoda;
+    }
+
+    public void settInCoda(Duration tInCoda) {
+        this.tInCoda = tInCoda;
     }
 
     @Override

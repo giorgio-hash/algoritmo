@@ -1,12 +1,17 @@
-Order number,Waiting time
-1,31.045
-2,38.022
-3,53.041
-4,65.043
-5,65.05
-6,69.045
-7,81.05
-8,113.052
-9,117.045
-10,46.424
-11,125.283
+Numero,Tempo di attesa,Ing.Principale,Tempo di preparazione,Urgenza cliente,Numero ordine effettuato,Tempo in coda
+1,18.064,CARNE,15,true,3,10
+2,39.062,RISO,34,true,1,18
+3,57.067,PESCE,56,false,4,52
+4,59.047,PASTA,57,true,2,2
+5,74.098,CARNE,56,true,1,24
+6,84.063,PASTA,25,false,1,82
+7,88.067,RISO,49,false,1,54
+8,104.109,CARNE,30,true,3,21
+9,116.075,PESCE,56,false,4,58
+10,119.117,CARNE,15,true,3,10
+11,121.068,PASTA,37,true,5,72
+12,122.07,RISO,34,true,1,18
+13,158.071,PASTA,37,true,5,72
+14,171.081,RISO,49,false,1,54
+15,175.12,CARNE,56,true,1,24
+16,183.097,PASTA,25,false,1,82
