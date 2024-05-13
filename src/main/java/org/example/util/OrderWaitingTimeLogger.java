@@ -28,13 +28,13 @@ public class OrderWaitingTimeLogger {
             if (!intestazione) {
                 writer.write("Numero," +
                         "ID," +
-                        "Tempo di attesa," +
-                        "Ingr. Principale," +
-                        "Tempo di preparazione," +
-                        "Urgenza cliente," +
-                        "Numero ordine effettuato," +
-                        "Tempo in coda," +
-                        "Priorità"); // Intestazione della colonna per il timestamp
+                        "tempo_attesa," +
+                        "ingr_principale," +
+                        "t_prep," +
+                        "urgenza," +
+                        "numero_ordine_eff," +
+                        "t_coda," +
+                        "priorita"); // Intestazione della colonna per il timestamp
                 writer.newLine();
                 intestazione = true;
             }

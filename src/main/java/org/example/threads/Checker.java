@@ -44,8 +44,6 @@ public class Checker implements Runnable{
                         buffer.updatePQ(entry.getKey(), priorita); // aggiorna la indexed priority queue
                         System.out.println("Checker: priorità aggiornata: " + entry.getValue());
                     }
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 } finally {
