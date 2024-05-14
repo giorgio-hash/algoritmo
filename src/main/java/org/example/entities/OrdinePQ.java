@@ -142,10 +142,6 @@ public class OrdinePQ {
         this.tInCoda = tInCoda;
     }
 
-    public int getId() {
-        return id;
-    }
-
     public void setPrioritaIniziale(Double prioritaIniziale){
         this.prioritaIniziale = prioritaIniziale;
     }
