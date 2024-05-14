@@ -3,6 +3,7 @@ package threads;
 import entities.GestioneCode;
 import entities.IngredientePrincipale;
 import entities.OrdinePQ;
+import util.Printer;
 
 import java.util.Optional;
 
@@ -11,9 +12,16 @@ public class Cuoco implements Runnable{
     private IngredientePrincipale ingredientePrincipale;
     private GestioneCode gestioneCode;
 
+    //log
+    private int localIDGenerator = 0;
+    private static int uuid_prefix_generator=0;
+    private String uuid_prefix;
+
+
     public Cuoco(GestioneCode gestioneCode, IngredientePrincipale ingredientePrincipale) {
         this.ingredientePrincipale = ingredientePrincipale;
         this.gestioneCode = gestioneCode;
+        uuid_prefix = (uuid_prefix_generator++) + "cu";
     }
 
     @Override
@@ -23,6 +31,15 @@ public class Cuoco implements Runnable{
 
             System.out.println("Cuoco " + ingredientePrincipale.toString() + ": osservo la coda di postazione: " +
                     gestioneCode.getCodaPostazione(ingredientePrincipale).toString());
+
+            //stampa di log
+            //unique id per riga log
+            localIDGenerator++;
+            Printer.stampaLog(
+                    uuid_prefix+localIDGenerator,
+                    Thread.currentThread().getName(),
+                    0,
+                    false);
 
             Optional<OrdinePQ> ordinePQ = gestioneCode.getOrder(ingredientePrincipale.toString());
             if (ordinePQ.isPresent()) {
@@ -48,6 +65,12 @@ public class Cuoco implements Runnable{
                     throw new RuntimeException(e);
                 }
             }
+
+            Printer.stampaLog(
+                    uuid_prefix+localIDGenerator,
+                    Thread.currentThread().getName(),
+                    ordinePQ.map(OrdinePQ::getId).orElse(0),
+                    true);
         }
     }
 

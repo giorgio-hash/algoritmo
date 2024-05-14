@@ -18,6 +18,10 @@ public class Producer implements Runnable{
     private final BlockingQueue<OrdinePQ> queue = new LinkedBlockingQueue<>();
     private final BlockingQueue<OrdinePQ> highPriorityQueue = new LinkedBlockingQueue<>();
 
+    //log
+    private int localIDGenerator = 0;
+    private final String uuid_prefix = "p";
+
     public Producer(ProducerIF buffer) {
         this.buffer = buffer;
     }
@@ -51,13 +55,18 @@ public class Producer implements Runnable{
                         OrdinePQ ordinePQ = highPriorityQueue.poll();
                         //stampe di log
                         //unique id per riga log
-                        UniqueIdGenerator.getInstance().newGeneratedId();
-                        Printer.stampaLogProducer(UniqueIdGenerator.getInstance().getGeneratedId(),
-                                ordinePQ.getId(),
+                        localIDGenerator++;
+                        Printer.stampaLog(
+                                uuid_prefix+localIDGenerator,
+                                Thread.currentThread().getName(),
+                                0,
                                 false);
+
                         buffer.insertInBuffer(ordinePQ);
                         //stampa di log
-                        Printer.stampaLogProducer(UniqueIdGenerator.getInstance().getGeneratedId(),
+                        Printer.stampaLog(
+                                uuid_prefix+localIDGenerator,
+                                Thread.currentThread().getName(),
                                 ordinePQ.getId(),
                                 true);
                         System.out.println("Producer: reinserimento avvenuto con successo: " + ordinePQ);
@@ -66,8 +75,10 @@ public class Producer implements Runnable{
                             System.out.println("Producer: rilevato ordine in arrivo.");
                             //stampe di log
                             //unique id per riga log
-                            UniqueIdGenerator.getInstance().newGeneratedId();
-                            Printer.stampaLogProducer(UniqueIdGenerator.getInstance().getGeneratedId(),
+                            localIDGenerator++;
+                            Printer.stampaLog(
+                                    uuid_prefix+localIDGenerator,
+                                    Thread.currentThread().getName(),
                                     0,
                                     false);
 
@@ -77,7 +88,9 @@ public class Producer implements Runnable{
                             buffer.insertInBuffer(ordinePQ);
                             //util.Printer.stampa("polling producer",queue); // ! : lancia una eccezione
                             //stampa di log
-                            Printer.stampaLogProducer(UniqueIdGenerator.getInstance().getGeneratedId(),
+                            Printer.stampaLog(
+                                    uuid_prefix+localIDGenerator,
+                                    Thread.currentThread().getName(),
                                     ordinePQ.getId(),
                                     true);
                             System.out.println("Producer: inserimento avvenuto con successo: " + ordinePQ);

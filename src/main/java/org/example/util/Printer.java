@@ -11,6 +11,16 @@ public class Printer {
 
     }
 
+    public static void stampaLog(String unique_id, String thread_name , int id_ordine, boolean begin_end){
+        System.out.println(
+                "uuid:" + unique_id
+                        + "-secs:" + System.nanoTime()
+                        + "-id:" + id_ordine
+                        + "-thread:" + thread_name
+                        + "-state:" + (begin_end?"end":"begin")
+                        + ":::");
+    }
+
     public static void stampaLogCuoco(int unique_id, int id_ordine, boolean begin_end){
         System.out.println(
                 "uuid:" + unique_id
