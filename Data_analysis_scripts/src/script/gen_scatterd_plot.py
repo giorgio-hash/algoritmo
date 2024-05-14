@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import pandas as pd
+from scipy import stats
 
 # Analisi dei parametri in base al tempo totale in attesa
 # In questo passo viene analizzato come i 5 parametri su cui si basa la priorità influiscano sul tempo di
@@ -17,6 +18,15 @@ import pandas as pd
 
 def generate_scattered_plot_from_csv(file_csv, output_file):
     df = pd.read_csv(file_csv)
+
+    # Calcola lo z-score per la colonna 'tempo_attesa'
+    z_scores = stats.zscore(df['tempo_attesa'])
+
+    # Trova le osservazioni che hanno uno z-score al di fuori di un certo intervallo
+    outlier_indexes = (z_scores > 3) | (z_scores < -3)
+
+    # Rimuovi le osservazioni outlier dal DataFrame
+    df = df[~outlier_indexes]
 
     x1 = df['ingr_principale']
     x2 = df['t_prep']

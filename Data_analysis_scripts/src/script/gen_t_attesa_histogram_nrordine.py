@@ -1,18 +1,31 @@
 import matplotlib.pyplot as plt
 import pandas as pd
+from scipy import stats
 
 
 def generate_t_coda_histograms_nr_ordine_from_csv(file_csv, output_file):
     # Importo il file csv
     df = pd.read_csv(file_csv)
 
-    # Considero solo le occorrenze dalla 20a in poi
-    df = df.iloc[20:]
+    # Calcola lo z-score per la colonna 't_coda'
+    z_scores = stats.zscore(df['t_coda'])
+
+    # Trova le osservazioni che hanno uno z-score al di fuori di un certo intervallo
+    outlier_indexes = (z_scores > 3) | (z_scores < -3)
+
+    # Rimuovi le osservazioni outlier dal DataFrame
+    df = df[~outlier_indexes]
+
+    # Considero solo le occorrenze dalla 50a in poi
+    # df = df.iloc[50:]
+
+    # Calcolo il numero di ordini nel dataset
+    nr_ordini = len(df)
 
     # Suddivide i dati in base al numero di ordinazione progressivo
-    ordini_iniziali = df[df['Numero'] < 55] # si parte da 20
-    ordini_medi = df[(df['Numero'] <= 85) & (df['Numero'] >= 55)]
-    ordini_finali = df[df['Numero'] > 85]
+    ordini_iniziali = df.head(int(nr_ordini*0.3))
+    ordini_medi = df.iloc[int(nr_ordini*0.3):-int(nr_ordini*0.1)]
+    ordini_finali = df.tail(int(nr_ordini*0.1))
 
     # Modifica la dimensione del grafico
     # plt.figure(figsize=(10, 6))

@@ -58,7 +58,7 @@ public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
         //        false);
 
 
-        //System.out.println("***** Producer controlla il buffer *****");
+        System.out.println("***** Producer controlla il buffer *****");
         int id = dizionario.aggiungiOrdine(ordinePQ);
         indexMinPQ.insert(id, ordinePQ.getValorePriorita());
 
@@ -68,14 +68,14 @@ public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
         //        ordinePQ.getId(),
         //        true);
 
-        //Printer.stampa("Buffer: inserimento " + ordinePQ,indexMinPQ);
+        Printer.stampa("Buffer: inserimento " + ordinePQ,indexMinPQ);
 
-        //if(dizionario.getSize() == BUFFER_SIZE)
-        //{
-        //    Printer.stampa("pieno!",indexMinPQ);
-        //}
+        if(dizionario.getSize() == BUFFER_SIZE)
+        {
+            Printer.stampa("pieno!",indexMinPQ);
+        }
 
-        //System.out.println("***** Producer rilascia il buffer *****");
+        System.out.println("***** Producer rilascia il buffer *****");
         BUSY.release();  // Rilascio del semaforo BUSY (fine dell'accesso esclusivo)
         FULL.release();  // Rilascio del semaforo FULL per segnalare che il buffer contiene un elemento in più
     }

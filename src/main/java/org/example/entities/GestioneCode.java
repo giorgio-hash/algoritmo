@@ -90,10 +90,16 @@ public class GestioneCode {
     public boolean push(OrdinePQ ordinePQ) throws RuntimeException, InterruptedException {
 
         boolean res;
+
         boolean acquired = EMPTY.tryAcquire();  // Acquisizione del semaforo EMPTY (si blocca se il buffer è pieno)
         if(acquired) {
             CodaPostazione coda_selezionata = postazioni.get(ordinePQ.getIngredientePrincipale().toString());
             res = coda_selezionata.insert(ordinePQ);
+            if(!res){
+                EMPTY.release();
+                System.out.println("Postazione " + ordinePQ.getIngredientePrincipale().toString() + " piena! : " + this);
+                return false;
+            }
             System.out.println("GestioneCode: Postazione Aggiornata: " + postazioni.get(ordinePQ.getIngredientePrincipale().toString()));
             System.out.println("GestioneCode: stampa di tutte le code: " + this);
             FULL.release();  // Rilascio del semaforo FULL per segnalare che il buffer contiene un elemento in più
