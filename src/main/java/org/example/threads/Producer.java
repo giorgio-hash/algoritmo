@@ -67,7 +67,7 @@ public class Producer implements Runnable{
                         Printer.stampaLog(
                                 uuid_prefix+localIDGenerator,
                                 Thread.currentThread().getName(),
-                                ordinePQ.getId(),
+                                ordinePQ,
                                 true);
                         System.out.println("Producer: reinserimento avvenuto con successo: " + ordinePQ);
                     } else {
@@ -91,7 +91,7 @@ public class Producer implements Runnable{
                             Printer.stampaLog(
                                     uuid_prefix+localIDGenerator,
                                     Thread.currentThread().getName(),
-                                    ordinePQ.getId(),
+                                    ordinePQ,
                                     true);
                             System.out.println("Producer: inserimento avvenuto con successo: " + ordinePQ);
                         }

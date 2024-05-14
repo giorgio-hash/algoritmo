@@ -1,8 +1,11 @@
 package util;
 
+import entities.OrdinePQ;
+
 import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.Iterator;
+import java.util.Optional;
 
 public class Printer {
 
@@ -11,11 +14,34 @@ public class Printer {
 
     }
 
+    public static void stampaLog(String unique_id, String thread_name , Optional<OrdinePQ> ordine, boolean begin_end){
+        System.out.println(
+                "uuid:" + unique_id
+                        + "-secs:" + System.nanoTime()
+                        + "-id:" + (ordine.isPresent()?ordine.get().getId():0)
+                        + "-type:" + (ordine.isPresent()?ordine.get().getIngredientePrincipale():0)
+                        + "-thread:" + thread_name
+                        + "-state:" + (begin_end?"end":"begin")
+                        + ":::");
+    }
+
+    public static void stampaLog(String unique_id, String thread_name , OrdinePQ ordine, boolean begin_end){
+        System.out.println(
+                "uuid:" + unique_id
+                        + "-secs:" + System.nanoTime()
+                        + "-id:" + ordine.getId()
+                        + "-type:" + ordine.getIngredientePrincipale()
+                        + "-thread:" + thread_name
+                        + "-state:" + (begin_end?"end":"begin")
+                        + ":::");
+    }
+
     public static void stampaLog(String unique_id, String thread_name , int id_ordine, boolean begin_end){
         System.out.println(
                 "uuid:" + unique_id
                         + "-secs:" + System.nanoTime()
                         + "-id:" + id_ordine
+                        + "-type:" + 0
                         + "-thread:" + thread_name
                         + "-state:" + (begin_end?"end":"begin")
                         + ":::");

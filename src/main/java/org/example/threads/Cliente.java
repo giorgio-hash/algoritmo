@@ -40,7 +40,7 @@ public class Cliente implements Runnable{
             Printer.stampaLog(
                     uuid_prefix+localIDGenerator,
                     Thread.currentThread().getName(),
-                    ordinePQ.getId(),
+                    ordinePQ,
                     true);
             // Aspetta un periodo randomico e ricomincia
             try {
