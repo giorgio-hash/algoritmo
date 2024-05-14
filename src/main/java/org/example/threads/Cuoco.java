@@ -3,6 +3,7 @@ package threads;
 import entities.GestioneCode;
 import entities.IngredientePrincipale;
 import entities.OrdinePQ;
+import util.Printer;
 
 import java.util.Optional;
 
@@ -11,9 +12,16 @@ public class Cuoco implements Runnable{
     private IngredientePrincipale ingredientePrincipale;
     private GestioneCode gestioneCode;
 
+    //log
+    private int localIDGenerator = 0;
+    private static int uuid_prefix_generator=0;
+    private String uuid_prefix;
+
+
     public Cuoco(GestioneCode gestioneCode, IngredientePrincipale ingredientePrincipale) {
         this.ingredientePrincipale = ingredientePrincipale;
         this.gestioneCode = gestioneCode;
+        uuid_prefix = (uuid_prefix_generator++) + "cu";
     }
 
     @Override
@@ -26,6 +34,16 @@ public class Cuoco implements Runnable{
 
             Optional<OrdinePQ> ordinePQ = gestioneCode.getOrder(ingredientePrincipale.toString());
             if (ordinePQ.isPresent()) {
+
+                //stampa di log
+                //unique id per riga log
+                localIDGenerator++;
+                Printer.stampaLog(
+                        uuid_prefix+localIDGenerator,
+                        Thread.currentThread().getName(),
+                        0,
+                        false);
+
                 System.out.println("Cuoco " + ingredientePrincipale.toString() + ": preparando l'ordine: " + ordinePQ);
                 try {
                     Thread.sleep(ordinePQ.get().getTp()); // cucina l'ordine (aspetta un tempo tp di preparazione)
@@ -40,6 +58,13 @@ public class Cuoco implements Runnable{
                     System.out.println("Cuoco " + ingredientePrincipale.toString() + ": errore per : " + ordinePQ);
                     throw new RuntimeException(e);
                 }
+
+                Printer.stampaLog(
+                        uuid_prefix+localIDGenerator,
+                        Thread.currentThread().getName(),
+                        ordinePQ,
+                        true);
+
             } else {
                 System.out.println("Cuoco " + ingredientePrincipale.toString() + ": in attesa di ordini...");
                 try {

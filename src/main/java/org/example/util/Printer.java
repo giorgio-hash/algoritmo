@@ -1,15 +1,96 @@
 package util;
 
+import entities.OrdinePQ;
+
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.Iterator;
+import java.util.Optional;
 
 public class Printer {
 
-    // Metodo privato per stampare un messaggio insieme allo stato attuale della coda
+
+    private Printer(){
+
+    }
+
+    public static void stampaLog(String unique_id, String thread_name , Optional<OrdinePQ> ordine, boolean begin_end){
+        System.out.println(
+                "uuid:" + unique_id
+                        + "-secs:" + System.nanoTime()
+                        + "-id:" + (ordine.isPresent()?ordine.get().getId():0)
+                        + "-type:" + (ordine.isPresent()?ordine.get().getIngredientePrincipale():0)
+                        + "-thread:" + thread_name
+                        + "-state:" + (begin_end?"end":"begin")
+                        + ":::");
+    }
+
+    public static void stampaLog(String unique_id, String thread_name , OrdinePQ ordine, boolean begin_end){
+        System.out.println(
+                "uuid:" + unique_id
+                        + "-secs:" + System.nanoTime()
+                        + "-id:" + ordine.getId()
+                        + "-type:" + ordine.getIngredientePrincipale()
+                        + "-thread:" + thread_name
+                        + "-state:" + (begin_end?"end":"begin")
+                        + ":::");
+    }
+
+    public static void stampaLog(String unique_id, String thread_name , int id_ordine, boolean begin_end){
+        System.out.println(
+                "uuid:" + unique_id
+                        + "-secs:" + System.nanoTime()
+                        + "-id:" + id_ordine
+                        + "-type:" + 0
+                        + "-thread:" + thread_name
+                        + "-state:" + (begin_end?"end":"begin")
+                        + ":::");
+    }
+
+    public static void stampaLogCuoco(int unique_id, int id_ordine, boolean begin_end){
+        System.out.println(
+                "uuid:" + unique_id
+                + "-secs:" + System.nanoTime()
+                + "-id:" + id_ordine
+                + "-thread:cuoco"
+                + "-state:" + (begin_end?"end":"begin")
+                + ":::");
+    }
+
+    public static void stampaLogChecker(int unique_id, boolean begin_end){
+        System.out.println(
+                "uuid:" + unique_id
+                + "-secs:" + System.nanoTime()
+                + "-id:0"
+                + "-thread:checker"
+                + "-state:" + (begin_end?"end":"begin")
+                + ":::");
+    }
+    public static void stampaLogConsumer(int unique_id, int id_ordine, boolean begin_end){
+        System.out.println(
+                "uuid:" + unique_id
+                + "-secs:" + System.nanoTime()
+                + "-id:" + id_ordine
+                + "-thread:consumer"
+                + "-state:" + (begin_end?"end":"begin")
+                + ":::");
+    }
+    public static void stampaLogProducer(int unique_id, int id_ordine, boolean begin_end){
+            System.out.println(
+                    "uuid:" + unique_id
+                        + "-secs:" + System.nanoTime()
+                        + "-id:" + id_ordine
+                        + "-thread:producer"
+                        + "-state:" + (begin_end?"end":"begin")
+                        + ":::");
+    }
+
+    // Metodo per stampare un messaggio insieme allo stato attuale della coda
     public static void stampa(String mex,Iterable struttura){
         System.out.println(mex+"|| "+stampa_coda(struttura));
     }
 
-    // Metodo privato per stampare lo stato attuale della coda
+    // Metodo per stampare lo stato attuale della coda
     public static void stampa(Iterable struttura){
         System.out.println(stampa_coda(struttura));
     }

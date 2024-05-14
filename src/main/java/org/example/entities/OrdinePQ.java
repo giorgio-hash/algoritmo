@@ -101,6 +101,7 @@ public class OrdinePQ {
                 numOrdineEffettuato);
     }
 
+    public int getId(){return id;}
     public Double getValorePriorita() {
         return valorePriorita;
     }

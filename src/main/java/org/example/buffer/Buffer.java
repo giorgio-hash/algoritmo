@@ -2,6 +2,7 @@ package buffer;
 
 import entities.OrdinePQ;
 import util.Printer;
+import util.UniqueIdGenerator;
 
 import java.util.AbstractMap;
 import java.util.LinkedList;
@@ -49,18 +50,32 @@ public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
         EMPTY.acquire();  // Acquisizione del semaforo EMPTY (si blocca se il buffer è pieno)
         BUSY.acquire();   // Acquisizione del semaforo BUSY per eseguire l'accesso esclusivo al buffer
 
-        System.out.println("***** Producer controlla il buffer *****");
+        //stampe di log
+        //unique id per riga log
+        //UniqueIdGenerator.getInstance().newGeneratedId();
+        //Printer.stampaLogProducer(UniqueIdGenerator.getInstance().getGeneratedId(),
+        //        ordinePQ.getId(),
+        //        false);
+
+
+        //System.out.println("***** Producer controlla il buffer *****");
         int id = dizionario.aggiungiOrdine(ordinePQ);
         indexMinPQ.insert(id, ordinePQ.getValorePriorita());
 
-        Printer.stampa("Buffer: inserimento " + ordinePQ,indexMinPQ);
 
-        if(dizionario.getSize() == BUFFER_SIZE)
-        {
-            Printer.stampa("pieno!",indexMinPQ);
-        }
+        //stampa di log
+        //Printer.stampaLogProducer(UniqueIdGenerator.getInstance().getGeneratedId(),
+        //        ordinePQ.getId(),
+        //        true);
 
-        System.out.println("***** Producer rilascia il buffer *****");
+        //Printer.stampa("Buffer: inserimento " + ordinePQ,indexMinPQ);
+
+        //if(dizionario.getSize() == BUFFER_SIZE)
+        //{
+        //    Printer.stampa("pieno!",indexMinPQ);
+        //}
+
+        //System.out.println("***** Producer rilascia il buffer *****");
         BUSY.release();  // Rilascio del semaforo BUSY (fine dell'accesso esclusivo)
         FULL.release();  // Rilascio del semaforo FULL per segnalare che il buffer contiene un elemento in più
     }
@@ -71,12 +86,20 @@ public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
         FULL.acquire();  // Acquisizione del semaforo FULL (si blocca se il buffer è vuoto)
         BUSY.acquire();  // Acquisizione del semaforo BUSY per eseguire l'accesso esclusivo al buffer
 
-        System.out.println("***** Consumer controlla il buffer *****");
+        //stampa di log
+        //unique id per riga log
+        //UniqueIdGenerator.getInstance().newGeneratedId();
+        //Printer.stampaLogConsumer(UniqueIdGenerator.getInstance().getGeneratedId(), 0, false);
+
+        //System.out.println("***** Consumer controlla il buffer *****");
         int i = indexMinPQ.delMin();
         // System.out.println("estrazione " + i + " " + dizionario.cercaOrdine(i));
-        Printer.stampa("estrazione: " + i,indexMinPQ);
+        //Printer.stampa("estrazione: " + i,indexMinPQ);
 
-        System.out.println("***** Consumer rilascia il buffer *****");
+        //stampa di log
+        //Printer.stampaLogConsumer(UniqueIdGenerator.getInstance().getGeneratedId(), i, true);
+
+        //System.out.println("***** Consumer rilascia il buffer *****");
         BUSY.release();  // Rilascio del semaforo BUSY (fine dell'accesso esclusivo)
         EMPTY.release(); // Rilascio del semaforo EMPTY per segnalare che il buffer ha un posto libero in più
 
@@ -91,8 +114,15 @@ public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
     @Override
     public LinkedList<Map.Entry<Integer, OrdinePQ>> getWindow() throws InterruptedException {
 
-        System.out.println("controllo...");
-        System.out.println("ordini presenti nel buffer: " + dizionario.toString());
+        //System.out.println("controllo...");
+        //System.out.println("ordini presenti nel buffer: " + dizionario.toString());
+
+        //stampa di log
+        //unique id per riga log
+        //UniqueIdGenerator.getInstance().newGeneratedId();
+        //Printer.stampaLogChecker(UniqueIdGenerator.getInstance().getGeneratedId(),
+        //        false);
+
 
         int size = dizionario.getSize();
         int window = WINDOW_SIZE;
@@ -113,12 +143,18 @@ public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
             }
         }
 
+        //stampa di log
+        //Printer.stampaLogChecker(UniqueIdGenerator.getInstance().getGeneratedId(),
+        //        true);
+
         return list;
     }
 
     @Override
     public void updatePQ(int key, double priorita) throws InterruptedException {
+
         indexMinPQ.changeKey(key, priorita);
+
     }
 
 }
