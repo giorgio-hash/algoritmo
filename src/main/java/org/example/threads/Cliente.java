@@ -44,7 +44,7 @@ public class Cliente implements Runnable{
                     true);
             // Aspetta un periodo randomico e ricomincia
             try {
-                Thread.sleep(random.nextInt(10000,100000));
+                Thread.sleep(random.nextInt(10000,40000));
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

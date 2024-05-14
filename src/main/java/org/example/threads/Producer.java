@@ -43,7 +43,7 @@ public class Producer implements Runnable{
 
         while(true){
             try {
-                Thread.sleep(700);
+                Thread.sleep(500);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

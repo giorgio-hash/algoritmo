@@ -29,7 +29,7 @@ public class Checker implements Runnable{
         while(true){
 
             try {
-                Thread.sleep(2000);
+                Thread.sleep(3000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -59,8 +59,6 @@ public class Checker implements Runnable{
                         buffer.updatePQ(entry.getKey(), priorita); // aggiorna la indexed priority queue
                         System.out.println("Checker: priorità aggiornata: " + entry.getValue());
                     }
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 } finally {
