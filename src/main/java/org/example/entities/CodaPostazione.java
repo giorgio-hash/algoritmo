@@ -99,4 +99,5 @@ public class CodaPostazione {
                 ", queue=" + queue +
                 '}';
     }
+
 }

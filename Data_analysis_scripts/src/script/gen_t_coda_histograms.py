@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
+from scipy import stats
+
 
 # Analisi distribuzione del tempo di attesa in coda degli ordini
 # In questa sezione viene analizzato il tempo di attesa in coda degli ordini, ossia il tempo che passa da quando
@@ -20,8 +22,19 @@ def generate_t_coda_histograms_from_csv(file_csv, output_file):
     # Importo il file csv
     df = pd.read_csv(file_csv)
 
-    # Considero solo le occorrenze dalla 20a in poi
-    df = df.iloc[20:]
+    # Calcola lo z-score per la colonna 't_cosa'
+    z_scores = stats.zscore(df['t_coda'])
+
+    # Trova le osservazioni che hanno uno z-score al di fuori di un certo intervallo
+    outlier_indexes = (z_scores > 3) | (z_scores < -3)
+
+    # Rimuovi le osservazioni outlier dal DataFrame
+    df = df[~outlier_indexes]
+
+    # Considero solo le occorrenze dalla 50a in poi
+    # df = df.iloc[50:]
+
+    print(len(df))
 
     # Calcola la media del tempo di attesa
     media_tempo_attesa = df['t_coda'].mean()
@@ -42,9 +55,9 @@ def generate_t_coda_histograms_from_csv(file_csv, output_file):
     print("75° percentile tempo di attesa = " + "{:.3f}".format(percentile_75))
 
     # Suddivide i dati in base alla priorità degli ordini
-    priorita_bassa = df[df['priorita_iniz'] < 30]
-    priorita_media = df[(df['priorita_iniz'] <= 70) & (df['priorita_iniz'] >= 30)]
-    priorita_alta = df[df['priorita_iniz'] > 70]
+    priorita_bassa = df[df['priorita_iniz'] < 40]
+    priorita_media = df[(df['priorita_iniz'] <= 60) & (df['priorita_iniz'] >= 40)]
+    priorita_alta = df[df['priorita_iniz'] > 60]
 
     # Modifica la dimensione del grafico
     plt.figure(figsize=(10, 6))

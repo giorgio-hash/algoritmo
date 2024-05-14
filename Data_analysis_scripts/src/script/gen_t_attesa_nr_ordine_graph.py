@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+from scipy import stats
 
 # Analisi Tempo di attesa in base al numero degli ordini
 # Come primo passo viene analizzato come il tempo di attesa varia con l'avanzare del numero di ordini.
@@ -13,6 +14,18 @@ def generate_t_attesa_line_plot_from_csv(file_csv, output_file):
     df = pd.read_csv(file_csv)
 
     df.loc[:, 't_attesa-prep'] = df['tempo_attesa'] - df['t_prep']
+
+    # Calcola lo z-score per la colonna 't_attesa-prep'
+    z_scores = stats.zscore(df['t_attesa-prep'])
+
+    # Trova le osservazioni che hanno uno z-score al di fuori di un certo intervallo
+    outlier_indexes = (z_scores > 3) | (z_scores < -3)
+
+    # Rimuovi le osservazioni outlier dal DataFrame
+    df = df[~outlier_indexes]
+
+    # Modifica la dimensione del grafico
+    plt.figure(figsize=(10, 6))
 
     # Applica il filtro a media mobile ai dati di tempo di attesa utilizzando una finestra di 10 punti
     df['tempo_attesa_filtrato'] = df['t_attesa-prep'].rolling(window=10, min_periods=1).mean()

@@ -29,6 +29,7 @@ public class Producer implements Runnable{
     public void addToQueue(OrdinePQ value) {
         synchronized (lock) {
             queue.offer(value); // Add to the queue
+            System.out.print("producer queue: " + queue.toString());
         }
     }
 

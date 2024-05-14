@@ -1,10 +1,12 @@
 import os
 from pathlib import Path
+
 import script.gen_t_attesa_nr_ordine_graph as l1
 import script.gen_t_attesa_histograms as h1
 import script.gen_t_coda_histograms as h2
 import script.gen_t_attesa_histogram_nrordine as h3
 import script.gen_scatterd_plot as s1
+
 
 def check_and_create_folder(folder):
     path_folder = Path(folder)
