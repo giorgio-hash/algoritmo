@@ -15,6 +15,9 @@ public class Checker implements Runnable{
     CheckerIF buffer;
     private final Object lock = new Object(); // Internal lock
 
+    //log
+    private int localIDGenerator = 0;
+    private final String uuid_prefix = "ch";
 
     public Checker(CheckerIF buffer) {
         this.buffer = buffer;
@@ -35,8 +38,11 @@ public class Checker implements Runnable{
 
             //stampa di log
             //unique id per riga log
-            UniqueIdGenerator.getInstance().newGeneratedId();
-            Printer.stampaLogChecker(UniqueIdGenerator.getInstance().getGeneratedId(),
+            localIDGenerator++;
+            Printer.stampaLog(
+                    uuid_prefix+localIDGenerator,
+                    Thread.currentThread().getName(),
+                    0,
                     false);
 
             synchronized(lock){
@@ -63,7 +69,10 @@ public class Checker implements Runnable{
                 }
             }
 
-            Printer.stampaLogChecker(UniqueIdGenerator.getInstance().getGeneratedId(),
+            Printer.stampaLog(
+                    uuid_prefix+localIDGenerator,
+                    Thread.currentThread().getName(),
+                    0,
                     true);
 
         }

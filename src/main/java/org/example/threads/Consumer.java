@@ -13,9 +13,13 @@ import java.util.Optional;
 
 public class Consumer implements Runnable{
 
-    ConsumerIF buffer;
-    GestioneCode gestioneCode;
-    Producer producer;
+    private ConsumerIF buffer;
+    private GestioneCode gestioneCode;
+    private Producer producer;
+
+    //log
+    private int localIDGenerator = 0;
+    private final String uuid_prefix = "c";
 
     public Consumer(ConsumerIF buffer, GestioneCode gestioneCode, Producer producer) {
         this.buffer = buffer;
@@ -39,8 +43,10 @@ public class Consumer implements Runnable{
 
                 //stampa di log
                 //unique id per riga log
-                UniqueIdGenerator.getInstance().newGeneratedId();
-                Printer.stampaLogConsumer(UniqueIdGenerator.getInstance().getGeneratedId(),
+                localIDGenerator++;
+                Printer.stampaLog(
+                        uuid_prefix+localIDGenerator,
+                        Thread.currentThread().getName(),
                         0,
                         false);
 
@@ -61,7 +67,9 @@ public class Consumer implements Runnable{
                     }
                 });
 
-                Printer.stampaLogConsumer(UniqueIdGenerator.getInstance().getGeneratedId(),
+                Printer.stampaLog(
+                        uuid_prefix+localIDGenerator,
+                        Thread.currentThread().getName(),
                         ordinePQ.map(OrdinePQ::getId).orElse(0),
                         true);
             } catch (InterruptedException e) {

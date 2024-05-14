@@ -28,12 +28,20 @@ public class Main {
             Thread thread_producer = new Thread(producer);
             Thread thread_consumer = new Thread(consumer);
             Thread thread_checker = new Thread(checker);
+            thread_producer.setName("producer");
+            thread_consumer.setName("consumer");
+            thread_checker.setName("checker");
 
             Thread thread_cuocoRiso = new Thread(cuocoRiso);
             Thread thread_cuocoPasta = new Thread(cuocoPasta);
             Thread thread_cuocoCarne = new Thread(cuocoCarne);
             Thread thread_cuocoPesce = new Thread(cuocoPesce);
             Thread thread_cliente = new Thread(cliente);
+            thread_cuocoRiso.setName("cuoco_riso");
+            thread_cuocoPasta.setName("cuoco_pasta");
+            thread_cuocoCarne.setName("cuoco_carne");
+            thread_cuocoPesce.setName("cuoco_pesce");
+            thread_cliente.setName("cliente");
 
             ArrayList<OrdinePQ> list = new ArrayList<OrdinePQ>();
 
