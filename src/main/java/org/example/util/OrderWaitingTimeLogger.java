@@ -26,12 +26,16 @@ public class OrderWaitingTimeLogger {
             append = true;
             // Scrivi l'intestazione solo se il file non esiste già
             if (!intestazione) {
-                writer.write("Numero,Tempo di attesa," +
-                        "Ing.Principale," +
-                        "Tempo di preparazione," +
-                        "Urgenza cliente," +
-                        "Numero ordine effettuato," +
-                        "Tempo in coda"); // Intestazione della colonna per il timestamp
+                writer.write("Numero," +
+                        "ID," +
+                        "tempo_attesa," +
+                        "ingr_principale," +
+                        "t_prep," +
+                        "urgenza," +
+                        "numero_ordine_eff," +
+                        "t_coda," +
+                        "priorita_iniz," +
+                        "priorita_fin"); // Intestazione della colonna per il timestamp
                 writer.newLine();
                 intestazione = true;
             }
@@ -40,12 +44,15 @@ public class OrderWaitingTimeLogger {
             long difference = now.getTime() - orderTimeStamp.getTime(); // millis
             double seconds = (double) difference / 1000; // seconds
             writer.write(orderCount +
+                    "," + ordinePQ.getId() +
                     "," + seconds +
                     "," + ordinePQ.getIngredientePrincipale() +
                     "," + ordinePQ.getTp().getSeconds() +
                     "," + ordinePQ.getUrgenzaCliente() +
                     "," + ordinePQ.getNumOrdineEffettuato() +
-                    "," + ordinePQ.gettInCoda().toSeconds());
+                    "," + ordinePQ.gettInCoda().toSeconds() +
+                    "," + String.format("%.0f", ordinePQ.getPrioritaIniziale()*-100) +
+                    "," + String.format("%.0f", ordinePQ.getValorePriorita()*-100));
             writer.newLine();
             orderCount += 1;
             System.out.println("File csv: Scrittura completata con successo");
