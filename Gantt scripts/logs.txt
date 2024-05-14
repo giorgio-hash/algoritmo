@@ -1,0 +1,1324 @@
+begin:370867448271800
+Cuoco RISO: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PASTA: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco RISO: in attesa di ordini...
+Cuoco CARNE: in attesa di ordini...
+Cuoco PESCE: in attesa di ordini...
+Cuoco PASTA: in attesa di ordini...
+uuid:0cl3-secs:370867464456800-id:0-type:0-thread:clienteD-state:begin:::
+uuid:0cl2-secs:370867465299600-id:0-type:0-thread:clienteB-state:begin:::
+uuid:0cl1-secs:370867464621400-id:0-type:0-thread:clienteA-state:begin:::
+uuid:0cl4-secs:370867464455500-id:0-type:0-thread:clienteC-state:begin:::
+producer queue: [OrdinePQ{ id=2154, CARNE }]producer queue: [OrdinePQ{ id=2154, CARNE }, OrdinePQ{ id=5801, PASTA }]producer queue: [OrdinePQ{ id=2154, CARNE }, OrdinePQ{ id=5801, PASTA }, OrdinePQ{ id=4995, CARNE }]Cliente: aggiungo un ordine nel sistema: OrdinePQ{ id=5801, PASTA }
+producer queue: [OrdinePQ{ id=2154, CARNE }, OrdinePQ{ id=5801, PASTA }, OrdinePQ{ id=4995, CARNE }, OrdinePQ{ id=2779, PESCE }]Cliente: aggiungo un ordine nel sistema: OrdinePQ{ id=2779, PESCE }
+Cliente: aggiungo un ordine nel sistema: OrdinePQ{ id=4995, CARNE }
+producer queue: [OrdinePQ{ id=2154, CARNE }, OrdinePQ{ id=5801, PASTA }, OrdinePQ{ id=4995, CARNE }, OrdinePQ{ id=2779, PESCE }, OrdinePQ{ id=8884, RISO }]Cliente: aggiungo un ordine nel sistema: OrdinePQ{ id=8884, RISO }
+uuid:0cl4-secs:370867499550300-id:5801-type:PASTA-thread:clienteC-state:end:::
+uuid:0cl4-secs:370867499560800-id:2779-type:PESCE-thread:clienteA-state:end:::
+uuid:0cl4-secs:370867499580500-id:4995-type:CARNE-thread:clienteD-state:end:::
+uuid:0cl4-secs:370867500094000-id:8884-type:RISO-thread:clienteB-state:end:::
+Producer: rilevato ordine in arrivo.
+uuid:p1-secs:370867955777800-id:0-type:0-thread:producer-state:begin:::
+Producer: calcolo della priorità per: OrdinePQ{ id=2154, CARNE }
+Gestione Priorita': x1 = 1.0
+Gestione Priorita': x2 = 0.4
+Gestione Priorita': x3 = 1
+Gestione Priorita': x4 = 1.0
+Gestione Priorita': x5 = 0.0025611111111111112
+Gestione Priorita': y = 0.6606402891026603
+Gestione Priorita iniziale': y' = 0.8800000150998434
+***** Producer controlla il buffer *****
+Buffer: inserimento OrdinePQ{ id=2154, CARNE, valorePriorità=0,661 }|| [0]
+***** Producer rilascia il buffer *****
+uuid:p1-secs:370867974882500-id:2154-type:CARNE-thread:producer-state:end:::
+Producer: inserimento avvenuto con successo: OrdinePQ{ id=2154, CARNE, valorePriorità=0,661 }
+producer queue: [OrdinePQ{ id=5801, PASTA }, OrdinePQ{ id=4995, CARNE }, OrdinePQ{ id=2779, PESCE }, OrdinePQ{ id=8884, RISO }, OrdinePQ{ id=5458, RISO }]Producer: rilevato ordine in arrivo.
+uuid:p2-secs:370868477762000-id:0-type:0-thread:producer-state:begin:::
+Producer: calcolo della priorità per: OrdinePQ{ id=5801, PASTA }
+Gestione Priorita': x1 = 1.0
+Gestione Priorita': x2 = 0.72
+Gestione Priorita': x3 = 0
+Gestione Priorita': x4 = 0.25
+Gestione Priorita': x5 = 0.0054666666666666665
+Gestione Priorita': y = 0.39686667244831725
+Gestione Priorita iniziale': y' = 0.5273333410422008
+***** Producer controlla il buffer *****
+Buffer: inserimento OrdinePQ{ id=5801, PASTA, valorePriorità=0,397 }|| [0,1]
+***** Producer rilascia il buffer *****
+uuid:p2-secs:370868479796300-id:5801-type:PASTA-thread:producer-state:end:::
+Producer: inserimento avvenuto con successo: OrdinePQ{ id=5801, PASTA, valorePriorità=0,397 }
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Cuoco PASTA: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PASTA: in attesa di ordini...
+Cuoco RISO: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco RISO: in attesa di ordini...
+producer queue: [OrdinePQ{ id=4995, CARNE }, OrdinePQ{ id=2779, PESCE }, OrdinePQ{ id=8884, RISO }, OrdinePQ{ id=5458, RISO }, OrdinePQ{ id=1000, PASTA }]Producer: rilevato ordine in arrivo.
+uuid:p3-secs:370868982211800-id:0-type:0-thread:producer-state:begin:::
+Producer: calcolo della priorità per: OrdinePQ{ id=4995, CARNE }
+Gestione Priorita': x1 = 1.0
+Gestione Priorita': x2 = 0.16
+Gestione Priorita': x3 = 1
+Gestione Priorita': x4 = 0.75
+Gestione Priorita': x5 = 0.008266666666666667
+Gestione Priorita': y = 0.5885666750709215
+Gestione Priorita iniziale': y' = 0.7820000112056732
+***** Producer controlla il buffer *****
+Buffer: inserimento OrdinePQ{ id=4995, CARNE, valorePriorità=0,589 }|| [0,2,1]
+***** Producer rilascia il buffer *****
+uuid:p3-secs:370868983881600-id:4995-type:CARNE-thread:producer-state:end:::
+Producer: inserimento avvenuto con successo: OrdinePQ{ id=4995, CARNE, valorePriorità=0,589 }
+Consumer: chiedo l'ordine a priorità più alta dal buffer...
+uuid:c1-secs:370869464865300-id:0-type:0-thread:consumer-state:begin:::
+GestioneCode: Postazione Aggiornata: entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=2154, CARNE, valorePriorità=0,661 }]}
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=2154, CARNE, valorePriorità=0,661 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}
+uuid:c1-secs:370869470212600-id:2154-type:CARNE-thread:consumer-state:end:::
+Consumer: estratto: OrdinePQ{ id=2154, CARNE, valorePriorità=0,661 }
+Producer: rilevato ordine in arrivo.
+uuid:p4-secs:370869485410200-id:0-type:0-thread:producer-state:begin:::
+Producer: calcolo della priorità per: OrdinePQ{ id=2779, PESCE }
+Gestione Priorita': x1 = 1.0
+Gestione Priorita': x2 = 0.2
+Gestione Priorita': x3 = 1
+Gestione Priorita': x4 = 0.25
+Gestione Priorita': x5 = 0.011061111111111112
+Gestione Priorita': y = 0.520265283440219
+Gestione Priorita iniziale': y' = 0.6900000075499216
+***** Producer controlla il buffer *****
+Buffer: inserimento OrdinePQ{ id=2779, PESCE, valorePriorità=0,520 }|| [2,0,1]
+***** Producer rilascia il buffer *****
+uuid:p4-secs:370869487044200-id:2779-type:PESCE-thread:producer-state:end:::
+Producer: inserimento avvenuto con successo: OrdinePQ{ id=2779, PESCE, valorePriorità=0,520 }
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=2154, CARNE, valorePriorità=0,661 }]}]
+uuid:2cu1-secs:370869488389600-id:0-type:0-thread:cuoco_carne-state:begin:::
+Cuoco CARNE: preparando l'ordine: Optional[OrdinePQ{ id=2154, CARNE, valorePriorità=0,661 }]
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Cuoco PASTA: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PASTA: in attesa di ordini...
+Cuoco RISO: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco RISO: in attesa di ordini...
+Producer: rilevato ordine in arrivo.
+uuid:p5-secs:370869987906300-id:0-type:0-thread:producer-state:begin:::
+Producer: calcolo della priorità per: OrdinePQ{ id=8884, RISO }
+Gestione Priorita': x1 = 1.0
+Gestione Priorita': x2 = 0.0
+Gestione Priorita': x3 = 0
+Gestione Priorita': x4 = 0.75
+Gestione Priorita': x5 = 0.013855555555555555
+Gestione Priorita': y = 0.36596389335923724
+Gestione Priorita iniziale': y' = 0.4833333392937978
+***** Producer controlla il buffer *****
+Buffer: inserimento OrdinePQ{ id=8884, RISO, valorePriorità=0,366 }|| [2,0,1,3]
+***** Producer rilascia il buffer *****
+uuid:p5-secs:370869989280300-id:8884-type:RISO-thread:producer-state:end:::
+Producer: inserimento avvenuto con successo: OrdinePQ{ id=8884, RISO, valorePriorità=0,366 }
+uuid:ch1-secs:370870463339900-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Gestione Priorita': x1 = 1.0
+Gestione Priorita': x2 = 0.72
+Gestione Priorita': x3 = 0
+Gestione Priorita': x4 = 0.25
+Gestione Priorita': x5 = 0.016516666666666666
+Gestione Priorita': y = 0.39962917244831725
+Checker: aggiorno la priorità di: OrdinePQ{ id=5801, PASTA, valorePriorità=0,400 }
+Checker: priorità aggiornata: OrdinePQ{ id=5801, PASTA, valorePriorità=0,400 }
+Gestione Priorita': x1 = 0.8
+Gestione Priorita': x2 = 0.16
+Gestione Priorita': x3 = 1
+Gestione Priorita': x4 = 0.75
+Gestione Priorita': x5 = 0.016522222222222223
+Gestione Priorita': y = 0.5406305639598105
+Checker: aggiorno la priorità di: OrdinePQ{ id=4995, CARNE, valorePriorità=0,541 }
+Checker: priorità aggiornata: OrdinePQ{ id=4995, CARNE, valorePriorità=0,541 }
+Gestione Priorita': x1 = 1.0
+Gestione Priorita': x2 = 0.0
+Gestione Priorita': x3 = 0
+Gestione Priorita': x4 = 0.75
+Gestione Priorita': x5 = 0.016522222222222223
+Gestione Priorita': y = 0.36663056002590394
+Checker: aggiorno la priorità di: OrdinePQ{ id=8884, RISO, valorePriorità=0,367 }
+Checker: priorità aggiornata: OrdinePQ{ id=8884, RISO, valorePriorità=0,367 }
+***** Checker rilascia il buffer *****
+uuid:ch1-secs:370870469822900-id:0-type:0-thread:checker-state:end:::
+Producer: rilevato ordine in arrivo.
+Cuoco RISO: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco RISO: in attesa di ordini...
+uuid:p6-secs:370870492232100-id:0-type:0-thread:producer-state:begin:::
+Cuoco PASTA: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Producer: calcolo della priorità per: OrdinePQ{ id=5458, RISO }
+Gestione Priorita': x1 = 1.0
+Gestione Priorita': x2 = 0.4
+Gestione Priorita': x3 = 1
+Gestione Priorita': x4 = 1.0
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PASTA: in attesa di ordini...
+Gestione Priorita': x5 = 0.01665
+Gestione Priorita': y = 0.6641625113248825
+Gestione Priorita iniziale': y' = 0.8800000150998434
+***** Producer controlla il buffer *****
+Buffer: inserimento OrdinePQ{ id=5458, RISO, valorePriorità=0,664 }|| [4,2,0,1,3]
+***** Producer rilascia il buffer *****
+uuid:p6-secs:370870495492100-id:5458-type:RISO-thread:producer-state:end:::
+Producer: inserimento avvenuto con successo: OrdinePQ{ id=5458, RISO, valorePriorità=0,664 }
+Cuoco PESCE: in attesa di ordini...
+Producer: rilevato ordine in arrivo.
+uuid:p7-secs:370870997890200-id:0-type:0-thread:producer-state:begin:::
+Producer: calcolo della priorità per: OrdinePQ{ id=1000, PASTA }
+Gestione Priorita': x1 = 1.0
+Gestione Priorita': x2 = 0.4
+Gestione Priorita': x3 = 1
+Gestione Priorita': x4 = 1.0
+Gestione Priorita': x5 = 0.01945
+Gestione Priorita': y = 0.6648625113248825
+Gestione Priorita iniziale': y' = 0.8800000150998434
+***** Producer controlla il buffer *****
+Buffer: inserimento OrdinePQ{ id=1000, PASTA, valorePriorità=0,665 }|| [5,4,2,0,1,3]
+***** Producer rilascia il buffer *****
+uuid:p7-secs:370870999647700-id:1000-type:PASTA-thread:producer-state:end:::
+Producer: inserimento avvenuto con successo: OrdinePQ{ id=1000, PASTA, valorePriorità=0,665 }
+Consumer: chiedo l'ordine a priorità più alta dal buffer...
+uuid:c2-secs:370871472115500-id:0-type:0-thread:consumer-state:begin:::
+GestioneCode: Postazione Aggiornata: entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=1000, PASTA, valorePriorità=0,665 }]}
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=2154, CARNE, valorePriorità=0,661 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=1000, PASTA, valorePriorità=0,665 }]}
+uuid:c2-secs:370871473884300-id:1000-type:PASTA-thread:consumer-state:end:::
+Consumer: estratto: OrdinePQ{ id=1000, PASTA, valorePriorità=0,665 }
+Cuoco RISO: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco RISO: in attesa di ordini...
+Cuoco PASTA: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=1000, PASTA, valorePriorità=0,665 }]}]
+uuid:1cu1-secs:370871496559700-id:0-type:0-thread:cuoco_pasta-state:begin:::
+Cuoco PASTA: preparando l'ordine: Optional[OrdinePQ{ id=1000, PASTA, valorePriorità=0,665 }]
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Cuoco RISO: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco RISO: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+uuid:ch2-secs:370873470124800-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Gestione Priorita': x1 = 1.0
+Gestione Priorita': x2 = 0.4
+Gestione Priorita': x3 = 1
+Gestione Priorita': x4 = 1.0
+Gestione Priorita': x5 = 0.033188888888888886
+Gestione Priorita': y = 0.6682972335471047
+Checker: aggiorno la priorità di: OrdinePQ{ id=5458, RISO, valorePriorità=0,668 }
+Checker: priorità aggiornata: OrdinePQ{ id=5458, RISO, valorePriorità=0,668 }
+Gestione Priorita': x1 = 1.0
+Gestione Priorita': x2 = 0.2
+Gestione Priorita': x3 = 1
+Gestione Priorita': x4 = 0.25
+Gestione Priorita': x5 = 0.0332
+Gestione Priorita': y = 0.5258000056624412
+Checker: aggiorno la priorità di: OrdinePQ{ id=2779, PESCE, valorePriorità=0,526 }
+Checker: priorità aggiornata: OrdinePQ{ id=2779, PESCE, valorePriorità=0,526 }
+Gestione Priorita': x1 = 0.8
+Gestione Priorita': x2 = 0.72
+Gestione Priorita': x3 = 0
+Gestione Priorita': x4 = 0.25
+Gestione Priorita': x5 = 0.03321111111111111
+Gestione Priorita': y = 0.3538027835594283
+Checker: aggiorno la priorità di: OrdinePQ{ id=5801, PASTA, valorePriorità=0,354 }
+Checker: priorità aggiornata: OrdinePQ{ id=5801, PASTA, valorePriorità=0,354 }
+***** Checker rilascia il buffer *****
+uuid:ch2-secs:370873474029900-id:0-type:0-thread:checker-state:end:::
+Consumer: chiedo l'ordine a priorità più alta dal buffer...
+uuid:c3-secs:370873474598700-id:0-type:0-thread:consumer-state:begin:::
+GestioneCode: Postazione Aggiornata: entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=5458, RISO, valorePriorità=0,668 }]}
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=5458, RISO, valorePriorità=0,668 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=2154, CARNE, valorePriorità=0,661 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=1000, PASTA, valorePriorità=0,665 }]}
+uuid:c3-secs:370873475625600-id:5458-type:RISO-thread:consumer-state:end:::
+Consumer: estratto: OrdinePQ{ id=5458, RISO, valorePriorità=0,668 }
+Cuoco RISO: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=5458, RISO, valorePriorità=0,668 }]}]
+uuid:0cu1-secs:370873496027200-id:0-type:0-thread:cuoco_riso-state:begin:::
+Cuoco RISO: preparando l'ordine: Optional[OrdinePQ{ id=5458, RISO, valorePriorità=0,668 }]
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Consumer: chiedo l'ordine a priorità più alta dal buffer...
+uuid:c4-secs:370875487187500-id:0-type:0-thread:consumer-state:begin:::
+GestioneCode: Postazione Aggiornata: entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=2154, CARNE, valorePriorità=0,661 }, OrdinePQ{ id=4995, CARNE, valorePriorità=0,541 }]}
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=5458, RISO, valorePriorità=0,668 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=2154, CARNE, valorePriorità=0,661 }, OrdinePQ{ id=4995, CARNE, valorePriorità=0,541 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=1000, PASTA, valorePriorità=0,665 }]}
+uuid:c4-secs:370875487667300-id:4995-type:CARNE-thread:consumer-state:end:::
+Consumer: estratto: OrdinePQ{ id=4995, CARNE, valorePriorità=0,541 }
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+uuid:ch3-secs:370876474578900-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Gestione Priorita': x1 = 0.8
+Gestione Priorita': x2 = 0.0
+Gestione Priorita': x3 = 0
+Gestione Priorita': x4 = 0.75
+Gestione Priorita': x5 = 0.04989444444444444
+Gestione Priorita': y = 0.3249736155814595
+Checker: aggiorno la priorità di: OrdinePQ{ id=8884, RISO, valorePriorità=0,325 }
+Checker: priorità aggiornata: OrdinePQ{ id=8884, RISO, valorePriorità=0,325 }
+Gestione Priorita': x1 = 1.0
+Gestione Priorita': x2 = 0.2
+Gestione Priorita': x3 = 1
+Gestione Priorita': x4 = 0.25
+Gestione Priorita': x5 = 0.04988888888888889
+Gestione Priorita': y = 0.5299722278846635
+Checker: aggiorno la priorità di: OrdinePQ{ id=2779, PESCE, valorePriorità=0,530 }
+Checker: priorità aggiornata: OrdinePQ{ id=2779, PESCE, valorePriorità=0,530 }
+Gestione Priorita': x1 = 0.8
+Gestione Priorita': x2 = 0.72
+Gestione Priorita': x3 = 0
+Gestione Priorita': x4 = 0.25
+Gestione Priorita': x5 = 0.04992777777777778
+Gestione Priorita': y = 0.35798195022609497
+Checker: aggiorno la priorità di: OrdinePQ{ id=5801, PASTA, valorePriorità=0,358 }
+Checker: priorità aggiornata: OrdinePQ{ id=5801, PASTA, valorePriorità=0,358 }
+***** Checker rilascia il buffer *****
+uuid:ch3-secs:370876481943000-id:0-type:0-thread:checker-state:end:::
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Consumer: chiedo l'ordine a priorità più alta dal buffer...
+uuid:c5-secs:370877488491100-id:0-type:0-thread:consumer-state:begin:::
+GestioneCode: Postazione Aggiornata: entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=2779, PESCE, valorePriorità=0,530 }]}
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=5458, RISO, valorePriorità=0,668 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=2154, CARNE, valorePriorità=0,661 }, OrdinePQ{ id=4995, CARNE, valorePriorità=0,541 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=2779, PESCE, valorePriorità=0,530 }]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=1000, PASTA, valorePriorità=0,665 }]}
+uuid:c5-secs:370877490527000-id:2779-type:PESCE-thread:consumer-state:end:::
+Consumer: estratto: OrdinePQ{ id=2779, PESCE, valorePriorità=0,530 }
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=2779, PESCE, valorePriorità=0,530 }]}]
+uuid:3cu1-secs:370877506901500-id:0-type:0-thread:cuoco_pesce-state:begin:::
+Cuoco PESCE: preparando l'ordine: Optional[OrdinePQ{ id=2779, PESCE, valorePriorità=0,530 }]
+uuid:0cl5-secs:370878329845600-id:0-type:0-thread:clienteA-state:begin:::
+producer queue: [OrdinePQ{ id=9433, PASTA }]Cliente: aggiungo un ordine nel sistema: OrdinePQ{ id=9433, PASTA }
+uuid:0cl5-secs:370878331083500-id:9433-type:PASTA-thread:clienteA-state:end:::
+Producer: rilevato ordine in arrivo.
+uuid:p8-secs:370878511608800-id:0-type:0-thread:producer-state:begin:::
+Producer: calcolo della priorità per: OrdinePQ{ id=9433, PASTA }
+Gestione Priorita': x1 = 0.8
+Gestione Priorita': x2 = 0.16
+Gestione Priorita': x3 = 0
+Gestione Priorita': x4 = 0.75
+Gestione Priorita': x5 = 0.001011111111111111
+Gestione Priorita': y = 0.33675278320180047
+Gestione Priorita iniziale': y' = 0.4486666738986969
+***** Producer controlla il buffer *****
+Buffer: inserimento OrdinePQ{ id=9433, PASTA, valorePriorità=0,337 }|| [1,0,3]
+***** Producer rilascia il buffer *****
+uuid:p8-secs:370878512907100-id:9433-type:PASTA-thread:producer-state:end:::
+Producer: inserimento avvenuto con successo: OrdinePQ{ id=9433, PASTA, valorePriorità=0,337 }
+uuid:ch4-secs:370879482903500-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Gestione Priorita': x1 = 0.8
+Gestione Priorita': x2 = 0.0
+Gestione Priorita': x3 = 0
+Gestione Priorita': x4 = 0.75
+Gestione Priorita': x5 = 0.06660555555555556
+Gestione Priorita': y = 0.32915139335923727
+Checker: aggiorno la priorità di: OrdinePQ{ id=8884, RISO, valorePriorità=0,329 }
+Checker: priorità aggiornata: OrdinePQ{ id=8884, RISO, valorePriorità=0,329 }
+Gestione Priorita': x1 = 0.8
+Gestione Priorita': x2 = 0.16
+Gestione Priorita': x3 = 0
+Gestione Priorita': x4 = 0.75
+Gestione Priorita': x5 = 0.006411111111111111
+Gestione Priorita': y = 0.3381027832018005
+Checker: aggiorno la priorità di: OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }
+Checker: priorità aggiornata: OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }
+Gestione Priorita': x1 = 0.8
+Gestione Priorita': x2 = 0.72
+Gestione Priorita': x3 = 0
+Gestione Priorita': x4 = 0.25
+Gestione Priorita': x5 = 0.06661666666666667
+Gestione Priorita': y = 0.3621541724483172
+Checker: aggiorno la priorità di: OrdinePQ{ id=5801, PASTA, valorePriorità=0,362 }
+Checker: priorità aggiornata: OrdinePQ{ id=5801, PASTA, valorePriorità=0,362 }
+***** Checker rilascia il buffer *****
+uuid:ch4-secs:370879485987700-id:0-type:0-thread:checker-state:end:::
+Consumer: chiedo l'ordine a priorità più alta dal buffer...
+uuid:c6-secs:370879492660100-id:0-type:0-thread:consumer-state:begin:::
+GestioneCode: Postazione Aggiornata: entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=1000, PASTA, valorePriorità=0,665 }, OrdinePQ{ id=5801, PASTA, valorePriorità=0,362 }]}
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=5458, RISO, valorePriorità=0,668 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=2154, CARNE, valorePriorità=0,661 }, OrdinePQ{ id=4995, CARNE, valorePriorità=0,541 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=2779, PESCE, valorePriorità=0,530 }]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=1000, PASTA, valorePriorità=0,665 }, OrdinePQ{ id=5801, PASTA, valorePriorità=0,362 }]}
+uuid:c6-secs:370879494202800-id:5801-type:PASTA-thread:consumer-state:end:::
+Consumer: estratto: OrdinePQ{ id=5801, PASTA, valorePriorità=0,362 }
+Consumer: chiedo l'ordine a priorità più alta dal buffer...
+uuid:c7-secs:370881495714200-id:0-type:0-thread:consumer-state:begin:::
+GestioneCode: Postazione Aggiornata: entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=1000, PASTA, valorePriorità=0,665 }, OrdinePQ{ id=5801, PASTA, valorePriorità=0,362 }, OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }]}
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=5458, RISO, valorePriorità=0,668 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=2154, CARNE, valorePriorità=0,661 }, OrdinePQ{ id=4995, CARNE, valorePriorità=0,541 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=2779, PESCE, valorePriorità=0,530 }]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=1000, PASTA, valorePriorità=0,665 }, OrdinePQ{ id=5801, PASTA, valorePriorità=0,362 }, OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }]}
+uuid:c7-secs:370881498157100-id:9433-type:PASTA-thread:consumer-state:end:::
+Consumer: estratto: OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }
+uuid:ch5-secs:370882486810800-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Gestione Priorita': x1 = 0.8
+Gestione Priorita': x2 = 0.0
+Gestione Priorita': x3 = 0
+Gestione Priorita': x4 = 0.75
+Gestione Priorita': x5 = 0.08329444444444445
+Gestione Priorita': y = 0.3333236155814595
+Checker: aggiorno la priorità di: OrdinePQ{ id=8884, RISO, valorePriorità=0,333 }
+Checker: priorità aggiornata: OrdinePQ{ id=8884, RISO, valorePriorità=0,333 }
+***** Checker rilascia il buffer *****
+uuid:ch5-secs:370882488427600-id:0-type:0-thread:checker-state:end:::
+Consumer: chiedo l'ordine a priorità più alta dal buffer...
+uuid:c8-secs:370883498889000-id:0-type:0-thread:consumer-state:begin:::
+GestioneCode: Postazione Aggiornata: entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=5458, RISO, valorePriorità=0,668 }, OrdinePQ{ id=8884, RISO, valorePriorità=0,333 }]}
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=5458, RISO, valorePriorità=0,668 }, OrdinePQ{ id=8884, RISO, valorePriorità=0,333 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=2154, CARNE, valorePriorità=0,661 }, OrdinePQ{ id=4995, CARNE, valorePriorità=0,541 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=2779, PESCE, valorePriorità=0,530 }]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=1000, PASTA, valorePriorità=0,665 }, OrdinePQ{ id=5801, PASTA, valorePriorità=0,362 }, OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }]}
+uuid:c8-secs:370883501622400-id:8884-type:RISO-thread:consumer-state:end:::
+Consumer: estratto: OrdinePQ{ id=8884, RISO, valorePriorità=0,333 }
+uuid:ch6-secs:370885488836100-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch6-secs:370885489191900-id:0-type:0-thread:checker-state:end:::
+Consumer: chiedo l'ordine a priorità più alta dal buffer...
+uuid:c9-secs:370885503365000-id:0-type:0-thread:consumer-state:begin:::
+uuid:ch7-secs:370888490206400-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch7-secs:370888494038500-id:0-type:0-thread:checker-state:end:::
+uuid:ch8-secs:370891494322900-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch8-secs:370891494852000-id:0-type:0-thread:checker-state:end:::
+uuid:ch9-secs:370894496196200-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch9-secs:370894496446600-id:0-type:0-thread:checker-state:end:::
+uuid:ch10-secs:370897497439200-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch10-secs:370897498129900-id:0-type:0-thread:checker-state:end:::
+File csv: Scrittura completata con successo
+GestioneCode: rimosso ordine: Optional[OrdinePQ{ id=2779, PESCE, valorePriorità=0,530 }]
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=5458, RISO, valorePriorità=0,668 }, OrdinePQ{ id=8884, RISO, valorePriorità=0,333 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=2154, CARNE, valorePriorità=0,661 }, OrdinePQ{ id=4995, CARNE, valorePriorità=0,541 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=1000, PASTA, valorePriorità=0,665 }, OrdinePQ{ id=5801, PASTA, valorePriorità=0,362 }, OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }]}
+Cuoco PESCE: ordine completato: Optional[OrdinePQ{ id=2779, PESCE, valorePriorità=0,530 }]
+uuid:3cu1-secs:370897553490300-id:2779-type:PESCE-thread:cuoco_pesce-state:end:::
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+File csv: Scrittura completata con successo
+GestioneCode: rimosso ordine: Optional[OrdinePQ{ id=2154, CARNE, valorePriorità=0,661 }]
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=5458, RISO, valorePriorità=0,668 }, OrdinePQ{ id=8884, RISO, valorePriorità=0,333 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=4995, CARNE, valorePriorità=0,541 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=1000, PASTA, valorePriorità=0,665 }, OrdinePQ{ id=5801, PASTA, valorePriorità=0,362 }, OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }]}
+Cuoco CARNE: ordine completato: Optional[OrdinePQ{ id=2154, CARNE, valorePriorità=0,661 }]
+uuid:2cu1-secs:370899490960100-id:2154-type:CARNE-thread:cuoco_carne-state:end:::
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=4995, CARNE, valorePriorità=0,541 }]}]
+uuid:2cu2-secs:370899491062500-id:0-type:0-thread:cuoco_carne-state:begin:::
+Cuoco CARNE: preparando l'ordine: Optional[OrdinePQ{ id=4995, CARNE, valorePriorità=0,541 }]
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+uuid:ch11-secs:370900498894200-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch11-secs:370900499991800-id:0-type:0-thread:checker-state:end:::
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+File csv: Scrittura completata con successo
+GestioneCode: rimosso ordine: Optional[OrdinePQ{ id=1000, PASTA, valorePriorità=0,665 }]
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=5458, RISO, valorePriorità=0,668 }, OrdinePQ{ id=8884, RISO, valorePriorità=0,333 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=4995, CARNE, valorePriorità=0,541 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=5801, PASTA, valorePriorità=0,362 }, OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }]}
+Cuoco PASTA: ordine completato: Optional[OrdinePQ{ id=1000, PASTA, valorePriorità=0,665 }]
+uuid:1cu1-secs:370901500864400-id:1000-type:PASTA-thread:cuoco_pasta-state:end:::
+Cuoco PASTA: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=5801, PASTA, valorePriorità=0,362 }, OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }]}]
+uuid:1cu2-secs:370901501178400-id:0-type:0-thread:cuoco_pasta-state:begin:::
+Cuoco PASTA: preparando l'ordine: Optional[OrdinePQ{ id=5801, PASTA, valorePriorità=0,362 }]
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+uuid:0cl6-secs:370901644607300-id:0-type:0-thread:clienteA-state:begin:::
+producer queue: [OrdinePQ{ id=3732, PASTA }]Cliente: aggiungo un ordine nel sistema: OrdinePQ{ id=3732, PASTA }
+uuid:0cl6-secs:370901645452600-id:3732-type:PASTA-thread:clienteA-state:end:::
+Producer: rilevato ordine in arrivo.
+uuid:p9-secs:370902056808000-id:0-type:0-thread:producer-state:begin:::
+Producer: calcolo della priorità per: OrdinePQ{ id=3732, PASTA }
+Gestione Priorita': x1 = 0.6
+Gestione Priorita': x2 = 0.7
+Gestione Priorita': x3 = 0
+Gestione Priorita': x4 = 0.5
+Gestione Priorita': x5 = 0.0022833333333333334
+Gestione Priorita': y = 0.33057084048589075
+Gestione Priorita iniziale': y' = 0.4400000095367432
+***** Producer controlla il buffer *****
+Buffer: inserimento OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }|| [0]
+***** Producer rilascia il buffer *****
+GestioneCode: Postazione Aggiornata: entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=5801, PASTA, valorePriorità=0,362 }, OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }, OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }]}
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=5458, RISO, valorePriorità=0,668 }, OrdinePQ{ id=8884, RISO, valorePriorità=0,333 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=4995, CARNE, valorePriorità=0,541 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=5801, PASTA, valorePriorità=0,362 }, OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }, OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }]}
+uuid:c9-secs:370902058601400-id:3732-type:PASTA-thread:consumer-state:end:::
+Consumer: estratto: OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }
+uuid:p9-secs:370902059145800-id:3732-type:PASTA-thread:producer-state:end:::
+Producer: inserimento avvenuto con successo: OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+File csv: Scrittura completata con successo
+GestioneCode: rimosso ordine: Optional[OrdinePQ{ id=5458, RISO, valorePriorità=0,668 }]
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=8884, RISO, valorePriorità=0,333 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=4995, CARNE, valorePriorità=0,541 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=5801, PASTA, valorePriorità=0,362 }, OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }, OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }]}
+Cuoco RISO: ordine completato: Optional[OrdinePQ{ id=5458, RISO, valorePriorità=0,668 }]
+uuid:0cu1-secs:370903499752100-id:5458-type:RISO-thread:cuoco_riso-state:end:::
+Cuoco RISO: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=8884, RISO, valorePriorità=0,333 }]}]
+uuid:0cu2-secs:370903499940200-id:0-type:0-thread:cuoco_riso-state:begin:::
+Cuoco RISO: preparando l'ordine: Optional[OrdinePQ{ id=8884, RISO, valorePriorità=0,333 }]
+uuid:ch12-secs:370903500369700-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch12-secs:370903500517500-id:0-type:0-thread:checker-state:end:::
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Consumer: chiedo l'ordine a priorità più alta dal buffer...
+uuid:c10-secs:370904059015000-id:0-type:0-thread:consumer-state:begin:::
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+uuid:ch13-secs:370906501568100-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch13-secs:370906501828500-id:0-type:0-thread:checker-state:end:::
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+uuid:0cl7-secs:370909142082300-id:0-type:0-thread:clienteB-state:begin:::
+producer queue: [OrdinePQ{ id=4333, PESCE }]Cliente: aggiungo un ordine nel sistema: OrdinePQ{ id=4333, PESCE }
+uuid:0cl7-secs:370909142987700-id:4333-type:PESCE-thread:clienteB-state:end:::
+uuid:ch14-secs:370909502926400-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch14-secs:370909503277400-id:0-type:0-thread:checker-state:end:::
+Producer: rilevato ordine in arrivo.
+uuid:p10-secs:370909565460300-id:0-type:0-thread:producer-state:begin:::
+Producer: calcolo della priorità per: OrdinePQ{ id=4333, PESCE }
+Gestione Priorita': x1 = 1.0
+Gestione Priorita': x2 = 0.22
+Gestione Priorita': x3 = 0
+Gestione Priorita': x4 = 0.5
+Gestione Priorita': x5 = 0.0023555555555555556
+Gestione Priorita': y = 0.35858889318042336
+Gestione Priorita iniziale': y' = 0.4773333390553793
+***** Producer controlla il buffer *****
+Buffer: inserimento OrdinePQ{ id=4333, PESCE, valorePriorità=0,359 }|| [0]
+***** Producer rilascia il buffer *****
+GestioneCode: Postazione Aggiornata: entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=4333, PESCE, valorePriorità=0,359 }]}
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=8884, RISO, valorePriorità=0,333 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=4995, CARNE, valorePriorità=0,541 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=4333, PESCE, valorePriorità=0,359 }]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=5801, PASTA, valorePriorità=0,362 }, OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }, OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }]}
+uuid:c10-secs:370909567714400-id:4333-type:PESCE-thread:consumer-state:end:::
+Consumer: estratto: OrdinePQ{ id=4333, PESCE, valorePriorità=0,359 }
+uuid:p10-secs:370909568606600-id:4333-type:PESCE-thread:producer-state:end:::
+Producer: inserimento avvenuto con successo: OrdinePQ{ id=4333, PESCE, valorePriorità=0,359 }
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+uuid:3cu2-secs:370909569123000-id:0-type:0-thread:cuoco_pesce-state:begin:::
+Cuoco PESCE: preparando l'ordine: Optional[OrdinePQ{ id=4333, PESCE, valorePriorità=0,359 }]
+Consumer: chiedo l'ordine a priorità più alta dal buffer...
+uuid:c11-secs:370911568945100-id:0-type:0-thread:consumer-state:begin:::
+uuid:ch15-secs:370912504489000-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch15-secs:370912504785500-id:0-type:0-thread:checker-state:end:::
+File csv: Scrittura completata con successo
+GestioneCode: rimosso ordine: Optional[OrdinePQ{ id=8884, RISO, valorePriorità=0,333 }]
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=4995, CARNE, valorePriorità=0,541 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=4333, PESCE, valorePriorità=0,359 }]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=5801, PASTA, valorePriorità=0,362 }, OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }, OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }]}
+Cuoco RISO: ordine completato: Optional[OrdinePQ{ id=8884, RISO, valorePriorità=0,333 }]
+uuid:0cu2-secs:370913503846300-id:8884-type:RISO-thread:cuoco_riso-state:end:::
+Cuoco RISO: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco RISO: in attesa di ordini...
+uuid:0cl8-secs:370913829404800-id:0-type:0-thread:clienteD-state:begin:::
+producer queue: [OrdinePQ{ id=6671, RISO }]Cliente: aggiungo un ordine nel sistema: OrdinePQ{ id=6671, RISO }
+uuid:0cl8-secs:370913829881200-id:6671-type:RISO-thread:clienteD-state:end:::
+Producer: rilevato ordine in arrivo.
+uuid:p11-secs:370914071899600-id:0-type:0-thread:producer-state:begin:::
+Producer: calcolo della priorità per: OrdinePQ{ id=6671, RISO }
+Gestione Priorita': x1 = 1.0
+Gestione Priorita': x2 = 0.72
+Gestione Priorita': x3 = 1
+Gestione Priorita': x4 = 0.25
+Gestione Priorita': x5 = 0.00135
+Gestione Priorita': y = 0.5958375087618828
+Gestione Priorita iniziale': y' = 0.7940000116825104
+***** Producer controlla il buffer *****
+Buffer: inserimento OrdinePQ{ id=6671, RISO, valorePriorità=0,596 }|| [0]
+***** Producer rilascia il buffer *****
+uuid:p11-secs:370914072672800-id:6671-type:RISO-thread:producer-state:end:::
+GestioneCode: Postazione Aggiornata: entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=6671, RISO, valorePriorità=0,596 }]}
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=6671, RISO, valorePriorità=0,596 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=4995, CARNE, valorePriorità=0,541 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=4333, PESCE, valorePriorità=0,359 }]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=5801, PASTA, valorePriorità=0,362 }, OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }, OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }]}
+uuid:c11-secs:370914073637700-id:6671-type:RISO-thread:consumer-state:end:::
+Consumer: estratto: OrdinePQ{ id=6671, RISO, valorePriorità=0,596 }
+Producer: inserimento avvenuto con successo: OrdinePQ{ id=6671, RISO, valorePriorità=0,596 }
+Cuoco RISO: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=6671, RISO, valorePriorità=0,596 }]}]
+uuid:0cu3-secs:370914505999000-id:0-type:0-thread:cuoco_riso-state:begin:::
+Cuoco RISO: preparando l'ordine: Optional[OrdinePQ{ id=6671, RISO, valorePriorità=0,596 }]
+uuid:ch16-secs:370915505750400-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch16-secs:370915506028100-id:0-type:0-thread:checker-state:end:::
+Consumer: chiedo l'ordine a priorità più alta dal buffer...
+uuid:c12-secs:370916074584700-id:0-type:0-thread:consumer-state:begin:::
+File csv: Scrittura completata con successo
+GestioneCode: rimosso ordine: Optional[OrdinePQ{ id=4995, CARNE, valorePriorità=0,541 }]
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=6671, RISO, valorePriorità=0,596 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=4333, PESCE, valorePriorità=0,359 }]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=5801, PASTA, valorePriorità=0,362 }, OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }, OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }]}
+Cuoco CARNE: ordine completato: Optional[OrdinePQ{ id=4995, CARNE, valorePriorità=0,541 }]
+uuid:2cu2-secs:370917495876900-id:4995-type:CARNE-thread:cuoco_carne-state:end:::
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+uuid:ch17-secs:370918507110400-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch17-secs:370918507326800-id:0-type:0-thread:checker-state:end:::
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+uuid:0cl9-secs:370919786587300-id:0-type:0-thread:clienteC-state:begin:::
+producer queue: [OrdinePQ{ id=3668, RISO }]Cliente: aggiungo un ordine nel sistema: OrdinePQ{ id=3668, RISO }
+uuid:0cl9-secs:370919787232800-id:3668-type:RISO-thread:clienteC-state:end:::
+Producer: rilevato ordine in arrivo.
+uuid:p12-secs:370920080012600-id:0-type:0-thread:producer-state:begin:::
+Producer: calcolo della priorità per: OrdinePQ{ id=3668, RISO }
+Gestione Priorita': x1 = 0.8
+Gestione Priorita': x2 = 0.98
+Gestione Priorita': x3 = 0
+Gestione Priorita': x4 = 0.25
+Gestione Priorita': x5 = 0.0016333333333333334
+Gestione Priorita': y = 0.3849083406647047
+Gestione Priorita iniziale': y' = 0.5126666764418285
+***** Producer controlla il buffer *****
+Buffer: inserimento OrdinePQ{ id=3668, RISO, valorePriorità=0,385 }|| [0]
+***** Producer rilascia il buffer *****
+GestioneCode: Postazione Aggiornata: entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=6671, RISO, valorePriorità=0,596 }, OrdinePQ{ id=3668, RISO, valorePriorità=0,385 }]}
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=6671, RISO, valorePriorità=0,596 }, OrdinePQ{ id=3668, RISO, valorePriorità=0,385 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=4333, PESCE, valorePriorità=0,359 }]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=5801, PASTA, valorePriorità=0,362 }, OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }, OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }]}
+uuid:c12-secs:370920080757200-id:3668-type:RISO-thread:consumer-state:end:::
+Consumer: estratto: OrdinePQ{ id=3668, RISO, valorePriorità=0,385 }
+uuid:p12-secs:370920084853800-id:3668-type:RISO-thread:producer-state:end:::
+Producer: inserimento avvenuto con successo: OrdinePQ{ id=3668, RISO, valorePriorità=0,385 }
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+uuid:ch18-secs:370921507613400-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch18-secs:370921507974600-id:0-type:0-thread:checker-state:end:::
+Consumer: chiedo l'ordine a priorità più alta dal buffer...
+uuid:c13-secs:370922081179500-id:0-type:0-thread:consumer-state:begin:::
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+uuid:ch19-secs:370924508868400-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch19-secs:370924509296700-id:0-type:0-thread:checker-state:end:::
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+uuid:ch20-secs:370927509788700-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch20-secs:370927510214300-id:0-type:0-thread:checker-state:end:::
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+uuid:0cl10-secs:370930093983200-id:0-type:0-thread:clienteB-state:begin:::
+producer queue: [OrdinePQ{ id=6054, RISO }]Cliente: aggiungo un ordine nel sistema: OrdinePQ{ id=6054, RISO }
+uuid:0cl10-secs:370930094901300-id:6054-type:RISO-thread:clienteB-state:end:::
+Producer: rilevato ordine in arrivo.
+uuid:p13-secs:370930097656900-id:0-type:0-thread:producer-state:begin:::
+Producer: calcolo della priorità per: OrdinePQ{ id=6054, RISO }
+Gestione Priorita': x1 = 0.6
+Gestione Priorita': x2 = 0.06
+Gestione Priorita': x3 = 1
+Gestione Priorita': x4 = 0.0
+Gestione Priorita': x5 = 1.6666666666666667E-5
+Gestione Priorita': y = 0.3590041700045268
+Gestione Priorita iniziale': y' = 0.4786666711171468
+***** Producer controlla il buffer *****
+Buffer: inserimento OrdinePQ{ id=6054, RISO, valorePriorità=0,359 }|| [0]
+***** Producer rilascia il buffer *****
+uuid:p13-secs:370930098834300-id:6054-type:RISO-thread:producer-state:end:::
+Producer: inserimento avvenuto con successo: OrdinePQ{ id=6054, RISO, valorePriorità=0,359 }
+GestioneCode: Postazione Aggiornata: entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=6671, RISO, valorePriorità=0,596 }, OrdinePQ{ id=3668, RISO, valorePriorità=0,385 }, OrdinePQ{ id=6054, RISO, valorePriorità=0,359 }]}
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=6671, RISO, valorePriorità=0,596 }, OrdinePQ{ id=3668, RISO, valorePriorità=0,385 }, OrdinePQ{ id=6054, RISO, valorePriorità=0,359 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=4333, PESCE, valorePriorità=0,359 }]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=5801, PASTA, valorePriorità=0,362 }, OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }, OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }]}
+uuid:c13-secs:370930099879700-id:6054-type:RISO-thread:consumer-state:end:::
+Consumer: estratto: OrdinePQ{ id=6054, RISO, valorePriorità=0,359 }
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+uuid:ch21-secs:370930511098900-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch21-secs:370930511461100-id:0-type:0-thread:checker-state:end:::
+File csv: Scrittura completata con successo
+GestioneCode: rimosso ordine: Optional[OrdinePQ{ id=4333, PESCE, valorePriorità=0,359 }]
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=6671, RISO, valorePriorità=0,596 }, OrdinePQ{ id=3668, RISO, valorePriorità=0,385 }, OrdinePQ{ id=6054, RISO, valorePriorità=0,359 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=5801, PASTA, valorePriorità=0,362 }, OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }, OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }]}
+Cuoco PESCE: ordine completato: Optional[OrdinePQ{ id=4333, PESCE, valorePriorità=0,359 }]
+uuid:3cu2-secs:370930573040500-id:4333-type:PESCE-thread:cuoco_pesce-state:end:::
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Consumer: chiedo l'ordine a priorità più alta dal buffer...
+uuid:c14-secs:370932100962400-id:0-type:0-thread:consumer-state:begin:::
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+uuid:ch22-secs:370933513223300-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch22-secs:370933513491400-id:0-type:0-thread:checker-state:end:::
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+uuid:ch23-secs:370936518692500-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch23-secs:370936525861500-id:0-type:0-thread:checker-state:end:::
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+uuid:ch24-secs:370939526644600-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch24-secs:370939526989800-id:0-type:0-thread:checker-state:end:::
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+uuid:ch25-secs:370942529026000-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch25-secs:370942529179500-id:0-type:0-thread:checker-state:end:::
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+uuid:ch26-secs:370945529314700-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch26-secs:370945529546000-id:0-type:0-thread:checker-state:end:::
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+File csv: Scrittura completata con successo
+GestioneCode: rimosso ordine: Optional[OrdinePQ{ id=5801, PASTA, valorePriorità=0,362 }]
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=6671, RISO, valorePriorità=0,596 }, OrdinePQ{ id=3668, RISO, valorePriorità=0,385 }, OrdinePQ{ id=6054, RISO, valorePriorità=0,359 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }, OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }]}
+Cuoco PASTA: ordine completato: Optional[OrdinePQ{ id=5801, PASTA, valorePriorità=0,362 }]
+uuid:1cu2-secs:370947508064300-id:5801-type:PASTA-thread:cuoco_pasta-state:end:::
+Cuoco PASTA: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }, OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }]}]
+uuid:1cu3-secs:370947508502900-id:0-type:0-thread:cuoco_pasta-state:begin:::
+Cuoco PASTA: preparando l'ordine: Optional[OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }]
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+uuid:ch27-secs:370948530551400-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch27-secs:370948530906300-id:0-type:0-thread:checker-state:end:::
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+uuid:ch28-secs:370951531918600-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch28-secs:370951532223600-id:0-type:0-thread:checker-state:end:::
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+uuid:0cl11-secs:370953875589500-id:0-type:0-thread:clienteC-state:begin:::
+producer queue: [OrdinePQ{ id=6865, RISO }]Cliente: aggiungo un ordine nel sistema: OrdinePQ{ id=6865, RISO }
+uuid:0cl11-secs:370953876017100-id:6865-type:RISO-thread:clienteC-state:end:::
+Producer: rilevato ordine in arrivo.
+uuid:p14-secs:370954123475700-id:0-type:0-thread:producer-state:begin:::
+Producer: calcolo della priorità per: OrdinePQ{ id=6865, RISO }
+Gestione Priorita': x1 = 0.4
+Gestione Priorita': x2 = 0.14
+Gestione Priorita': x3 = 0
+Gestione Priorita': x4 = 0.25
+Gestione Priorita': x5 = 0.0013777777777777777
+Gestione Priorita': y = 0.15884444676902562
+Gestione Priorita iniziale': y' = 0.21133333643277488
+***** Producer controlla il buffer *****
+Buffer: inserimento OrdinePQ{ id=6865, RISO, valorePriorità=0,159 }|| [0]
+***** Producer rilascia il buffer *****
+uuid:p14-secs:370954124057100-id:6865-type:RISO-thread:producer-state:end:::
+Producer: inserimento avvenuto con successo: OrdinePQ{ id=6865, RISO, valorePriorità=0,159 }
+GestioneCode: Postazione Aggiornata: entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=4, gradoRiempimento=0.8, capacita=5, queue=[OrdinePQ{ id=6671, RISO, valorePriorità=0,596 }, OrdinePQ{ id=3668, RISO, valorePriorità=0,385 }, OrdinePQ{ id=6054, RISO, valorePriorità=0,359 }, OrdinePQ{ id=6865, RISO, valorePriorità=0,159 }]}
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=4, gradoRiempimento=0.8, capacita=5, queue=[OrdinePQ{ id=6671, RISO, valorePriorità=0,596 }, OrdinePQ{ id=3668, RISO, valorePriorità=0,385 }, OrdinePQ{ id=6054, RISO, valorePriorità=0,359 }, OrdinePQ{ id=6865, RISO, valorePriorità=0,159 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }, OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }]}
+uuid:c14-secs:370954124931700-id:6865-type:RISO-thread:consumer-state:end:::
+Consumer: estratto: OrdinePQ{ id=6865, RISO, valorePriorità=0,159 }
+uuid:0cl12-secs:370954132407100-id:0-type:0-thread:clienteA-state:begin:::
+producer queue: [OrdinePQ{ id=5682, CARNE }]Cliente: aggiungo un ordine nel sistema: OrdinePQ{ id=5682, CARNE }
+uuid:0cl12-secs:370954132748300-id:5682-type:CARNE-thread:clienteA-state:end:::
+uuid:ch29-secs:370954533163900-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch29-secs:370954533394400-id:0-type:0-thread:checker-state:end:::
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Producer: rilevato ordine in arrivo.
+uuid:p15-secs:370954624915700-id:0-type:0-thread:producer-state:begin:::
+Producer: calcolo della priorità per: OrdinePQ{ id=5682, CARNE }
+Gestione Priorita': x1 = 1.0
+Gestione Priorita': x2 = 0.48
+Gestione Priorita': x3 = 0
+Gestione Priorita': x4 = 0.0
+Gestione Priorita': x5 = 0.002738888888888889
+Gestione Priorita': y = 0.32268472508324514
+Gestione Priorita iniziale': y' = 0.42933333714803057
+***** Producer controlla il buffer *****
+Buffer: inserimento OrdinePQ{ id=5682, CARNE, valorePriorità=0,323 }|| [0]
+***** Producer rilascia il buffer *****
+uuid:p15-secs:370954626464000-id:5682-type:CARNE-thread:producer-state:end:::
+Producer: inserimento avvenuto con successo: OrdinePQ{ id=5682, CARNE, valorePriorità=0,323 }
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco CARNE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Consumer: chiedo l'ordine a priorità più alta dal buffer...
+uuid:c15-secs:370956125886100-id:0-type:0-thread:consumer-state:begin:::
+GestioneCode: Postazione Aggiornata: entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=5682, CARNE, valorePriorità=0,323 }]}
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=4, gradoRiempimento=0.8, capacita=5, queue=[OrdinePQ{ id=6671, RISO, valorePriorità=0,596 }, OrdinePQ{ id=3668, RISO, valorePriorità=0,385 }, OrdinePQ{ id=6054, RISO, valorePriorità=0,359 }, OrdinePQ{ id=6865, RISO, valorePriorità=0,159 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=5682, CARNE, valorePriorità=0,323 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }, OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }]}
+uuid:c15-secs:370956127317800-id:5682-type:CARNE-thread:consumer-state:end:::
+Consumer: estratto: OrdinePQ{ id=5682, CARNE, valorePriorità=0,323 }
+Cuoco CARNE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=5682, CARNE, valorePriorità=0,323 }]}]
+uuid:2cu3-secs:370956548815300-id:0-type:0-thread:cuoco_carne-state:begin:::
+Cuoco CARNE: preparando l'ordine: Optional[OrdinePQ{ id=5682, CARNE, valorePriorità=0,323 }]
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+uuid:0cl13-secs:370957350323300-id:0-type:0-thread:clienteB-state:begin:::
+producer queue: [OrdinePQ{ id=3155, PASTA }]Cliente: aggiungo un ordine nel sistema: OrdinePQ{ id=3155, PASTA }
+uuid:0cl13-secs:370957351194400-id:3155-type:PASTA-thread:clienteB-state:end:::
+uuid:ch30-secs:370957534484200-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch30-secs:370957534679800-id:0-type:0-thread:checker-state:end:::
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Producer: rilevato ordine in arrivo.
+uuid:p16-secs:370957629223700-id:0-type:0-thread:producer-state:begin:::
+Producer: calcolo della priorità per: OrdinePQ{ id=3155, PASTA }
+Gestione Priorita': x1 = 0.6
+Gestione Priorita': x2 = 0.28
+Gestione Priorita': x3 = 1
+Gestione Priorita': x4 = 1.0
+Gestione Priorita': x5 = 0.00155
+Gestione Priorita': y = 0.5423875106096268
+Gestione Priorita iniziale': y' = 0.7226666808128357
+***** Producer controlla il buffer *****
+Buffer: inserimento OrdinePQ{ id=3155, PASTA, valorePriorità=0,542 }|| [0]
+***** Producer rilascia il buffer *****
+uuid:p16-secs:370957629834700-id:3155-type:PASTA-thread:producer-state:end:::
+Producer: inserimento avvenuto con successo: OrdinePQ{ id=3155, PASTA, valorePriorità=0,542 }
+Consumer: chiedo l'ordine a priorità più alta dal buffer...
+uuid:c16-secs:370958128106400-id:0-type:0-thread:consumer-state:begin:::
+GestioneCode: Postazione Aggiornata: entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }, OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }, OrdinePQ{ id=3155, PASTA, valorePriorità=0,542 }]}
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=4, gradoRiempimento=0.8, capacita=5, queue=[OrdinePQ{ id=6671, RISO, valorePriorità=0,596 }, OrdinePQ{ id=3668, RISO, valorePriorità=0,385 }, OrdinePQ{ id=6054, RISO, valorePriorità=0,359 }, OrdinePQ{ id=6865, RISO, valorePriorità=0,159 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=5682, CARNE, valorePriorità=0,323 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }, OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }, OrdinePQ{ id=3155, PASTA, valorePriorità=0,542 }]}
+uuid:c16-secs:370958129540400-id:3155-type:PASTA-thread:consumer-state:end:::
+Consumer: estratto: OrdinePQ{ id=3155, PASTA, valorePriorità=0,542 }
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Consumer: chiedo l'ordine a priorità più alta dal buffer...
+uuid:c17-secs:370960130208300-id:0-type:0-thread:consumer-state:begin:::
+File csv: Scrittura completata con successo
+GestioneCode: rimosso ordine: Optional[OrdinePQ{ id=6671, RISO, valorePriorità=0,596 }]
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=3668, RISO, valorePriorità=0,385 }, OrdinePQ{ id=6054, RISO, valorePriorità=0,359 }, OrdinePQ{ id=6865, RISO, valorePriorità=0,159 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=5682, CARNE, valorePriorità=0,323 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }, OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }, OrdinePQ{ id=3155, PASTA, valorePriorità=0,542 }]}
+Cuoco RISO: ordine completato: Optional[OrdinePQ{ id=6671, RISO, valorePriorità=0,596 }]
+uuid:0cu3-secs:370960508696100-id:6671-type:RISO-thread:cuoco_riso-state:end:::
+Cuoco RISO: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=3668, RISO, valorePriorità=0,385 }, OrdinePQ{ id=6054, RISO, valorePriorità=0,359 }, OrdinePQ{ id=6865, RISO, valorePriorità=0,159 }]}]
+uuid:0cu4-secs:370960508858800-id:0-type:0-thread:cuoco_riso-state:begin:::
+Cuoco RISO: preparando l'ordine: Optional[OrdinePQ{ id=3668, RISO, valorePriorità=0,385 }]
+uuid:ch31-secs:370960535837700-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch31-secs:370960536021500-id:0-type:0-thread:checker-state:end:::
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+uuid:ch32-secs:370963537219400-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch32-secs:370963537378600-id:0-type:0-thread:checker-state:end:::
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+File csv: Scrittura completata con successo
+GestioneCode: rimosso ordine: Optional[OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }]
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=3668, RISO, valorePriorità=0,385 }, OrdinePQ{ id=6054, RISO, valorePriorità=0,359 }, OrdinePQ{ id=6865, RISO, valorePriorità=0,159 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=5682, CARNE, valorePriorità=0,323 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }, OrdinePQ{ id=3155, PASTA, valorePriorità=0,542 }]}
+Cuoco PASTA: ordine completato: Optional[OrdinePQ{ id=9433, PASTA, valorePriorità=0,338 }]
+uuid:1cu3-secs:370965513862900-id:9433-type:PASTA-thread:cuoco_pasta-state:end:::
+Cuoco PASTA: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }, OrdinePQ{ id=3155, PASTA, valorePriorità=0,542 }]}]
+uuid:1cu4-secs:370965514029100-id:0-type:0-thread:cuoco_pasta-state:begin:::
+Cuoco PASTA: preparando l'ordine: Optional[OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }]
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+uuid:ch33-secs:370966538552100-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch33-secs:370966538768500-id:0-type:0-thread:checker-state:end:::
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+uuid:0cl14-secs:370967059028900-id:0-type:0-thread:clienteD-state:begin:::
+producer queue: [OrdinePQ{ id=8313, RISO }]Cliente: aggiungo un ordine nel sistema: OrdinePQ{ id=8313, RISO }
+uuid:0cl14-secs:370967059567900-id:8313-type:RISO-thread:clienteD-state:end:::
+Producer: rilevato ordine in arrivo.
+uuid:p17-secs:370967134670500-id:0-type:0-thread:producer-state:begin:::
+Producer: calcolo della priorità per: OrdinePQ{ id=8313, RISO }
+Gestione Priorita': x1 = 0.4
+Gestione Priorita': x2 = 0.26
+Gestione Priorita': x3 = 1
+Gestione Priorita': x4 = 1.0
+Gestione Priorita': x5 = 4.166666666666667E-4
+Gestione Priorita': y = 0.4891041771570842
+Gestione Priorita iniziale': y' = 0.6520000139872234
+***** Producer controlla il buffer *****
+Buffer: inserimento OrdinePQ{ id=8313, RISO, valorePriorità=0,489 }|| [0]
+***** Producer rilascia il buffer *****
+uuid:p17-secs:370967135576400-id:8313-type:RISO-thread:producer-state:end:::
+Producer: inserimento avvenuto con successo: OrdinePQ{ id=8313, RISO, valorePriorità=0,489 }
+GestioneCode: Postazione Aggiornata: entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=4, gradoRiempimento=0.8, capacita=5, queue=[OrdinePQ{ id=3668, RISO, valorePriorità=0,385 }, OrdinePQ{ id=6054, RISO, valorePriorità=0,359 }, OrdinePQ{ id=6865, RISO, valorePriorità=0,159 }, OrdinePQ{ id=8313, RISO, valorePriorità=0,489 }]}
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=4, gradoRiempimento=0.8, capacita=5, queue=[OrdinePQ{ id=3668, RISO, valorePriorità=0,385 }, OrdinePQ{ id=6054, RISO, valorePriorità=0,359 }, OrdinePQ{ id=6865, RISO, valorePriorità=0,159 }, OrdinePQ{ id=8313, RISO, valorePriorità=0,489 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=5682, CARNE, valorePriorità=0,323 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }, OrdinePQ{ id=3155, PASTA, valorePriorità=0,542 }]}
+uuid:c17-secs:370967136788100-id:8313-type:RISO-thread:consumer-state:end:::
+Consumer: estratto: OrdinePQ{ id=8313, RISO, valorePriorità=0,489 }
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+uuid:0cl15-secs:370968367783900-id:0-type:0-thread:clienteC-state:begin:::
+producer queue: [OrdinePQ{ id=9184, PESCE }]Cliente: aggiungo un ordine nel sistema: OrdinePQ{ id=9184, PESCE }
+uuid:0cl15-secs:370968368900800-id:9184-type:PESCE-thread:clienteC-state:end:::
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=0, gradoRiempimento=0.0, capacita=5, queue=[]}]
+Cuoco PESCE: in attesa di ordini...
+Producer: rilevato ordine in arrivo.
+uuid:p18-secs:370968636431000-id:0-type:0-thread:producer-state:begin:::
+Producer: calcolo della priorità per: OrdinePQ{ id=9184, PESCE }
+Gestione Priorita': x1 = 1.0
+Gestione Priorita': x2 = 0.62
+Gestione Priorita': x3 = 0
+Gestione Priorita': x4 = 0.75
+Gestione Priorita': x5 = 0.001488888888888889
+Gestione Priorita': y = 0.4558722303880586
+Gestione Priorita iniziale': y' = 0.6073333442211152
+***** Producer controlla il buffer *****
+Buffer: inserimento OrdinePQ{ id=9184, PESCE, valorePriorità=0,456 }|| [0]
+***** Producer rilascia il buffer *****
+uuid:p18-secs:370968637055000-id:9184-type:PESCE-thread:producer-state:end:::
+Producer: inserimento avvenuto con successo: OrdinePQ{ id=9184, PESCE, valorePriorità=0,456 }
+Consumer: chiedo l'ordine a priorità più alta dal buffer...
+uuid:c18-secs:370969138044700-id:0-type:0-thread:consumer-state:begin:::
+GestioneCode: Postazione Aggiornata: entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=9184, PESCE, valorePriorità=0,456 }]}
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=4, gradoRiempimento=0.8, capacita=5, queue=[OrdinePQ{ id=3668, RISO, valorePriorità=0,385 }, OrdinePQ{ id=6054, RISO, valorePriorità=0,359 }, OrdinePQ{ id=6865, RISO, valorePriorità=0,159 }, OrdinePQ{ id=8313, RISO, valorePriorità=0,489 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=5682, CARNE, valorePriorità=0,323 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=9184, PESCE, valorePriorità=0,456 }]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }, OrdinePQ{ id=3155, PASTA, valorePriorità=0,542 }]}
+uuid:c18-secs:370969139996000-id:9184-type:PESCE-thread:consumer-state:end:::
+Consumer: estratto: OrdinePQ{ id=9184, PESCE, valorePriorità=0,456 }
+uuid:ch34-secs:370969540726400-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch34-secs:370969540940100-id:0-type:0-thread:checker-state:end:::
+Cuoco PESCE: osservo la coda di postazione: Optional[entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=9184, PESCE, valorePriorità=0,456 }]}]
+uuid:3cu3-secs:370969615963700-id:0-type:0-thread:cuoco_pesce-state:begin:::
+Cuoco PESCE: preparando l'ordine: Optional[OrdinePQ{ id=9184, PESCE, valorePriorità=0,456 }]
+Consumer: chiedo l'ordine a priorità più alta dal buffer...
+uuid:c19-secs:370971141710200-id:0-type:0-thread:consumer-state:begin:::
+uuid:0cl16-secs:370971162041500-id:0-type:0-thread:clienteA-state:begin:::
+producer queue: [OrdinePQ{ id=8678, PASTA }]Cliente: aggiungo un ordine nel sistema: OrdinePQ{ id=8678, PASTA }
+uuid:0cl16-secs:370971162528900-id:8678-type:PASTA-thread:clienteA-state:end:::
+uuid:0cl17-secs:370971215349500-id:0-type:0-thread:clienteB-state:begin:::
+producer queue: [OrdinePQ{ id=8678, PASTA }, OrdinePQ{ id=7339, CARNE }]Cliente: aggiungo un ordine nel sistema: OrdinePQ{ id=7339, CARNE }
+uuid:0cl17-secs:370971215944100-id:7339-type:CARNE-thread:clienteB-state:end:::
+Producer: rilevato ordine in arrivo.
+uuid:p19-secs:370971638761500-id:0-type:0-thread:producer-state:begin:::
+Producer: calcolo della priorità per: OrdinePQ{ id=8678, PASTA }
+Gestione Priorita': x1 = 0.6
+Gestione Priorita': x2 = 0.68
+Gestione Priorita': x3 = 1
+Gestione Priorita': x4 = 0.75
+Gestione Priorita': x5 = 0.00265
+Gestione Priorita': y = 0.5651625115036965
+Gestione Priorita iniziale': y' = 0.7526666820049286
+***** Producer controlla il buffer *****
+Buffer: inserimento OrdinePQ{ id=8678, PASTA, valorePriorità=0,565 }|| [0]
+***** Producer rilascia il buffer *****
+uuid:p19-secs:370971639573900-id:8678-type:PASTA-thread:producer-state:end:::
+GestioneCode: Postazione Aggiornata: entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }, OrdinePQ{ id=3155, PASTA, valorePriorità=0,542 }, OrdinePQ{ id=8678, PASTA, valorePriorità=0,565 }]}
+Producer: inserimento avvenuto con successo: OrdinePQ{ id=8678, PASTA, valorePriorità=0,565 }
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=4, gradoRiempimento=0.8, capacita=5, queue=[OrdinePQ{ id=3668, RISO, valorePriorità=0,385 }, OrdinePQ{ id=6054, RISO, valorePriorità=0,359 }, OrdinePQ{ id=6865, RISO, valorePriorità=0,159 }, OrdinePQ{ id=8313, RISO, valorePriorità=0,489 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=5682, CARNE, valorePriorità=0,323 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=9184, PESCE, valorePriorità=0,456 }]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }, OrdinePQ{ id=3155, PASTA, valorePriorità=0,542 }, OrdinePQ{ id=8678, PASTA, valorePriorità=0,565 }]}
+uuid:c19-secs:370971640168700-id:8678-type:PASTA-thread:consumer-state:end:::
+Consumer: estratto: OrdinePQ{ id=8678, PASTA, valorePriorità=0,565 }
+Producer: rilevato ordine in arrivo.
+uuid:p20-secs:370972140722300-id:0-type:0-thread:producer-state:begin:::
+Producer: calcolo della priorità per: OrdinePQ{ id=7339, CARNE }
+Gestione Priorita': x1 = 0.8
+Gestione Priorita': x2 = 0.4
+Gestione Priorita': x3 = 1
+Gestione Priorita': x4 = 0.75
+Gestione Priorita': x5 = 0.005138888888888889
+Gestione Priorita': y = 0.5737847320569885
+Gestione Priorita iniziale': y' = 0.7633333464463551
+***** Producer controlla il buffer *****
+Buffer: inserimento OrdinePQ{ id=7339, CARNE, valorePriorità=0,574 }|| [0]
+***** Producer rilascia il buffer *****
+uuid:p20-secs:370972141380300-id:7339-type:CARNE-thread:producer-state:end:::
+Producer: inserimento avvenuto con successo: OrdinePQ{ id=7339, CARNE, valorePriorità=0,574 }
+uuid:ch35-secs:370972541609700-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Gestione Priorita': x1 = 0.8
+Gestione Priorita': x2 = 0.4
+Gestione Priorita': x3 = 1
+Gestione Priorita': x4 = 0.75
+Gestione Priorita': x5 = 0.007366666666666666
+Gestione Priorita': y = 0.574341676501433
+Checker: aggiorno la priorità di: OrdinePQ{ id=7339, CARNE, valorePriorità=0,574 }
+Checker: priorità aggiornata: OrdinePQ{ id=7339, CARNE, valorePriorità=0,574 }
+***** Checker rilascia il buffer *****
+uuid:ch35-secs:370972542070600-id:0-type:0-thread:checker-state:end:::
+Consumer: chiedo l'ordine a priorità più alta dal buffer...
+uuid:c20-secs:370973641023100-id:0-type:0-thread:consumer-state:begin:::
+GestioneCode: Postazione Aggiornata: entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=5682, CARNE, valorePriorità=0,323 }, OrdinePQ{ id=7339, CARNE, valorePriorità=0,574 }]}
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=4, gradoRiempimento=0.8, capacita=5, queue=[OrdinePQ{ id=3668, RISO, valorePriorità=0,385 }, OrdinePQ{ id=6054, RISO, valorePriorità=0,359 }, OrdinePQ{ id=6865, RISO, valorePriorità=0,159 }, OrdinePQ{ id=8313, RISO, valorePriorità=0,489 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=5682, CARNE, valorePriorità=0,323 }, OrdinePQ{ id=7339, CARNE, valorePriorità=0,574 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=9184, PESCE, valorePriorità=0,456 }]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }, OrdinePQ{ id=3155, PASTA, valorePriorità=0,542 }, OrdinePQ{ id=8678, PASTA, valorePriorità=0,565 }]}
+uuid:c20-secs:370973641695300-id:7339-type:CARNE-thread:consumer-state:end:::
+Consumer: estratto: OrdinePQ{ id=7339, CARNE, valorePriorità=0,574 }
+uuid:ch36-secs:370975542872500-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch36-secs:370975543112500-id:0-type:0-thread:checker-state:end:::
+Consumer: chiedo l'ordine a priorità più alta dal buffer...
+uuid:c21-secs:370975641989600-id:0-type:0-thread:consumer-state:begin:::
+uuid:ch37-secs:370978543197900-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch37-secs:370978543372800-id:0-type:0-thread:checker-state:end:::
+uuid:ch38-secs:370981543907800-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Checker: nulla da controllare
+***** Checker rilascia il buffer *****
+uuid:ch38-secs:370981544098200-id:0-type:0-thread:checker-state:end:::
+uuid:0cl18-secs:370981991335800-id:0-type:0-thread:clienteB-state:begin:::
+producer queue: [OrdinePQ{ id=3817, PASTA }]Cliente: aggiungo un ordine nel sistema: OrdinePQ{ id=3817, PASTA }
+uuid:0cl18-secs:370981991763500-id:3817-type:PASTA-thread:clienteB-state:end:::
+Producer: rilevato ordine in arrivo.
+uuid:p21-secs:370982151005300-id:0-type:0-thread:producer-state:begin:::
+Producer: calcolo della priorità per: OrdinePQ{ id=3817, PASTA }
+Gestione Priorita': x1 = 0.4
+Gestione Priorita': x2 = 0.86
+Gestione Priorita': x3 = 1
+Gestione Priorita': x4 = 0.5
+Gestione Priorita': x5 = 8.888888888888889E-4
+Gestione Priorita': y = 0.5042222333086862
+Gestione Priorita iniziale': y' = 0.6720000147819519
+***** Producer controlla il buffer *****
+Buffer: inserimento OrdinePQ{ id=3817, PASTA, valorePriorità=0,504 }|| [0]
+***** Producer rilascia il buffer *****
+uuid:p21-secs:370982151648700-id:3817-type:PASTA-thread:producer-state:end:::
+Producer: inserimento avvenuto con successo: OrdinePQ{ id=3817, PASTA, valorePriorità=0,504 }
+GestioneCode: Capacità massima di ordini in cucina raggiunta: 10
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=4, gradoRiempimento=0.8, capacita=5, queue=[OrdinePQ{ id=3668, RISO, valorePriorità=0,385 }, OrdinePQ{ id=6054, RISO, valorePriorità=0,359 }, OrdinePQ{ id=6865, RISO, valorePriorità=0,159 }, OrdinePQ{ id=8313, RISO, valorePriorità=0,489 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=5682, CARNE, valorePriorità=0,323 }, OrdinePQ{ id=7339, CARNE, valorePriorità=0,574 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=9184, PESCE, valorePriorità=0,456 }]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }, OrdinePQ{ id=3155, PASTA, valorePriorità=0,542 }, OrdinePQ{ id=8678, PASTA, valorePriorità=0,565 }]}
+Consumer: problemi nell'inserimento di: OrdinePQ{ id=3817, PASTA, valorePriorità=0,504 }
+Consumer: reinserisco nel buffer l'ordine: OrdinePQ{ id=3817, PASTA, valorePriorità=0,504 }
+uuid:c21-secs:370982153002200-id:3817-type:PASTA-thread:consumer-state:end:::
+Consumer: estratto: OrdinePQ{ id=3817, PASTA, valorePriorità=0,504 }
+Producer: rilevato ordine da reinserire nel buffer.
+uuid:p22-secs:370982652589500-id:0-type:0-thread:producer-state:begin:::
+***** Producer controlla il buffer *****
+Buffer: inserimento OrdinePQ{ id=3817, PASTA, valorePriorità=0,504 }|| [0]
+***** Producer rilascia il buffer *****
+uuid:p22-secs:370982653158400-id:3817-type:PASTA-thread:producer-state:end:::
+Producer: reinserimento avvenuto con successo: OrdinePQ{ id=3817, PASTA, valorePriorità=0,504 }
+Consumer: chiedo l'ordine a priorità più alta dal buffer...
+uuid:c22-secs:370984154286100-id:0-type:0-thread:consumer-state:begin:::
+GestioneCode: Capacità massima di ordini in cucina raggiunta: 10
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=4, gradoRiempimento=0.8, capacita=5, queue=[OrdinePQ{ id=3668, RISO, valorePriorità=0,385 }, OrdinePQ{ id=6054, RISO, valorePriorità=0,359 }, OrdinePQ{ id=6865, RISO, valorePriorità=0,159 }, OrdinePQ{ id=8313, RISO, valorePriorità=0,489 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=5682, CARNE, valorePriorità=0,323 }, OrdinePQ{ id=7339, CARNE, valorePriorità=0,574 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=9184, PESCE, valorePriorità=0,456 }]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }, OrdinePQ{ id=3155, PASTA, valorePriorità=0,542 }, OrdinePQ{ id=8678, PASTA, valorePriorità=0,565 }]}
+Consumer: problemi nell'inserimento di: OrdinePQ{ id=3817, PASTA, valorePriorità=0,504 }
+Consumer: reinserisco nel buffer l'ordine: OrdinePQ{ id=3817, PASTA, valorePriorità=0,504 }
+uuid:c22-secs:370984155273500-id:3817-type:PASTA-thread:consumer-state:end:::
+Consumer: estratto: OrdinePQ{ id=3817, PASTA, valorePriorità=0,504 }
+Producer: rilevato ordine da reinserire nel buffer.
+uuid:p23-secs:370984155725600-id:0-type:0-thread:producer-state:begin:::
+***** Producer controlla il buffer *****
+Buffer: inserimento OrdinePQ{ id=3817, PASTA, valorePriorità=0,504 }|| [0]
+***** Producer rilascia il buffer *****
+uuid:p23-secs:370984155921000-id:3817-type:PASTA-thread:producer-state:end:::
+Producer: reinserimento avvenuto con successo: OrdinePQ{ id=3817, PASTA, valorePriorità=0,504 }
+uuid:ch39-secs:370984544295700-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Gestione Priorita': x1 = 0.4
+Gestione Priorita': x2 = 0.86
+Gestione Priorita': x3 = 1
+Gestione Priorita': x4 = 0.5
+Gestione Priorita': x5 = 0.014188888888888888
+Gestione Priorita': y = 0.5075472333086862
+Checker: aggiorno la priorità di: OrdinePQ{ id=3817, PASTA, valorePriorità=0,508 }
+Checker: priorità aggiornata: OrdinePQ{ id=3817, PASTA, valorePriorità=0,508 }
+***** Checker rilascia il buffer *****
+uuid:ch39-secs:370984546181500-id:0-type:0-thread:checker-state:end:::
+Consumer: chiedo l'ordine a priorità più alta dal buffer...
+uuid:c23-secs:370986156184500-id:0-type:0-thread:consumer-state:begin:::
+GestioneCode: Capacità massima di ordini in cucina raggiunta: 10
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=4, gradoRiempimento=0.8, capacita=5, queue=[OrdinePQ{ id=3668, RISO, valorePriorità=0,385 }, OrdinePQ{ id=6054, RISO, valorePriorità=0,359 }, OrdinePQ{ id=6865, RISO, valorePriorità=0,159 }, OrdinePQ{ id=8313, RISO, valorePriorità=0,489 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=5682, CARNE, valorePriorità=0,323 }, OrdinePQ{ id=7339, CARNE, valorePriorità=0,574 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=9184, PESCE, valorePriorità=0,456 }]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }, OrdinePQ{ id=3155, PASTA, valorePriorità=0,542 }, OrdinePQ{ id=8678, PASTA, valorePriorità=0,565 }]}
+Consumer: problemi nell'inserimento di: OrdinePQ{ id=3817, PASTA, valorePriorità=0,508 }
+Consumer: reinserisco nel buffer l'ordine: OrdinePQ{ id=3817, PASTA, valorePriorità=0,508 }
+uuid:c23-secs:370986157428400-id:3817-type:PASTA-thread:consumer-state:end:::
+Consumer: estratto: OrdinePQ{ id=3817, PASTA, valorePriorità=0,508 }
+Producer: rilevato ordine da reinserire nel buffer.
+uuid:p24-secs:370986158095700-id:0-type:0-thread:producer-state:begin:::
+***** Producer controlla il buffer *****
+Buffer: inserimento OrdinePQ{ id=3817, PASTA, valorePriorità=0,508 }|| [0]
+***** Producer rilascia il buffer *****
+uuid:p24-secs:370986158347300-id:3817-type:PASTA-thread:producer-state:end:::
+Producer: reinserimento avvenuto con successo: OrdinePQ{ id=3817, PASTA, valorePriorità=0,508 }
+uuid:ch40-secs:370987546476800-id:0-type:0-thread:checker-state:begin:::
+***** Checker controlla il buffer *****
+Gestione Priorita': x1 = 0.4
+Gestione Priorita': x2 = 0.86
+Gestione Priorita': x3 = 1
+Gestione Priorita': x4 = 0.5
+Gestione Priorita': x5 = 0.03086111111111111
+Gestione Priorita': y = 0.5117152888642418
+Checker: aggiorno la priorità di: OrdinePQ{ id=3817, PASTA, valorePriorità=0,512 }
+Checker: priorità aggiornata: OrdinePQ{ id=3817, PASTA, valorePriorità=0,512 }
+***** Checker rilascia il buffer *****
+uuid:ch40-secs:370987547279900-id:0-type:0-thread:checker-state:end:::
+Consumer: chiedo l'ordine a priorità più alta dal buffer...
+uuid:c24-secs:370988157771400-id:0-type:0-thread:consumer-state:begin:::
+GestioneCode: Capacità massima di ordini in cucina raggiunta: 10
+GestioneCode: stampa di tutte le code: 
+RISO, entities.CodaPostazione{ingredientePrincipale=RISO, numeroOrdiniPresenti=4, gradoRiempimento=0.8, capacita=5, queue=[OrdinePQ{ id=3668, RISO, valorePriorità=0,385 }, OrdinePQ{ id=6054, RISO, valorePriorità=0,359 }, OrdinePQ{ id=6865, RISO, valorePriorità=0,159 }, OrdinePQ{ id=8313, RISO, valorePriorità=0,489 }]}
+CARNE, entities.CodaPostazione{ingredientePrincipale=CARNE, numeroOrdiniPresenti=2, gradoRiempimento=0.4, capacita=5, queue=[OrdinePQ{ id=5682, CARNE, valorePriorità=0,323 }, OrdinePQ{ id=7339, CARNE, valorePriorità=0,574 }]}
+PESCE, entities.CodaPostazione{ingredientePrincipale=PESCE, numeroOrdiniPresenti=1, gradoRiempimento=0.2, capacita=5, queue=[OrdinePQ{ id=9184, PESCE, valorePriorità=0,456 }]}
+PASTA, entities.CodaPostazione{ingredientePrincipale=PASTA, numeroOrdiniPresenti=3, gradoRiempimento=0.6, capacita=5, queue=[OrdinePQ{ id=3732, PASTA, valorePriorità=0,331 }, OrdinePQ{ id=3155, PASTA, valorePriorità=0,542 }, OrdinePQ{ id=8678, PASTA, valorePriorità=0,565 }]}
+Consumer: problemi nell'inserimento di: OrdinePQ{ id=3817, PASTA, valorePriorità=0,512 }
+Consumer: reinserisco nel buffer l'ordine: OrdinePQ{ id=3817, PASTA, valorePriorità=0,512 }
+uuid:c24-secs:370988159620800-id:3817-type:PASTA-thread:consumer-state:end:::
+Consumer: estratto: OrdinePQ{ id=3817, PASTA, valorePriorità=0,512 }
+Producer: rilevato ordine da reinserire nel buffer.
+uuid:p25-secs:370988160760600-id:0-type:0-thread:producer-state:begin:::
+***** Producer controlla il buffer *****
+Buffer: inserimento OrdinePQ{ id=3817, PASTA, valorePriorità=0,512 }|| [0]
+***** Producer rilascia il buffer *****
+uuid:p25-secs:370988161138400-id:3817-type:PASTA-thread:producer-state:end:::
+Producer: reinserimento avvenuto con successo: OrdinePQ{ id=3817, PASTA, valorePriorità=0,512 }
