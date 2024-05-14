@@ -1,149 +1,112 @@
-{"uuid": "cl1", "secs": "324462076606600", "id": "0", "thread": "cliente", "state": "begin"}
-{"uuid": "3cu1", "secs": "324462097299900", "id": "0", "thread": "cuoco_pesce", "state": "begin"}
-{"uuid": "1cu1", "secs": "324462097352500", "id": "0", "thread": "cuoco_pasta", "state": "begin"}
-{"uuid": "0cu1", "secs": "324462097519700", "id": "0", "thread": "cuoco_riso", "state": "begin"}
-{"uuid": "2cu1", "secs": "324462098077900", "id": "0", "thread": "cuoco_carne", "state": "begin"}
-{"uuid": "p1", "secs": "324462783461600", "id": "0", "thread": "producer", "state": "begin"}
-{"uuid": "p1", "secs": "324462786562300", "id": "1549", "thread": "producer", "state": "end"}
-{"uuid": "c1", "secs": "324463079390200", "id": "0", "thread": "consumer", "state": "begin"}
-{"uuid": "c1", "secs": "324463082608400", "id": "1549", "thread": "consumer", "state": "end"}
-{"uuid": "1cu1", "secs": "324463108857600", "id": "0", "thread": "cuoco_pasta", "state": "end"}
-{"uuid": "2cu1", "secs": "324463109135800", "id": "0", "thread": "cuoco_carne", "state": "end"}
-{"uuid": "3cu1", "secs": "324463109260600", "id": "0", "thread": "cuoco_pesce", "state": "end"}
-{"uuid": "1cu2", "secs": "324463109396100", "id": "0", "thread": "cuoco_pasta", "state": "begin"}
-{"uuid": "0cu1", "secs": "324463109429300", "id": "0", "thread": "cuoco_riso", "state": "end"}
-{"uuid": "2cu2", "secs": "324463109607600", "id": "0", "thread": "cuoco_carne", "state": "begin"}
-{"uuid": "0cu2", "secs": "324463110510500", "id": "0", "thread": "cuoco_riso", "state": "begin"}
-{"uuid": "3cu2", "secs": "324463110428500", "id": "0", "thread": "cuoco_pesce", "state": "begin"}
-{"uuid": "p2", "secs": "324463499300000", "id": "0", "thread": "producer", "state": "begin"}
-{"uuid": "p2", "secs": "324463499707100", "id": "5173", "thread": "producer", "state": "end"}
-{"uuid": "ch1", "secs": "324464081084300", "id": "0", "thread": "checker", "state": "begin"}
-{"uuid": "c2", "secs": "324464083444600", "id": "0", "thread": "consumer", "state": "begin"}
-{"uuid": "ch1", "secs": "324464086620300", "id": "0", "thread": "checker", "state": "end"}
-{"uuid": "c2", "secs": "324464086503200", "id": "5173", "thread": "consumer", "state": "end"}
-{"uuid": "2cu2", "secs": "324464110834600", "id": "0", "thread": "cuoco_carne", "state": "end"}
-{"uuid": "2cu3", "secs": "324464111252800", "id": "0", "thread": "cuoco_carne", "state": "begin"}
-{"uuid": "0cu2", "secs": "324464111987000", "id": "0", "thread": "cuoco_riso", "state": "end"}
-{"uuid": "0cu3", "secs": "324464113768600", "id": "0", "thread": "cuoco_riso", "state": "begin"}
-{"uuid": "3cu2", "secs": "324464115380500", "id": "0", "thread": "cuoco_pesce", "state": "end"}
-{"uuid": "3cu3", "secs": "324464115749300", "id": "0", "thread": "cuoco_pesce", "state": "begin"}
-{"uuid": "p3", "secs": "324464200736600", "id": "0", "thread": "producer", "state": "begin"}
-{"uuid": "p3", "secs": "324464201703900", "id": "9396", "thread": "producer", "state": "end"}
-{"uuid": "p4", "secs": "324464902971200", "id": "0", "thread": "producer", "state": "begin"}
-{"uuid": "p4", "secs": "324464903845800", "id": "4362", "thread": "producer", "state": "end"}
-{"uuid": "c3", "secs": "324465088160400", "id": "0", "thread": "consumer", "state": "begin"}
-{"uuid": "c3", "secs": "324465091756600", "id": "9396", "thread": "consumer", "state": "end"}
-{"uuid": "0cu3", "secs": "324465115986700", "id": "0", "thread": "cuoco_riso", "state": "end"}
-{"uuid": "0cu4", "secs": "324465116695600", "id": "0", "thread": "cuoco_riso", "state": "begin"}
-{"uuid": "3cu3", "secs": "324465118193900", "id": "0", "thread": "cuoco_pesce", "state": "end"}
-{"uuid": "3cu4", "secs": "324465119613600", "id": "0", "thread": "cuoco_pesce", "state": "begin"}
-{"uuid": "p5", "secs": "324465606446900", "id": "0", "thread": "producer", "state": "begin"}
-{"uuid": "p5", "secs": "324465608557300", "id": "5160", "thread": "producer", "state": "end"}
-{"uuid": "ch2", "secs": "324466087372600", "id": "0", "thread": "checker", "state": "begin"}
-{"uuid": "ch2", "secs": "324466092365700", "id": "0", "thread": "checker", "state": "end"}
-{"uuid": "c4", "secs": "324466092664100", "id": "0", "thread": "consumer", "state": "begin"}
-{"uuid": "c4", "secs": "324466094205600", "id": "5160", "thread": "consumer", "state": "end"}
-{"uuid": "0cu4", "secs": "324466118543900", "id": "0", "thread": "cuoco_riso", "state": "end"}
-{"uuid": "0cu5", "secs": "324466118873000", "id": "0", "thread": "cuoco_riso", "state": "begin"}
-{"uuid": "p6", "secs": "324466310541600", "id": "0", "thread": "producer", "state": "begin"}
-{"uuid": "p6", "secs": "324466312799200", "id": "7866", "thread": "producer", "state": "end"}
-{"uuid": "p7", "secs": "324467014177500", "id": "0", "thread": "producer", "state": "begin"}
-{"uuid": "p7", "secs": "324467015841000", "id": "5364", "thread": "producer", "state": "end"}
-{"uuid": "c5", "secs": "324467095209500", "id": "0", "thread": "consumer", "state": "begin"}
-{"uuid": "c5", "secs": "324467100321500", "id": "5364", "thread": "consumer", "state": "end"}
-{"uuid": "0cu5", "secs": "324467119914700", "id": "0", "thread": "cuoco_riso", "state": "end"}
-{"uuid": "0cu6", "secs": "324467120131700", "id": "0", "thread": "cuoco_riso", "state": "begin"}
-{"uuid": "p8", "secs": "324467717523200", "id": "0", "thread": "producer", "state": "begin"}
-{"uuid": "p8", "secs": "324467718838000", "id": "2335", "thread": "producer", "state": "end"}
-{"uuid": "ch3", "secs": "324468092703000", "id": "0", "thread": "checker", "state": "begin"}
-{"uuid": "ch3", "secs": "324468097523500", "id": "0", "thread": "checker", "state": "end"}
-{"uuid": "c6", "secs": "324468103663700", "id": "0", "thread": "consumer", "state": "begin"}
-{"uuid": "c6", "secs": "324468104628700", "id": "7866", "thread": "consumer", "state": "end"}
-{"uuid": "0cu6", "secs": "324468121858200", "id": "0", "thread": "cuoco_riso", "state": "end"}
-{"uuid": "0cu7", "secs": "324468122253000", "id": "0", "thread": "cuoco_riso", "state": "begin"}
-{"uuid": "p9", "secs": "324468420603400", "id": "0", "thread": "producer", "state": "begin"}
-{"uuid": "p9", "secs": "324468422085900", "id": "8619", "thread": "producer", "state": "end"}
-{"uuid": "c7", "secs": "324469105526300", "id": "0", "thread": "consumer", "state": "begin"}
-{"uuid": "c7", "secs": "324469108755800", "id": "8619", "thread": "consumer", "state": "end"}
-{"uuid": "p10", "secs": "324469123653500", "id": "0", "thread": "producer", "state": "begin"}
-{"uuid": "0cu7", "secs": "324469123530000", "id": "0", "thread": "cuoco_riso", "state": "end"}
-{"uuid": "0cu8", "secs": "324469124145700", "id": "0", "thread": "cuoco_riso", "state": "begin"}
-{"uuid": "p10", "secs": "324469124815100", "id": "4838", "thread": "producer", "state": "end"}
-{"uuid": "p11", "secs": "324469825956400", "id": "0", "thread": "producer", "state": "begin"}
-{"uuid": "p11", "secs": "324469827146800", "id": "5364", "thread": "producer", "state": "end"}
-{"uuid": "ch4", "secs": "324470098260500", "id": "0", "thread": "checker", "state": "begin"}
-{"uuid": "ch4", "secs": "324470099388200", "id": "0", "thread": "checker", "state": "end"}
-{"uuid": "c8", "secs": "324470110011900", "id": "0", "thread": "consumer", "state": "begin"}
-{"uuid": "c8", "secs": "324470111927900", "id": "5364", "thread": "consumer", "state": "end"}
-{"uuid": "0cu8", "secs": "324470125649100", "id": "0", "thread": "cuoco_riso", "state": "end"}
-{"uuid": "0cu9", "secs": "324470126194900", "id": "0", "thread": "cuoco_riso", "state": "begin"}
-{"uuid": "p12", "secs": "324470529066600", "id": "0", "thread": "producer", "state": "begin"}
-{"uuid": "p12", "secs": "324470531165000", "id": "1549", "thread": "producer", "state": "end"}
-{"uuid": "c9", "secs": "324471112964800", "id": "0", "thread": "consumer", "state": "begin"}
-{"uuid": "c9", "secs": "324471117327600", "id": "2335", "thread": "consumer", "state": "end"}
-{"uuid": "0cu9", "secs": "324471126595900", "id": "0", "thread": "cuoco_riso", "state": "end"}
-{"uuid": "0cu10", "secs": "324471126829000", "id": "0", "thread": "cuoco_riso", "state": "begin"}
-{"uuid": "p13", "secs": "324471233880700", "id": "0", "thread": "producer", "state": "begin"}
-{"uuid": "p13", "secs": "324471235348600", "id": "9396", "thread": "producer", "state": "end"}
-{"uuid": "p14", "secs": "324471950001000", "id": "0", "thread": "producer", "state": "begin"}
-{"uuid": "p14", "secs": "324471950641400", "id": "4362", "thread": "producer", "state": "end"}
-{"uuid": "ch5", "secs": "324472099542600", "id": "0", "thread": "checker", "state": "begin"}
-{"uuid": "ch5", "secs": "324472110221900", "id": "0", "thread": "checker", "state": "end"}
-{"uuid": "c10", "secs": "324472119689700", "id": "0", "thread": "consumer", "state": "begin"}
-{"uuid": "c10", "secs": "324472122360400", "id": "9396", "thread": "consumer", "state": "end"}
-{"uuid": "0cu10", "secs": "324472127120800", "id": "0", "thread": "cuoco_riso", "state": "end"}
-{"uuid": "0cu11", "secs": "324472127249000", "id": "0", "thread": "cuoco_riso", "state": "begin"}
-{"uuid": "p15", "secs": "324472652437200", "id": "0", "thread": "producer", "state": "begin"}
-{"uuid": "p15", "secs": "324472653788800", "id": "5160", "thread": "producer", "state": "end"}
-{"uuid": "0cu11", "secs": "324473134405500", "id": "0", "thread": "cuoco_riso", "state": "end"}
-{"uuid": "c11", "secs": "324473134899800", "id": "0", "thread": "consumer", "state": "begin"}
-{"uuid": "0cu12", "secs": "324473134925700", "id": "0", "thread": "cuoco_riso", "state": "begin"}
-{"uuid": "c11", "secs": "324473136174500", "id": "4838", "thread": "consumer", "state": "end"}
-{"uuid": "p16", "secs": "324473355596600", "id": "0", "thread": "producer", "state": "begin"}
-{"uuid": "p16", "secs": "324473355934000", "id": "4838", "thread": "producer", "state": "end"}
-{"uuid": "p17", "secs": "324474056877600", "id": "0", "thread": "producer", "state": "begin"}
-{"uuid": "p17", "secs": "324474057407000", "id": "7866", "thread": "producer", "state": "end"}
-{"uuid": "ch6", "secs": "324474111965300", "id": "0", "thread": "checker", "state": "begin"}
-{"uuid": "ch6", "secs": "324474116660200", "id": "0", "thread": "checker", "state": "end"}
-{"uuid": "0cu12", "secs": "324474136199100", "id": "0", "thread": "cuoco_riso", "state": "end"}
-{"uuid": "0cu13", "secs": "324474136439600", "id": "0", "thread": "cuoco_riso", "state": "begin"}
-{"uuid": "c12", "secs": "324474137786800", "id": "0", "thread": "consumer", "state": "begin"}
-{"uuid": "c12", "secs": "324474140680300", "id": "7866", "thread": "consumer", "state": "end"}
-{"uuid": "p18", "secs": "324474759252800", "id": "0", "thread": "producer", "state": "begin"}
-{"uuid": "p18", "secs": "324474759449300", "id": "7866", "thread": "producer", "state": "end"}
-{"uuid": "0cu13", "secs": "324475140959000", "id": "0", "thread": "cuoco_riso", "state": "end"}
-{"uuid": "0cu14", "secs": "324475141055800", "id": "0", "thread": "cuoco_riso", "state": "begin"}
-{"uuid": "c13", "secs": "324475141416900", "id": "0", "thread": "consumer", "state": "begin"}
-{"uuid": "c13", "secs": "324475142994300", "id": "7866", "thread": "consumer", "state": "end"}
-{"uuid": "p19", "secs": "324475460328500", "id": "0", "thread": "producer", "state": "begin"}
-{"uuid": "p19", "secs": "324475460424800", "id": "7866", "thread": "producer", "state": "end"}
-{"uuid": "ch7", "secs": "324476117792100", "id": "0", "thread": "checker", "state": "begin"}
-{"uuid": "ch7", "secs": "324476120357100", "id": "0", "thread": "checker", "state": "end"}
-{"uuid": "0cu14", "secs": "324476142034300", "id": "0", "thread": "cuoco_riso", "state": "end"}
-{"uuid": "0cu15", "secs": "324476142430700", "id": "0", "thread": "cuoco_riso", "state": "begin"}
-{"uuid": "c14", "secs": "324476144206400", "id": "0", "thread": "consumer", "state": "begin"}
-{"uuid": "c14", "secs": "324476146412000", "id": "7866", "thread": "consumer", "state": "end"}
-{"uuid": "p20", "secs": "324476161292500", "id": "0", "thread": "producer", "state": "begin"}
-{"uuid": "p20", "secs": "324476161425400", "id": "7866", "thread": "producer", "state": "end"}
-{"uuid": "p21", "secs": "324476864676700", "id": "0", "thread": "producer", "state": "begin"}
-{"uuid": "p21", "secs": "324476866232400", "id": "5364", "thread": "producer", "state": "end"}
-{"uuid": "0cu15", "secs": "324477143500900", "id": "0", "thread": "cuoco_riso", "state": "end"}
-{"uuid": "0cu16", "secs": "324477143911600", "id": "0", "thread": "cuoco_riso", "state": "begin"}
-{"uuid": "c15", "secs": "324477148678500", "id": "0", "thread": "consumer", "state": "begin"}
-{"uuid": "c15", "secs": "324477149897100", "id": "5364", "thread": "consumer", "state": "end"}
-{"uuid": "p22", "secs": "324477567579700", "id": "0", "thread": "producer", "state": "begin"}
-{"uuid": "p22", "secs": "324477567772500", "id": "5364", "thread": "producer", "state": "end"}
-{"uuid": "ch8", "secs": "324478120605100", "id": "0", "thread": "checker", "state": "begin"}
-{"uuid": "ch8", "secs": "324478123675900", "id": "0", "thread": "checker", "state": "end"}
-{"uuid": "0cu16", "secs": "324478144603600", "id": "0", "thread": "cuoco_riso", "state": "end"}
-{"uuid": "0cu17", "secs": "324478144896200", "id": "0", "thread": "cuoco_riso", "state": "begin"}
-{"uuid": "c16", "secs": "324478151748200", "id": "0", "thread": "consumer", "state": "begin"}
-{"uuid": "c16", "secs": "324478153301500", "id": "5364", "thread": "consumer", "state": "end"}
-{"uuid": "p23", "secs": "324478269294900", "id": "0", "thread": "producer", "state": "begin"}
-{"uuid": "p23", "secs": "324478269472000", "id": "5364", "thread": "producer", "state": "end"}
-{"uuid": "p24", "secs": "324478971014200", "id": "0", "thread": "producer", "state": "begin"}
-{"uuid": "p24", "secs": "324478972957900", "id": "2335", "thread": "producer", "state": "end"}
-{"uuid": "0cu17", "secs": "324479145921300", "id": "0", "thread": "cuoco_riso", "state": "end"}
-{"uuid": "0cu18", "secs": "324479146150100", "id": "0", "thread": "cuoco_riso", "state": "begin"}
-{"uuid": "c17", "secs": "324479154502700", "id": "0", "thread": "consumer", "state": "begin"}
-{"uuid": "c17", "secs": "324479157291600", "id": "5364", "thread": "consumer", "state": "end"}
+{"uuid": "cl1", "secs": "327949664340100", "id": "0", "type": "0", "thread": "cliente", "state": "begin"}
+{"uuid": "cl1", "secs": "327949684878000", "id": "4670", "type": "PASTA", "thread": "cliente", "state": "end"}
+{"uuid": "p1", "secs": "327950364768900", "id": "0", "type": "0", "thread": "producer", "state": "begin"}
+{"uuid": "p1", "secs": "327950372422800", "id": "7134", "type": "PASTA", "thread": "producer", "state": "end"}
+{"uuid": "c1", "secs": "327950660821600", "id": "0", "type": "0", "thread": "consumer", "state": "begin"}
+{"uuid": "c1", "secs": "327950667376000", "id": "7134", "type": "PASTA", "thread": "consumer", "state": "end"}
+{"uuid": "1cu1", "secs": "327950703813800", "id": "0", "type": "0", "thread": "cuoco_pasta", "state": "begin"}
+{"uuid": "p2", "secs": "327951090390700", "id": "0", "type": "0", "thread": "producer", "state": "begin"}
+{"uuid": "p2", "secs": "327951092208200", "id": "4670", "type": "PASTA", "thread": "producer", "state": "end"}
+{"uuid": "ch1", "secs": "327951667252000", "id": "0", "type": "0", "thread": "checker", "state": "begin"}
+{"uuid": "ch1", "secs": "327951669720400", "id": "0", "type": "0", "thread": "checker", "state": "end"}
+{"uuid": "c2", "secs": "327951670142800", "id": "0", "type": "0", "thread": "consumer", "state": "begin"}
+{"uuid": "c2", "secs": "327951671391700", "id": "4670", "type": "PASTA", "thread": "consumer", "state": "end"}
+{"uuid": "p3", "secs": "327951793276400", "id": "0", "type": "0", "thread": "producer", "state": "begin"}
+{"uuid": "p3", "secs": "327951794246700", "id": "6297", "type": "PESCE", "thread": "producer", "state": "end"}
+{"uuid": "p4", "secs": "327952495494300", "id": "0", "type": "0", "thread": "producer", "state": "begin"}
+{"uuid": "p4", "secs": "327952499202500", "id": "6931", "type": "RISO", "thread": "producer", "state": "end"}
+{"uuid": "c3", "secs": "327952672635600", "id": "0", "type": "0", "thread": "consumer", "state": "begin"}
+{"uuid": "c3", "secs": "327952674824200", "id": "6297", "type": "PESCE", "thread": "consumer", "state": "end"}
+{"uuid": "3cu1", "secs": "327952702643200", "id": "0", "type": "0", "thread": "cuoco_pesce", "state": "begin"}
+{"uuid": "p5", "secs": "327953200016300", "id": "0", "type": "0", "thread": "producer", "state": "begin"}
+{"uuid": "p5", "secs": "327953201042800", "id": "6568", "type": "RISO", "thread": "producer", "state": "end"}
+{"uuid": "ch2", "secs": "327953670867000", "id": "0", "type": "0", "thread": "checker", "state": "begin"}
+{"uuid": "ch2", "secs": "327953673823900", "id": "0", "type": "0", "thread": "checker", "state": "end"}
+{"uuid": "c4", "secs": "327953676190700", "id": "0", "type": "0", "thread": "consumer", "state": "begin"}
+{"uuid": "c4", "secs": "327953677438900", "id": "6931", "type": "RISO", "thread": "consumer", "state": "end"}
+{"uuid": "0cu1", "secs": "327953707111300", "id": "0", "type": "0", "thread": "cuoco_riso", "state": "begin"}
+{"uuid": "p6", "secs": "327953904034300", "id": "0", "type": "0", "thread": "producer", "state": "begin"}
+{"uuid": "p6", "secs": "327953904870500", "id": "7162", "type": "RISO", "thread": "producer", "state": "end"}
+{"uuid": "p7", "secs": "327954606430000", "id": "0", "type": "0", "thread": "producer", "state": "begin"}
+{"uuid": "p7", "secs": "327954606674500", "id": "6852", "type": "PASTA", "thread": "producer", "state": "end"}
+{"uuid": "c5", "secs": "327954678329500", "id": "0", "type": "0", "thread": "consumer", "state": "begin"}
+{"uuid": "c5", "secs": "327954679117200", "id": "6568", "type": "RISO", "thread": "consumer", "state": "end"}
+{"uuid": "p8", "secs": "327955307271900", "id": "0", "type": "0", "thread": "producer", "state": "begin"}
+{"uuid": "p8", "secs": "327955307597200", "id": "5365", "type": "CARNE", "thread": "producer", "state": "end"}
+{"uuid": "ch3", "secs": "327955673945800", "id": "0", "type": "0", "thread": "checker", "state": "begin"}
+{"uuid": "ch3", "secs": "327955675607800", "id": "0", "type": "0", "thread": "checker", "state": "end"}
+{"uuid": "c6", "secs": "327955680155600", "id": "0", "type": "0", "thread": "consumer", "state": "begin"}
+{"uuid": "c6", "secs": "327955681447400", "id": "6852", "type": "PASTA", "thread": "consumer", "state": "end"}
+{"uuid": "p9", "secs": "327956008839300", "id": "0", "type": "0", "thread": "producer", "state": "begin"}
+{"uuid": "p9", "secs": "327956009034500", "id": "4640", "type": "PESCE", "thread": "producer", "state": "end"}
+{"uuid": "c7", "secs": "327956681819400", "id": "0", "type": "0", "thread": "consumer", "state": "begin"}
+{"uuid": "c7", "secs": "327956683302900", "id": "4640", "type": "PESCE", "thread": "consumer", "state": "end"}
+{"uuid": "p10", "secs": "327956709899700", "id": "0", "type": "0", "thread": "producer", "state": "begin"}
+{"uuid": "p10", "secs": "327956711006400", "id": "3922", "type": "PESCE", "thread": "producer", "state": "end"}
+{"uuid": "p11", "secs": "327957412179300", "id": "0", "type": "0", "thread": "producer", "state": "begin"}
+{"uuid": "p11", "secs": "327957412749400", "id": "4699", "type": "PESCE", "thread": "producer", "state": "end"}
+{"uuid": "ch4", "secs": "327957676515300", "id": "0", "type": "0", "thread": "checker", "state": "begin"}
+{"uuid": "ch4", "secs": "327957677532300", "id": "0", "type": "0", "thread": "checker", "state": "end"}
+{"uuid": "c8", "secs": "327957684580600", "id": "0", "type": "0", "thread": "consumer", "state": "begin"}
+{"uuid": "c8", "secs": "327957685159000", "id": "3922", "type": "PESCE", "thread": "consumer", "state": "end"}
+{"uuid": "p12", "secs": "327958113998300", "id": "0", "type": "0", "thread": "producer", "state": "begin"}
+{"uuid": "p12", "secs": "327958114789400", "id": "7134", "type": "PASTA", "thread": "producer", "state": "end"}
+{"uuid": "c9", "secs": "327958686970100", "id": "0", "type": "0", "thread": "consumer", "state": "begin"}
+{"uuid": "c9", "secs": "327958688628900", "id": "5365", "type": "CARNE", "thread": "consumer", "state": "end"}
+{"uuid": "2cu1", "secs": "327958709468200", "id": "0", "type": "0", "thread": "cuoco_carne", "state": "begin"}
+{"uuid": "p13", "secs": "327958816636500", "id": "0", "type": "0", "thread": "producer", "state": "begin"}
+{"uuid": "p13", "secs": "327958818257300", "id": "6297", "type": "PESCE", "thread": "producer", "state": "end"}
+{"uuid": "p14", "secs": "327959521423300", "id": "0", "type": "0", "thread": "producer", "state": "begin"}
+{"uuid": "p14", "secs": "327959521997000", "id": "6931", "type": "RISO", "thread": "producer", "state": "end"}
+{"uuid": "ch5", "secs": "327959678269300", "id": "0", "type": "0", "thread": "checker", "state": "begin"}
+{"uuid": "ch5", "secs": "327959679931000", "id": "0", "type": "0", "thread": "checker", "state": "end"}
+{"uuid": "c10", "secs": "327959689445300", "id": "0", "type": "0", "thread": "consumer", "state": "begin"}
+{"uuid": "c10", "secs": "327959690408700", "id": "6931", "type": "RISO", "thread": "consumer", "state": "end"}
+{"uuid": "p15", "secs": "327960222671400", "id": "0", "type": "0", "thread": "producer", "state": "begin"}
+{"uuid": "p15", "secs": "327960223404300", "id": "6568", "type": "RISO", "thread": "producer", "state": "end"}
+{"uuid": "c11", "secs": "327960691325900", "id": "0", "type": "0", "thread": "consumer", "state": "begin"}
+{"uuid": "c11", "secs": "327960693192600", "id": "6297", "type": "PESCE", "thread": "consumer", "state": "end"}
+{"uuid": "p16", "secs": "327960925753900", "id": "0", "type": "0", "thread": "producer", "state": "begin"}
+{"uuid": "p16", "secs": "327960926454900", "id": "6297", "type": "PESCE", "thread": "producer", "state": "end"}
+{"uuid": "p17", "secs": "327961627892000", "id": "0", "type": "0", "thread": "producer", "state": "begin"}
+{"uuid": "p17", "secs": "327961628888000", "id": "7162", "type": "RISO", "thread": "producer", "state": "end"}
+{"uuid": "ch6", "secs": "327961680595700", "id": "0", "type": "0", "thread": "checker", "state": "begin"}
+{"uuid": "ch6", "secs": "327961684962300", "id": "0", "type": "0", "thread": "checker", "state": "end"}
+{"uuid": "c12", "secs": "327961694555200", "id": "0", "type": "0", "thread": "consumer", "state": "begin"}
+{"uuid": "c12", "secs": "327961695956500", "id": "6297", "type": "PESCE", "thread": "consumer", "state": "end"}
+{"uuid": "p18", "secs": "327962329685700", "id": "0", "type": "0", "thread": "producer", "state": "begin"}
+{"uuid": "p18", "secs": "327962330019800", "id": "6297", "type": "PESCE", "thread": "producer", "state": "end"}
+{"uuid": "c13", "secs": "327962696325500", "id": "0", "type": "0", "thread": "consumer", "state": "begin"}
+{"uuid": "c13", "secs": "327962697989700", "id": "6297", "type": "PESCE", "thread": "consumer", "state": "end"}
+{"uuid": "p19", "secs": "327963032681600", "id": "0", "type": "0", "thread": "producer", "state": "begin"}
+{"uuid": "p19", "secs": "327963033027600", "id": "6297", "type": "PESCE", "thread": "producer", "state": "end"}
+{"uuid": "ch7", "secs": "327963685903500", "id": "0", "type": "0", "thread": "checker", "state": "begin"}
+{"uuid": "ch7", "secs": "327963687779700", "id": "0", "type": "0", "thread": "checker", "state": "end"}
+{"uuid": "c14", "secs": "327963698652400", "id": "0", "type": "0", "thread": "consumer", "state": "begin"}
+{"uuid": "c14", "secs": "327963702597800", "id": "6297", "type": "PESCE", "thread": "consumer", "state": "end"}
+{"uuid": "p20", "secs": "327963733717800", "id": "0", "type": "0", "thread": "producer", "state": "begin"}
+{"uuid": "p20", "secs": "327963733857000", "id": "6297", "type": "PESCE", "thread": "producer", "state": "end"}
+{"uuid": "p21", "secs": "327964435623100", "id": "0", "type": "0", "thread": "producer", "state": "begin"}
+{"uuid": "p21", "secs": "327964436382900", "id": "6852", "type": "PASTA", "thread": "producer", "state": "end"}
+{"uuid": "c15", "secs": "327964703853700", "id": "0", "type": "0", "thread": "consumer", "state": "begin"}
+{"uuid": "c15", "secs": "327964704631400", "id": "6297", "type": "PESCE", "thread": "consumer", "state": "end"}
+{"uuid": "p22", "secs": "327965137379700", "id": "0", "type": "0", "thread": "producer", "state": "begin"}
+{"uuid": "p22", "secs": "327965137493500", "id": "6297", "type": "PESCE", "thread": "producer", "state": "end"}
+{"uuid": "ch8", "secs": "327965692822600", "id": "0", "type": "0", "thread": "checker", "state": "begin"}
+{"uuid": "ch8", "secs": "327965694391800", "id": "0", "type": "0", "thread": "checker", "state": "end"}
+{"uuid": "c16", "secs": "327965705788000", "id": "0", "type": "0", "thread": "consumer", "state": "begin"}
+{"uuid": "c16", "secs": "327965709151800", "id": "6297", "type": "PESCE", "thread": "consumer", "state": "end"}
+{"uuid": "p23", "secs": "327965839016000", "id": "0", "type": "0", "thread": "producer", "state": "begin"}
+{"uuid": "p23", "secs": "327965839233100", "id": "6297", "type": "PESCE", "thread": "producer", "state": "end"}
+{"uuid": "p24", "secs": "327966539852500", "id": "0", "type": "0", "thread": "producer", "state": "begin"}
+{"uuid": "p24", "secs": "327966540122600", "id": "5365", "type": "CARNE", "thread": "producer", "state": "end"}
+{"uuid": "c17", "secs": "327966709510100", "id": "0", "type": "0", "thread": "consumer", "state": "begin"}
+{"uuid": "c17", "secs": "327966711310100", "id": "6297", "type": "PESCE", "thread": "consumer", "state": "end"}
+{"uuid": "p25", "secs": "327967240736800", "id": "0", "type": "0", "thread": "producer", "state": "begin"}
+{"uuid": "p25", "secs": "327967240877100", "id": "6297", "type": "PESCE", "thread": "producer", "state": "end"}
+{"uuid": "ch9", "secs": "327967694576100", "id": "0", "type": "0", "thread": "checker", "state": "begin"}
+{"uuid": "ch9", "secs": "327967700661700", "id": "0", "type": "0", "thread": "checker", "state": "end"}
+{"uuid": "c18", "secs": "327967713526100", "id": "0", "type": "0", "thread": "consumer", "state": "begin"}
+{"uuid": "c18", "secs": "327967714780900", "id": "6297", "type": "PESCE", "thread": "consumer", "state": "end"}
+{"uuid": "p26", "secs": "327967942060900", "id": "0", "type": "0", "thread": "producer", "state": "begin"}
+{"uuid": "p26", "secs": "327967942169400", "id": "6297", "type": "PESCE", "thread": "producer", "state": "end"}

@@ -37,18 +37,17 @@ public class Cliente implements Runnable{
             producer.addToQueue(ordinePQ);
             System.out.println("Cliente: aggiungo un ordine nel sistema: " + ordinePQ);
 
+            Printer.stampaLog(
+                    uuid_prefix+localIDGenerator,
+                    Thread.currentThread().getName(),
+                    ordinePQ,
+                    true);
             // Aspetta un periodo randomico e ricomincia
             try {
                 Thread.sleep(random.nextInt(10000,100000));
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-
-            Printer.stampaLog(
-                    uuid_prefix+localIDGenerator,
-                    Thread.currentThread().getName(),
-                    ordinePQ.getId(),
-                    true);
 
         }
     }

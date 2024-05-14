@@ -70,7 +70,7 @@ public class Consumer implements Runnable{
                 Printer.stampaLog(
                         uuid_prefix+localIDGenerator,
                         Thread.currentThread().getName(),
-                        ordinePQ.map(OrdinePQ::getId).orElse(0),
+                        ordinePQ,
                         true);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
