@@ -2,7 +2,6 @@ package buffer;
 
 import entities.OrdinePQ;
 import util.Printer;
-import util.UniqueIdGenerator;
 
 import java.util.AbstractMap;
 import java.util.LinkedList;
@@ -20,22 +19,53 @@ import java.util.concurrent.Semaphore;
  */
 public class Buffer implements ProducerIF, ConsumerIF, CheckerIF {
 
-    private static Buffer INSTANCE; // Singleton class
+    /**
+     * Istanza della classe Buffer per creare una Singleton class
+     */
+    private static Buffer INSTANCE;
 
-    // Dichiarazione dei semafori per sincronizzare l'accesso al buffer
-    private Semaphore FULL;   // Semaforo per indicare che il buffer è pieno
-    private Semaphore EMPTY;  // Semaforo per indicare che il buffer è vuoto
-    private Semaphore BUSY;   // Semaforo per gestire l'accesso esclusivo al buffer
+    // Dichiarazione dei semafori per sincronizzare l'accesso al buffer:
 
+    /**
+     * Semaforo per indicare che il buffer è pieno
+     */
+    private Semaphore FULL;
+
+    /**
+     * Semaforo per indicare che il buffer è vuoto
+     */
+    private Semaphore EMPTY;
+
+    /**
+     * Semaforo per gestire l'accesso esclusivo al buffer
+     */
+    private Semaphore BUSY;
+
+    /**
+     * Struttura dati Index Min Priority Queue
+     */
     private IndexMinPQ<Double> indexMinPQ;
 
+    /**
+     * Dizionario con associazione {chiave : ordine}.
+     * Genera le chiavi da associare ad ogni ordine per poterlo inserire tramite di esse nella indexMinPQ.
+     */
     private Dizionario dizionario;
 
+    /**
+     * Dimensione max del buffer.
+     */
     private final int BUFFER_SIZE = 10;
 
+    /**
+     * Dimensione della finestra di controllo.
+     */
     private final int WINDOW_SIZE = 3;
 
-    private int iterator; // variabile che scorre il buffer
+    /**
+     *  variabile che scorre il buffer
+     */
+    private int iterator;
 
     /**
      * Crea il Dizionario, La IndexMinPQ e inizializza i semafori.

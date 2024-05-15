@@ -4,8 +4,10 @@ import entities.OrdinePQ;
 
 import java.util.Optional;
 
+/**
+ * Interfaccia che permette al thread Consumer di interagire con il Buffer.
+ */
 public interface ConsumerIF {
-
 
     /**
      * Rimuovi l'ordine a priorità più elevata dal buffer.
@@ -13,12 +15,5 @@ public interface ConsumerIF {
      * @return ordine a priorità più elevata.
      */
     Optional<OrdinePQ> getMinPQ() throws InterruptedException;
-
-    /**
-     *  Rinserisci l'ordine all'interno del buffer.
-     *
-     * @param ordinePQ ordine da re_inserire.
-     */
-    void insertInBuffer(OrdinePQ ordinePQ) throws Exception;
 
 }

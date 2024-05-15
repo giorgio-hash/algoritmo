@@ -6,6 +6,9 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.concurrent.Semaphore;
 
+/**
+ * Interfaccia che permette al thread Checker di interagire con il Buffer
+ */
 public interface CheckerIF {
 
     /**

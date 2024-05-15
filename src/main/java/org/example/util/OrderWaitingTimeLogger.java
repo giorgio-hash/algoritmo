@@ -9,14 +9,46 @@ import java.io.IOException;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
+/**
+ * Classe di utilità che permette di generare un file di report csv con i dati della simulazione.
+ */
 public class OrderWaitingTimeLogger {
-    private static final String OUTPUT_FOLDER = "output";
-    private static final String CSV_SUBFOLDER = "csv";
-    private static final String CSV_FILE = OUTPUT_FOLDER + File.separator + CSV_SUBFOLDER + File.separator + "waiting_time.csv";
-    private static boolean append = false;
-    private static boolean intestazione = false;
-    private static int orderCount = 1; // Numero progressivo iniziale
 
+    /**
+     * cartella di output.
+     */
+    private static final String OUTPUT_FOLDER = "output";
+
+    /**
+     * cartella in cui mettere il file csv
+     */
+    private static final String CSV_SUBFOLDER = "csv";
+
+    /**
+     * nome e percorso del file csv di output.
+     */
+    private static final String CSV_FILE = OUTPUT_FOLDER + File.separator + CSV_SUBFOLDER + File.separator + "waiting_time.csv";
+
+    /**
+     * booleano che serve per sovrascrivere il file inizialmente e poi di aggiornarlo.
+     */
+    private static boolean append = false;
+
+    /**
+     * booleano che serve per stampare l'intestazione la prima volta e poi ignorarla.
+     */
+    private static boolean intestazione = false;
+
+    /**
+     * Numero progressivo iniziale.
+     */
+    private static int orderCount = 1;
+
+    /**
+     * Scrivi i parametri in considerazione in una nuova riga nel file di output.
+     *
+     * @param ordinePQ ordine estratto dalla cucina e quindi completato.
+     */
     public static void logOrder(OrdinePQ ordinePQ) {
 
         Timestamp orderTimeStamp = ordinePQ.gettOrdinazione();

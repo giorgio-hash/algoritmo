@@ -1,11 +1,12 @@
 package entities;
 
-import util.GestionePriorita;
 
 import java.sql.Timestamp;
 import java.time.Duration;
-import java.time.Instant;
 
+/**
+ * Entità OrdinePQ: ordine con priorità e i parametri per calcolarla.
+ */
 public class OrdinePQ {
     /**
      * Identificatore dell'ordine
@@ -74,6 +75,20 @@ public class OrdinePQ {
      */
     private double prioritaIniziale;
 
+    /**
+     * Costruttore completo
+     *
+     * @param id codice identificativo
+     * @param idComanda codice identificativo della comanda
+     * @param idPiatto codice identificativo del piatto
+     * @param stato stato dell'ordine
+     * @param tOrdinazione istante di tempo in cui è stata piazzata l'ordinazione
+     * @param urgenzaCliente urgenza del cliente
+     * @param ingredientePrincipale tipo enumerativo di ingrediente principale
+     * @param valorePriorita valore della priorità dell'ordine
+     * @param tp tempo di preparazione
+     * @param numOrdineEffettuato numero progressivo ordine effettuato dallo stesso cliente
+     */
     public OrdinePQ(int id,
                     int idComanda,
                     String idPiatto,
@@ -98,6 +113,17 @@ public class OrdinePQ {
         this.prioritaIniziale = 0.0;
     }
 
+    /**
+     * Costruttore di OrdinePQ con solo i campi relativi ai parametri dell'algoritmo,
+     * rimanda al costruttore principale.
+     *
+     * @param id codice identificativo
+     * @param urgenzaCliente urgenza del cliente
+     * @param ingredientePrincipale tipo enumerativo di ingrediente principale
+     * @param tp tempo di preparazione
+     * @param numOrdineEffettuato numero progressivo ordine effettuato dallo stesso cliente
+     * @param tOrdinazione istante di tempo in cui è stata piazzata l'ordinazione
+     */
     public OrdinePQ(int id,
                     Boolean urgenzaCliente,
                     IngredientePrincipale ingredientePrincipale,

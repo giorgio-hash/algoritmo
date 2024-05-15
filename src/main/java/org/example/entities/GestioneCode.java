@@ -5,11 +5,19 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.Semaphore;
 
-// Entita' CUCINA
+/**
+ * Entità cucina, contiene e gestisce le code di postazione.
+ */
 public class GestioneCode {
 
-    private static GestioneCode INSTANCE; // Singleton class
+    /**
+     * Istanza per generare una Singleton class
+     */
+    private static GestioneCode INSTANCE;
 
+    /**
+     * Postazioni della cucina
+     */
     private final HashMap<String, CodaPostazione> postazioni;
 
     /**
@@ -17,8 +25,15 @@ public class GestioneCode {
      */
     private final int MAX_CAPACITY = 10;
 
-    private Semaphore FULL;   // Semaforo per indicare che il buffer è pieno
-    private Semaphore EMPTY;  // Semaforo per indicare che il buffer è vuoto
+    /**
+     * Semaforo per indicare che il buffer è pieno
+     */
+    private Semaphore FULL;
+
+    /**
+     * Semaforo per indicare che il buffer è vuoto
+     */
+    private Semaphore EMPTY;
 
     /**
      * Si creano le code di postazione.
@@ -57,8 +72,8 @@ public class GestioneCode {
     /**
      * Richiesta per ottenere una specifica coda di postazione in base all'identificativo ingrediente principale
      *
-     * @param ingredientePrincipale identificativo della codaPostazione <i>String<i/>
-     * @return un oggetto container di tipo Optional che potrebbe contenere <i>codaPostazioneDTO<i/> oppure <i>null<i/>
+     * @param ingredientePrincipale identificativo della codaPostazione <i>String</i>
+     * @return un oggetto container di tipo Optional che potrebbe contenere <i>codaPostazioneDTO</i> oppure <i>null</i>
      */
     public Optional<CodaPostazione> getCodaPostazione(IngredientePrincipale ingredientePrincipale) {
         return Optional.ofNullable(postazioni.get(ingredientePrincipale.toString()));
@@ -68,8 +83,8 @@ public class GestioneCode {
      * Richiesta per ottenere l'ordine che deve essere preparato in una specifica coda di postazione
      * in base all'identificativo ingrediente principale
      *
-     * @param ingredientePrincipale identificativo della codaPostazione <i>String<i/>
-     * @return un oggetto container di tipo Optional che potrebbe contenere <i>codaPostazioneDTO<i/> oppure <i>null<i/>
+     * @param ingredientePrincipale identificativo della codaPostazione <i>String</i>
+     * @return un oggetto container di tipo Optional che potrebbe contenere <i>codaPostazioneDTO</i> oppure <i>null</i>
      */
     public Optional<OrdinePQ> getOrder(String ingredientePrincipale) {
         Optional<CodaPostazione> codaPostazione =
@@ -87,7 +102,7 @@ public class GestioneCode {
      * Notifica riguardo l'avvenuta preparazione di un ordine da parte di una determinata postazione della cucina.
      *
      * @param ingredientePrincipale identificativo della postazione della cucina responsabile
-     * @return un oggetto container di tipo Optional che potrebbe contenere <i>OrdineDTO<i/>oppure<i>null<i/>
+     * @return un oggetto container di tipo Optional che potrebbe contenere <i>OrdineDTO</i>oppure<i>null</i>
      */
     public Optional<OrdinePQ> postNotifica(IngredientePrincipale ingredientePrincipale, OrdinePQ ordinePQ)
             throws InterruptedException {

@@ -8,7 +8,15 @@ import util.GeneraOrdine;
 import java.time.Instant;
 import java.util.ArrayList;
 
+/**
+ * Classe Main del progetto
+ */
 public class Main {
+        /**
+         * Fa partire una simulazione
+         *
+         * @param args args
+         */
     public static void main(String[] args) {
 
             // SIMULAZIONE
