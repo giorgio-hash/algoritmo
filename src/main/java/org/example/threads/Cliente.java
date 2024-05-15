@@ -7,19 +7,42 @@ import util.Printer;
 import java.util.Random;
 
 /**
- * Thread che simula il comportamento di un Cliente
+ * Thread che simula il comportamento di un Cliente.
  */
 public class Cliente implements Runnable{
 
+    /**
+     * istanza della classe random.
+     */
     private final Random random = new Random();
+
+    /**
+     * Thread del producer.
+     */
     private final Producer producer;
 
     //log
+    /**
+     * generatore locale di id
+     */
     private int localIDGenerator = 0;
-    private static int uuid_prefix_generator=0;
-    private final String uuid_prefix;
-    public Cliente(Producer producer) {
 
+    /**
+     * generatore del prefisso uuid
+     */
+    private static int uuid_prefix_generator=0;
+
+    /**
+     * prefisso uuid
+     */
+    private final String uuid_prefix;
+
+    /**
+     * Costruttore del thread cliente
+     *
+     * @param producer thread del producer
+     */
+    public Cliente(Producer producer) {
         this.producer = producer;
         uuid_prefix = (uuid_prefix_generator++) + "cl";
     }

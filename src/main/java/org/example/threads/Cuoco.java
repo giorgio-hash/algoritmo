@@ -1,5 +1,6 @@
 package threads;
 
+import entities.FrontSignalPort;
 import entities.GestioneCode;
 import entities.IngredientePrincipale;
 import entities.OrdinePQ;
@@ -12,18 +13,40 @@ import java.util.Optional;
  */
 public class Cuoco implements Runnable{
 
+    /**
+     * Ingrediente principale sul quale è specializzato il cuoco
+     */
     private IngredientePrincipale ingredientePrincipale;
-    private GestioneCode gestioneCode;
+
+    /**
+     * Buffer da quale prende le ordinazioni
+     */
+    private final FrontSignalPort buffer;
 
     //log
+    /**
+     * id locale
+     */
     private int localIDGenerator = 0;
+    /**
+     * predisso uuid generatore
+     */
     private static int uuid_prefix_generator=0;
+    /**
+     * prefisso uuid
+     */
     private String uuid_prefix;
 
 
-    public Cuoco(GestioneCode gestioneCode, IngredientePrincipale ingredientePrincipale) {
+    /**
+     * Costruttore del thread cuoco
+     *
+     * @param buffer coda dalla quale il cuoco prende le ordinazioni
+     * @param ingredientePrincipale ingrediente principale sul quale è specializzato il cuoco
+     */
+    public Cuoco(GestioneCode buffer, IngredientePrincipale ingredientePrincipale) {
         this.ingredientePrincipale = ingredientePrincipale;
-        this.gestioneCode = gestioneCode;
+        this.buffer = buffer;
         uuid_prefix = (uuid_prefix_generator++) + "cu";
     }
 
@@ -37,9 +60,9 @@ public class Cuoco implements Runnable{
         while (true) {
 
             System.out.println("Cuoco " + ingredientePrincipale.toString() + ": osservo la coda di postazione: " +
-                    gestioneCode.getCodaPostazione(ingredientePrincipale).toString());
+                    buffer.getCodaPostazione(ingredientePrincipale).toString());
 
-            Optional<OrdinePQ> ordinePQ = gestioneCode.getOrder(ingredientePrincipale.toString());
+            Optional<OrdinePQ> ordinePQ = buffer.getOrder(ingredientePrincipale.toString());
             if (ordinePQ.isPresent()) {
 
                 //stampa di log
@@ -59,7 +82,7 @@ public class Cuoco implements Runnable{
                     throw new RuntimeException(e);
                 }
                 try {
-                    gestioneCode.postNotifica(ordinePQ.get().getIngredientePrincipale(), ordinePQ.get());
+                    buffer.postNotifica(ordinePQ.get().getIngredientePrincipale(), ordinePQ.get());
                     System.out.println("Cuoco " + ingredientePrincipale.toString() + ": ordine completato: " + ordinePQ);
                 } catch (InterruptedException e) {
                     System.out.println("Cuoco " + ingredientePrincipale.toString() + ": errore per : " + ordinePQ);

@@ -10,7 +10,7 @@ import java.util.concurrent.Semaphore;
 /**
  * Coda di una singola postazione della cucina
  */
-public class CodaPostazione {
+public class CodaPostazione implements CodaPostazioneIF {
 
     /**
      * identificativo della coda di postazione (IN MAIUSCOLO)
@@ -65,6 +65,7 @@ public class CodaPostazione {
      * @param ordineDTO ordine da inserire.
      * @return {@code true} se è stato aggiunto correttamente, {@code false} altrimenti.
      */
+    @Override
     public boolean insert(OrdinePQ ordineDTO) throws InterruptedException {
         BUSY.acquire();
         if (isFull()) {
@@ -86,6 +87,7 @@ public class CodaPostazione {
      *
      * @return Optional contentente la testa della coda se non è vuota, Optional contenente null altrimenti
      */
+    @Override
     public Optional<OrdinePQ> remove() throws InterruptedException {
         BUSY.acquire();
         Optional<OrdinePQ> ordinePQ = Optional.ofNullable(queue.poll());

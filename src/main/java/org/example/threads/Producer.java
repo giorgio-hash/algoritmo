@@ -4,7 +4,6 @@ import buffer.ProducerIF;
 import entities.OrdinePQ;
 import util.GestionePriorita;
 import util.Printer;
-import util.UniqueIdGenerator;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -14,17 +13,43 @@ import java.util.concurrent.LinkedBlockingQueue;
  */
 public class Producer implements Runnable{
 
+    /**
+     * Buffer sul quale il producer deve inserire gli ordini.
+     */
     private final ProducerIF buffer;
-    private final Object lock = new Object(); // Internal lock
+
+    /**
+     * lock interno per sincronizzazione.
+     */
+    private final Object lock = new Object();
 
     //POLLING
+    /**
+     * Coda interna del producer, sulla quale riceve gli ordini dai clienti.
+     */
     private final BlockingQueue<OrdinePQ> queue = new LinkedBlockingQueue<>();
+
+    /**
+     * Coda ad alta priorità del producer, sulla quale riceve gli ordini da reinserire immediatamente nel buffer.
+     */
     private final BlockingQueue<OrdinePQ> highPriorityQueue = new LinkedBlockingQueue<>();
 
     //log
+    /**
+     * generatore locale di id.
+     */
     private int localIDGenerator = 0;
+
+    /**
+     * prefisso uuid.
+     */
     private final String uuid_prefix = "p";
 
+    /**
+     * Costruttore del thread producer
+     *
+     * @param buffer buffer sul quale il producer deve inserire gli ordini.
+     */
     public Producer(ProducerIF buffer) {
         this.buffer = buffer;
     }
