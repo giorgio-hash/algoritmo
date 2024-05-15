@@ -9,39 +9,36 @@ import java.time.LocalDateTime;
 import java.util.Random;
 
 /**
- * Classe di utilità che permette di generare degli ordini, utile per una simulazione
+ * Classe di utilità che permette di generare degli ordini,
+ * utile per una simulazione.
  */
-public class GeneraOrdine {
+public final class GeneraOrdine {
 
     /**
-     * Genera un ordinePQ dato un indice
-     *
-     * @param i indice dell'ordine da generare
-     * @return OrdinePQ
+     * Costruttore privato per classe di utilità Genera ordine.
      */
-    public static OrdinePQ genOrdine(int i){
-        switch (i){
-            case 1:
-                return genOrdine1();
-            case 2:
-                return genOrdine2();
-            case 3:
-                return genOrdine3();
-            case 4:
-                return genOrdine4();
-            case 5:
-                return genOrdine5();
-            case 6:
-                return genOrdine6();
-            case 7:
-                return genOrdine7();
-            case 8:
-                return genOrdine8();
-            case 9:
-                return genOrdine9();
-            default:
-                return genOrdineDef();
-        }
+    private GeneraOrdine() { }
+
+
+    /**
+     * Genera un ordinePQ dato un indice.
+     *
+     * @param i indice dell'ordine da generare.
+     * @return OrdinePQ.
+     */
+    public static OrdinePQ genOrdine(final int i) {
+        return switch (i) {
+            case 1 -> genOrdine1();
+            case 2 -> genOrdine2();
+            case 3 -> genOrdine3();
+            case 4 -> genOrdine4();
+            case 5 -> genOrdine5();
+            case 6 -> genOrdine6();
+            case 7 -> genOrdine7();
+            case 8 -> genOrdine8();
+            case 9 -> genOrdine9();
+            default -> genOrdineDef();
+        };
     }
 
     /**
@@ -189,7 +186,7 @@ public class GeneraOrdine {
      *
      * @return nuovo oggetto OrdinePQ
      */
-    public static OrdinePQ genOrdineRandom(){
+    public static OrdinePQ genOrdineRandom() {
         Random random = new Random();
         int id = random.nextInt(1000, 10000);
         int idComanda = random.nextInt(1000,10000);
@@ -219,7 +216,7 @@ public class GeneraOrdine {
      * @return tipo enumerativo casuale
      * @param <T> tipo enumerativo generico
      */
-    private static <T extends Enum<?>> T getRandomEnum(Class<T> enumeration) {
+    private static <T extends Enum<?>> T getRandomEnum(final Class<T> enumeration) {
         Random random = new Random();
         int index = random.nextInt(enumeration.getEnumConstants().length);
         return enumeration.getEnumConstants()[index];

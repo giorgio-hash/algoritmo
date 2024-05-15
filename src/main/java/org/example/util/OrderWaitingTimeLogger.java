@@ -12,8 +12,12 @@ import java.time.LocalDateTime;
 /**
  * Classe di utilità che permette di generare un file di report csv con i dati della simulazione.
  */
-public class OrderWaitingTimeLogger {
+public final class OrderWaitingTimeLogger {
 
+    /**
+     * Costruttore privato per classe di utilità OrderWaitingTimeLogger.
+     */
+    private OrderWaitingTimeLogger() { }
     /**
      * cartella di output.
      */

@@ -8,17 +8,25 @@ import java.util.Optional;
 /**
  * Classe di utilità che permette di generare dei log personalizzati
  */
-public class Printer {
+public final class Printer {
 
     /**
-     * Stampa il log del thread (lavora con ordine opzionale)
+     * Costruttore privato per classe di utilità Printer.
+     */
+    private Printer() { }
+
+    /**
+     * Stampa il log del thread (lavora con ordine opzionale).
      *
      * @param unique_id identificatore univoco del thread.
      * @param thread_name nome del thread.
      * @param ordine opzionale che contiene l'entità ordine.
      * @param begin_end booleano che dice se il thread è iniziato o è finito.
      */
-    public static void stampaLog(String unique_id, String thread_name , Optional<OrdinePQ> ordine, boolean begin_end){
+    public static void stampaLog(final String unique_id,
+                                 final String thread_name ,
+                                 final Optional<OrdinePQ> ordine,
+                                 boolean begin_end) {
         System.out.println(
                 "uuid:" + unique_id
                         + "-secs:" + System.nanoTime()

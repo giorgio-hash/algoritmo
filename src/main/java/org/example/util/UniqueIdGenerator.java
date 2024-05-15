@@ -3,7 +3,7 @@ package util;
 /**
  * Classe di utilità per generare codice Id univoci.
  */
-public class UniqueIdGenerator {
+public final class UniqueIdGenerator {
 
     /**
      * codice id generato.

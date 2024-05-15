@@ -12,12 +12,12 @@ import java.util.concurrent.Semaphore;
 /**
  * Thread che ha il compito di aggiornare il buffer.
  */
-public class Checker implements Runnable{
+public class Checker implements Runnable {
 
     /**
      * Buffer sul quale il checker deve compiere l'operazione di controllo.
      */
-    CheckerIF buffer;
+    private final CheckerIF buffer;
 
     //log
     /**
@@ -33,10 +33,10 @@ public class Checker implements Runnable{
     /**
      * Costruttore del thread checker.
      *
-     * @param buffer buffer sul quale il checker deve compiere l'operazione di controllo.
+     * @param checkerIF checkerIF sul quale il checker deve compiere l'operazione di controllo.
      */
-    public Checker(CheckerIF buffer) {
-        this.buffer = buffer;
+    public Checker(final CheckerIF checkerIF) {
+        this.buffer = checkerIF;
     }
 
     /**
@@ -49,7 +49,7 @@ public class Checker implements Runnable{
     @Override
     public void run() {
 
-        while(true){
+        while(true) {
 
             try {
                 Thread.sleep(3000);
