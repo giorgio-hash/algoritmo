@@ -1,21 +1,21 @@
 import buffer.Buffer;
 import entities.GestioneCode;
+import entities.CodeIF;
 import entities.IngredientePrincipale;
 import entities.OrdinePQ;
 import threads.*;
 import util.GeneraOrdine;
 
-import java.time.Instant;
 import java.util.ArrayList;
 
 /**
- * Classe Main del progetto
+ * Classe Main del progetto in cui si può far partire una simulazione.
  */
 public class Main {
         /**
-         * Fa partire una simulazione
+         * Fa partire una simulazione.
          *
-         * @param args args
+         * @param args args.
          */
     public static void main(String[] args) {
 

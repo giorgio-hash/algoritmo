@@ -8,10 +8,15 @@ import java.time.Duration;
 import java.time.Instant;
 
 /**
- * Classe di utilità che permette di generare il valore di priorità per un dato ordine.
+ * Classe di utilità che permette di generare il valore di priorità
+ * per un dato ordine.
  */
-public class GestionePriorita {
+public final class GestionePriorita {
 
+    /**
+     * Costruttore privato di classe di utilità GestionePriorità.
+     */
+    private GestionePriorita() { }
     // VALORE DEI PESI
     /**
      * peso relativo ad x1.
@@ -46,7 +51,7 @@ public class GestionePriorita {
     /**
      * tempo di preparazione minimo.
      */
-    private static final Duration tmin= Duration.ofMinutes(0).plusSeconds(10);
+    private static final Duration tmin = Duration.ofMinutes(0).plusSeconds(10);
 
     /**
      * tempo massimo in attesa.
@@ -69,8 +74,8 @@ public class GestionePriorita {
      * @throws Exception
      */
     public static double setPriorita(OrdinePQ ordinePQ) throws Exception {
-        double x1 = CalcolaIngredientePrincipale(ordinePQ.getIngredientePrincipale());
-        double x2 = CalcolaTempoDiPreparazione(ordinePQ.getTp());
+        double x1 = calcolaIngredientePrincipale(ordinePQ.getIngredientePrincipale());
+        double x2 = calcolaTempoDiPreparazione(ordinePQ.getTp());
         double x3 = CalcolaUrgenzaDelCliente(ordinePQ.getUrgenzaCliente());
         double x4 = CalcolaNumeroOrdineEffettuato(ordinePQ.getNumOrdineEffettuato());
         double x5 = CalcolaTempoDiAttesa(ordinePQ.gettOrdinazione());
@@ -93,8 +98,7 @@ public class GestionePriorita {
      * @param ingredientePrincipale ingrediente principale dell'ordine
      * @return il parametro x1
      */
-    private static double CalcolaIngredientePrincipale(IngredientePrincipale ingredientePrincipale) {
-        // TODO: codaPostazione(ingredientePrincipale).getGradoRiempimento();
+    private static double calcolaIngredientePrincipale(final IngredientePrincipale ingredientePrincipale) {
         double x1 = ingredientePrincipale.getValore();
         System.out.println("Gestione Priorita': x1 = " + (1 - x1));
         return 1 - x1;
@@ -106,7 +110,7 @@ public class GestionePriorita {
      * @param tp oggetto Duration che contiene il tempo di preparazione dellìordine
      * @return il parametro x2
      */
-    private static double CalcolaTempoDiPreparazione(Duration tp) {
+    private static double calcolaTempoDiPreparazione(final Duration tp) {
         double x2;
         if(tp.toSeconds()<tpmax.toSeconds()){
             x2 = (double) (tp.toSeconds() - tmin.toSeconds()) / (tpmax.toSeconds() - tmin.toSeconds());

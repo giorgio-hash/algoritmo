@@ -12,17 +12,31 @@ import java.util.concurrent.Semaphore;
 /**
  * Thread che ha il compito di aggiornare il buffer.
  */
-public class Checker implements Runnable{
+public class Checker implements Runnable {
 
-    CheckerIF buffer;
-    private final Object lock = new Object(); // Internal lock
+    /**
+     * Buffer sul quale il checker deve compiere l'operazione di controllo.
+     */
+    private final CheckerIF buffer;
 
     //log
+    /**
+     * Generatore locale di id.
+     */
     private int localIDGenerator = 0;
+
+    /**
+     * Prefisso uuid.
+     */
     private final String uuid_prefix = "ch";
 
-    public Checker(CheckerIF buffer) {
-        this.buffer = buffer;
+    /**
+     * Costruttore del thread checker.
+     *
+     * @param checkerIF checkerIF sul quale il checker deve compiere l'operazione di controllo.
+     */
+    public Checker(final CheckerIF checkerIF) {
+        this.buffer = checkerIF;
     }
 
     /**
@@ -35,7 +49,7 @@ public class Checker implements Runnable{
     @Override
     public void run() {
 
-        while(true){
+        while(true) {
 
             try {
                 Thread.sleep(3000);
@@ -54,26 +68,24 @@ public class Checker implements Runnable{
                     0,
                     false);
 
-            synchronized(lock){
-                try {
-                    BUSY.acquire();
-                    System.out.println("***** Checker controlla il buffer *****");
-                    LinkedList<Map.Entry<Integer, OrdinePQ>> list = buffer.getWindow();
-                    if(list.isEmpty()){
-                        System.out.println("Checker: nulla da controllare");
-                    }
-                    for(Map.Entry<Integer, OrdinePQ> entry : list){
-                        double priorita = GestionePriorita.setPriorita(entry.getValue()); // calcola la priorita'
-                        System.out.println("Checker: aggiorno la priorità di: " + entry.getValue());
-                        buffer.updatePQ(entry.getKey(), priorita); // aggiorna la indexed priority queue
-                        System.out.println("Checker: priorità aggiornata: " + entry.getValue());
-                    }
-                } catch (Exception e) {
-                    throw new RuntimeException(e);
-                } finally {
-                    System.out.println("***** Checker rilascia il buffer *****");
-                    BUSY.release();
+            try {
+                BUSY.acquire();
+                System.out.println("***** Checker controlla il buffer *****");
+                LinkedList<Map.Entry<Integer, OrdinePQ>> list = buffer.getWindow();
+                if(list.isEmpty()){
+                    System.out.println("Checker: nulla da controllare");
                 }
+                for(Map.Entry<Integer, OrdinePQ> entry : list){
+                    double priorita = GestionePriorita.setPriorita(entry.getValue()); // calcola la priorita'
+                    System.out.println("Checker: aggiorno la priorità di: " + entry.getValue());
+                    buffer.updatePQ(entry.getKey(), priorita); // aggiorna la indexed priority queue
+                    System.out.println("Checker: priorità aggiornata: " + entry.getValue());
+                }
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            } finally {
+                System.out.println("***** Checker rilascia il buffer *****");
+                BUSY.release();
             }
 
             Printer.stampaLog(

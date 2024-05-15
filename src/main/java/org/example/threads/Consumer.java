@@ -1,10 +1,9 @@
 package threads;
 
 import buffer.ConsumerIF;
-import entities.GestioneCode;
+import entities.CodeIF;
 import entities.OrdinePQ;
 import util.Printer;
-import util.UniqueIdGenerator;
 
 import java.sql.Timestamp;
 import java.time.Duration;
@@ -12,21 +11,44 @@ import java.time.Instant;
 import java.util.Optional;
 
 /**
- * Thread che ha il compito di estrarre ordini dal buffer.
+ * Thread che ha il compito di estrarre ordini dal buffer e inserirli in cucina.
  */
 public class Consumer implements Runnable{
 
+    /**
+     * Buffer centrale (da cui prende l'ordine)
+     */
     private ConsumerIF buffer;
-    private GestioneCode gestioneCode;
+
+    /**
+     * Buffer della cucina (in cui deve inserire l'ordine)
+     */
+    private CodeIF cucina;
+    /**
+     * Thread del Producer
+     */
     private Producer producer;
 
     //log
+    /**
+     * identificatore locale
+     */
     private int localIDGenerator = 0;
+    /**
+     * prefisso uuid
+     */
     private final String uuid_prefix = "c";
 
-    public Consumer(ConsumerIF buffer, GestioneCode gestioneCode, Producer producer) {
+    /**
+     * Costruttore del thread Consumer
+     *
+     * @param buffer buffer centrale dal quale deve estrarre gli ordini
+     * @param cucina buffer sul quale deve destinare gli ordini
+     * @param producer thread del Producer
+     */
+    public Consumer(ConsumerIF buffer, CodeIF cucina, Producer producer) {
         this.buffer = buffer;
-        this.gestioneCode = gestioneCode;
+        this.cucina = cucina;
         this.producer = producer;
     }
 
@@ -64,7 +86,7 @@ public class Consumer implements Runnable{
                 ordinePQ = buffer.getMinPQ();
                 ordinePQ.ifPresent(pq -> {
                     try {
-                        if(!gestioneCode.push(pq)){
+                        if(!cucina.push(pq)){
                             System.out.println("Consumer: problemi nell'inserimento di: " + pq);
                             System.out.println("Consumer: reinserisco nel buffer l'ordine: " + pq);
                             producer.addToHighPriorityQueue(pq);
