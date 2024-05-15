@@ -16,9 +16,12 @@ public class Cliente implements Runnable{
 
     //log
     private int localIDGenerator = 0;
-    private final String uuid_prefix = "cl";
+    private static int uuid_prefix_generator=0;
+    private final String uuid_prefix;
     public Cliente(Producer producer) {
+
         this.producer = producer;
+        uuid_prefix = (uuid_prefix_generator++) + "cl";
     }
 
     /**
