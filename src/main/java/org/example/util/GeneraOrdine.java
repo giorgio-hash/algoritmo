@@ -8,6 +8,9 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Random;
 
+/**
+ * Classe di utilità che permette di generare degli ordini, utile per una simulazione
+ */
 public class GeneraOrdine {
 
     /**
@@ -41,6 +44,11 @@ public class GeneraOrdine {
         }
     }
 
+    /**
+     * Genera un ordine prestabilito
+     *
+     * @return entità ordine prestabilita
+     */
     private static OrdinePQ genOrdineDef() {
         return new OrdinePQ(1524,
                 false,
@@ -50,6 +58,11 @@ public class GeneraOrdine {
                 Timestamp.valueOf(LocalDateTime.now()));
     }
 
+    /**
+     * Genera un ordine prestabilito
+     *
+     * @return entità ordine prestabilita
+     */
     private static OrdinePQ genOrdine1() {
         return new OrdinePQ(3645,
                 true,
@@ -59,6 +72,11 @@ public class GeneraOrdine {
                 Timestamp.valueOf(LocalDateTime.now()));
     }
 
+    /**
+     * Genera un ordine prestabilito
+     *
+     * @return entità ordine prestabilita
+     */
     private static OrdinePQ genOrdine2() {
         return new OrdinePQ(2154,
                 true,
@@ -68,6 +86,11 @@ public class GeneraOrdine {
                 Timestamp.valueOf(LocalDateTime.now()));
     }
 
+    /**
+     * Genera un ordine prestabilito
+     *
+     * @return entità ordine prestabilita
+     */
     private static OrdinePQ genOrdine3() {
         return new OrdinePQ(5458,
                 true,
@@ -77,6 +100,11 @@ public class GeneraOrdine {
                 Timestamp.valueOf(LocalDateTime.now()));
     }
 
+    /**
+     * Genera un ordine prestabilito
+     *
+     * @return entità ordine prestabilita
+     */
     private static OrdinePQ genOrdine4() {
         return new  OrdinePQ(1000,
                 true,
@@ -86,6 +114,11 @@ public class GeneraOrdine {
                 Timestamp.valueOf(LocalDateTime.now()));
     }
 
+    /**
+     * Genera un ordine prestabilito
+     *
+     * @return entità ordine prestabilita
+     */
     private static OrdinePQ genOrdine5() {
         return  new OrdinePQ(5445,
                 false,
@@ -95,6 +128,11 @@ public class GeneraOrdine {
                 Timestamp.valueOf(LocalDateTime.now()));
     }
 
+    /**
+     * Genera un ordine prestabilito
+     *
+     * @return entità ordine prestabilita
+     */
     private static OrdinePQ genOrdine6() {
         return new OrdinePQ(1054,
                 true,
@@ -104,6 +142,11 @@ public class GeneraOrdine {
                 Timestamp.valueOf(LocalDateTime.now()));
     }
 
+    /**
+     * Genera un ordine prestabilito
+     *
+     * @return entità ordine prestabilita
+     */
     private static OrdinePQ genOrdine7() {
         return new  OrdinePQ(1212,
                 false,
@@ -113,6 +156,11 @@ public class GeneraOrdine {
                 Timestamp.valueOf(LocalDateTime.now()));
     }
 
+    /**
+     * Genera un ordine prestabilito
+     *
+     * @return entità ordine prestabilita
+     */
     private static OrdinePQ genOrdine8() {
         return  new OrdinePQ(8888,
                 true,
@@ -122,6 +170,11 @@ public class GeneraOrdine {
                 Timestamp.valueOf(LocalDateTime.now()));
     }
 
+    /**
+     * Genera un ordine prestabilito
+     *
+     * @return entità ordine prestabilita
+     */
     private static OrdinePQ genOrdine9() {
         return  new OrdinePQ(2222,
                 false,
@@ -159,6 +212,13 @@ public class GeneraOrdine {
                 numOrdineEffettuato);
     }
 
+    /**
+     * Genera un tipo enumerativo casuale
+     *
+     * @param enumeration tipo enumerativo su cui generare un valore casuale
+     * @return tipo enumerativo casuale
+     * @param <T> tipo enumerativo generico
+     */
     private static <T extends Enum<?>> T getRandomEnum(Class<T> enumeration) {
         Random random = new Random();
         int index = random.nextInt(enumeration.getEnumConstants().length);

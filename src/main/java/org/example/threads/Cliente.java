@@ -6,6 +6,9 @@ import util.Printer;
 
 import java.util.Random;
 
+/**
+ * Thread che simula il comportamento di un Cliente
+ */
 public class Cliente implements Runnable{
 
     private final Random random = new Random();
@@ -21,6 +24,10 @@ public class Cliente implements Runnable{
         uuid_prefix = (uuid_prefix_generator++) + "cl";
     }
 
+    /**
+     * Resta in attesa per un periodo randomico
+     * piazza un ordine inviandolo alla coda del Producer.
+     */
     @Override
     public void run() {
 

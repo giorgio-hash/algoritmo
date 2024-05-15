@@ -7,6 +7,9 @@ import util.Printer;
 
 import java.util.Optional;
 
+/**
+ * Thread che simula il comportamento di un cuoco.
+ */
 public class Cuoco implements Runnable{
 
     private IngredientePrincipale ingredientePrincipale;
@@ -24,6 +27,10 @@ public class Cuoco implements Runnable{
         uuid_prefix = (uuid_prefix_generator++) + "cu";
     }
 
+    /**
+     * Controlla la coda di postazione associata.
+     * Se trova un ordine resta in attesa per il tempo di preparazione dell'ordine.
+     */
     @Override
     public void run() {
 

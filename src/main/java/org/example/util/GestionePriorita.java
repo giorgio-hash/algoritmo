@@ -7,18 +7,55 @@ import java.sql.Timestamp;
 import java.time.Duration;
 import java.time.Instant;
 
+/**
+ * Classe di utilità che permette di generare il valore di priorità per un dato ordine.
+ */
 public class GestionePriorita {
 
     // VALORE DEI PESI
+    /**
+     * peso relativo ad x1.
+     */
     private static final float p1 = 0.25f;
+
+    /**
+     * peso relativo ad x2.
+     */
     private static final float p2 = 0.15f;
+
+    /**
+     * peso relativo ad x3.
+     */
     private static final float p3 = 0.20f;
+
+    /**
+     * peso relativo ad x4.
+     */
     private static final float p4 = 0.15f;
+
+    /**
+     * peso relativo ad x5.
+     */
     private static final float p5 = 0.25f;
 
-    private static final Duration tpmax = Duration.ofMinutes(1).plusSeconds(0); // tempo di preparazione massimo
-    private static final Duration tmin= Duration.ofMinutes(0).plusSeconds(10); // tempo di preparazione minimo
-    private static final Duration tempo_max_in_attesa = Duration.ofMinutes(3); // tempo massimo in attesa
+    /**
+     * tempo di preparazione massimo.
+     */
+    private static final Duration tpmax = Duration.ofMinutes(1).plusSeconds(0);
+
+    /**
+     * tempo di preparazione minimo.
+     */
+    private static final Duration tmin= Duration.ofMinutes(0).plusSeconds(10);
+
+    /**
+     * tempo massimo in attesa.
+     */
+    private static final Duration tempo_max_in_attesa = Duration.ofMinutes(3);
+
+    /**
+     * Soglia massima di ordini ordinabili da un cliente.
+     */
     private static final int sogliaMax = 5;
 
 
@@ -139,6 +176,14 @@ public class GestionePriorita {
         return x5;
     }
 
+    /**
+     * Calcola la priorità iniziale senza considerare il contributo del parametro x5 poichè nullo all'entrata in coda.
+     *
+     * @param x5 parametro x5.
+     * @param y valore di priorità.
+     * @return priorità iniziale.
+     * @throws Exception eccezione se priorità è negativa o superiore a 1.
+     */
     private static double setPrioritaIniziale(double x5, double y) throws Exception {
         double y1 = (y - x5 * p5)/(1-p5);
         System.out.println("Gestione Priorita iniziale': y' = " + y1);

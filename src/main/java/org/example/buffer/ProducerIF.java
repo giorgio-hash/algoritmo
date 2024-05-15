@@ -2,6 +2,9 @@ package buffer;
 
 import entities.OrdinePQ;
 
+/**
+ * Interfaccia che permette al thread Producer di interagire con il buffer
+ */
 public interface ProducerIF {
 
     /**

@@ -11,6 +11,9 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.Optional;
 
+/**
+ * Thread che ha il compito di estrarre ordini dal buffer.
+ */
 public class Consumer implements Runnable{
 
     private ConsumerIF buffer;
@@ -27,6 +30,14 @@ public class Consumer implements Runnable{
         this.producer = producer;
     }
 
+    /**
+     * Resta in attesa per un periodo,
+     * richiede l'accesso esclusivo al buffer.
+     * estrae l'ordine a priorità elevata,
+     * rilascia l'accesso esclusivo.
+     * acontrolla se lo può inserire in cucina, se si lo fa,
+     * altrimenti rimette l'ordine nel buffer passandolo al producer.
+     */
     @Override
     public void run() {
 

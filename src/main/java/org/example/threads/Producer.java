@@ -9,6 +9,9 @@ import util.UniqueIdGenerator;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
+/**
+ * Thread che permette di inserire un ordine all'interno del buffer.
+ */
 public class Producer implements Runnable{
 
     private final ProducerIF buffer;
@@ -26,6 +29,10 @@ public class Producer implements Runnable{
         this.buffer = buffer;
     }
 
+    /**
+     * Aggiungi un ordine alla coda interna del producer
+     * @param value ordine da aggiungere alla coda.
+     */
     public void addToQueue(OrdinePQ value) {
         synchronized (lock) {
             queue.offer(value); // Add to the queue
@@ -33,12 +40,28 @@ public class Producer implements Runnable{
         }
     }
 
+    /**
+     * Aggiungi un ordine da inserire immediatamente nel buffer.
+     *
+     * @param ordinePQ ordine da inserire immediatamente nel buffer.
+     */
     public void addToHighPriorityQueue(OrdinePQ ordinePQ){
         synchronized (lock) {
             highPriorityQueue.add(ordinePQ);
         }
     }
 
+    /**
+     * Resta in attesa per un periodo,
+     * controlla se ha ordini in arrivo sulla coda ad alta priorità, se si:
+     * richiede l'accesso esclusivo al buffer.
+     * aggiunge l'ordine ad alta priorità nel buffer
+     * rilascia l'accesso esclusivo.
+     * altrimenti controlla se ha ordini in arrivo sulla coda interna, se si:
+     * richiede l'accesso esclusivo al buffer.
+     * aggiunge l'ordine nel buffer
+     * rilascia l'accesso esclusivo.
+     */
     @Override
     public void run() {
 

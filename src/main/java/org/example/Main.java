@@ -8,8 +8,18 @@ import util.GeneraOrdine;
 import java.time.Instant;
 import java.util.ArrayList;
 
+/**
+ * Classe Main del progetto
+ */
 public class Main {
-    public static void main(String[] args) throws Exception {
+        /**
+         * Fa partire una simulazione
+         *
+         * @param args args
+         */
+    public static void main(String[] args) {
+
+            // SIMULAZIONE
 
             Buffer buffer = Buffer.getInstance();
             GestioneCode gestioneCode = GestioneCode.getINSTANCE();
