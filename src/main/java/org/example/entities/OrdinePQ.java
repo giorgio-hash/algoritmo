@@ -60,15 +60,30 @@ public class OrdinePQ {
     private Duration tp;
 
     /**
-     * parametro numero ordine effettuato dal cliente
+     * parametro numero ordine effettuato dal cliente.
      */
     private int numOrdineEffettuato;
 
+    /**
+     * tempo passato in coda.
+     */
     private Duration tInCoda;
 
+    /**
+     * prioritò al momento dell'inserimento in coda calcolata non considerando il tempo in coda.
+     */
     private double prioritaIniziale;
 
-    public OrdinePQ(int id, int idComanda, String idPiatto, Integer stato, Timestamp tOrdinazione, Boolean urgenzaCliente, IngredientePrincipale ingredientePrincipale , Double valorePriorita, Duration tp, int numOrdineEffettuato) {
+    public OrdinePQ(int id,
+                    int idComanda,
+                    String idPiatto,
+                    Integer stato,
+                    Timestamp tOrdinazione,
+                    Boolean urgenzaCliente,
+                    IngredientePrincipale ingredientePrincipale,
+                    Double valorePriorita,
+                    Duration tp,
+                    int numOrdineEffettuato) {
         this.id = id;
         this.idComanda = idComanda;
         this.idPiatto = idPiatto;
@@ -83,11 +98,12 @@ public class OrdinePQ {
         this.prioritaIniziale = 0.0;
     }
 
-    public OrdinePQ(int id, Double valorePriorita) {
-        this(id,0,null,null,null,null,null,valorePriorita,null,1);
-    }
-
-    public OrdinePQ(int id, Boolean urgenzaCliente, IngredientePrincipale ingredientePrincipale, Duration tp, int numOrdineEffettuato, Timestamp tOrdinazione) {
+    public OrdinePQ(int id,
+                    Boolean urgenzaCliente,
+                    IngredientePrincipale ingredientePrincipale,
+                    Duration tp,
+                    int numOrdineEffettuato,
+                    Timestamp tOrdinazione) {
         this(
                 id,
                 0,
@@ -102,6 +118,7 @@ public class OrdinePQ {
     }
 
     public int getId(){return id;}
+
     public Double getValorePriorita() {
         return valorePriorita;
     }

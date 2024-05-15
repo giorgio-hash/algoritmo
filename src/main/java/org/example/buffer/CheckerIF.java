@@ -8,7 +8,14 @@ import java.util.concurrent.Semaphore;
 
 public interface CheckerIF {
 
-    LinkedList<Map.Entry<Integer, OrdinePQ>> getWindow() throws InterruptedException;
+    /**
+     * Restituisci una lista di coppie chiave, Ordine in modo da poter interrogare il buffer.
+     * Questa lista segue una finestra di lunghezza predefinita,
+     * che si sposta permettendo di iterare tutto il buffer con successive iterazioni.
+     *
+     * @return lista di coppie chiave, Ordine.
+     */
+    LinkedList<Map.Entry<Integer, OrdinePQ>> getWindow();
 
     /**
      * Aggiorna la priorità di un ordine presente nella coda a priorià

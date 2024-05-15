@@ -4,12 +4,14 @@ import buffer.CheckerIF;
 import entities.OrdinePQ;
 import util.GestionePriorita;
 import util.Printer;
-import util.UniqueIdGenerator;
 
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.concurrent.Semaphore;
 
+/**
+ * Thread che ha il compito di aggiornare il buffer.
+ */
 public class Checker implements Runnable{
 
     CheckerIF buffer;
@@ -23,6 +25,13 @@ public class Checker implements Runnable{
         this.buffer = buffer;
     }
 
+    /**
+     * Resta in attesa per un periodo,
+     * richiede l'accesso esclusivo al buffer.
+     * richiede dal buffer una lista di ordini da controllare,
+     * aggiorna la priorità di ogni ordine controllato e in seguito ad ognuno aggiorna il buffer.
+     * rilascia l'accesso esclusivo.
+     */
     @Override
     public void run() {
 
