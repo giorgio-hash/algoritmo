@@ -27,7 +27,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '17' # Utilizza la versione di Java fornita dalle GitHub Actions
-          distribution: 'Temurin'
+          distribution: 'temurin'
 
       - name: Install Maven
         run: sudo apt-get install maven -y
