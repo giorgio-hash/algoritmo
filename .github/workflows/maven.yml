@@ -1,4 +1,4 @@
-me: CI Maven Checkstyle Report
+name: CI Maven Checkstyle Report
 
 on:
   push:
