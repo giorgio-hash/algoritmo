@@ -1,4 +1,4 @@
-name: CI Maven Checkstyle Report
+me: CI Maven Checkstyle Report
 
 on:
   push:
@@ -27,8 +27,8 @@ jobs:
       #run: sudo apt-get install maven -y
       
     - name: Build with Maven and generate Checkstyle report
-      run: |
-          mvn clean verify checkstyle:checkstyle --file pom.xml continue-on-error: true
+      run: mvn clean verify checkstyle:checkstyle --file pom.xml 
+      continue-on-error: true
           
     - name: Archive Checkstyle report
       uses: actions/upload-artifact@v2
