@@ -21,9 +21,9 @@ jobs:
     #    cache: maven
     - name: Download and Install Amazon Corretto 21
       run: |
-          curl -L https://corretto.aws/downloads/latest/amazon-corretto-11-x64-linux-jdk.tar.gz -o corretto.tar.gz
+          curl -L https://corretto.aws/downloads/latest/amazon-corretto-21-x64-linux-jdk.tar.gz -o corretto.tar.gz
           tar -xzf corretto.tar.gz
-          export JAVA_HOME=$PWD/amazon-corretto-11-x64-linux-jdk
+          export JAVA_HOME=$PWD/amazon-corretto-21-x64-linux-jdk
 
     - name: Set JAVA_HOME environment variable
       run: echo "JAVA_HOME=$JAVA_HOME" >> $GITHUB_ENV
