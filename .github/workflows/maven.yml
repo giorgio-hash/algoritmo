@@ -24,7 +24,8 @@ jobs:
       with:
           java-version: 'adopt@1.21'
           maven-version: '3.8.4'
-        
+          distribution: 'repo'
+
     #- name: Build with Maven
     #  run: mvn -B package --file pom.xml
     
