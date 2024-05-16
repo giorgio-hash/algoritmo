@@ -13,6 +13,17 @@
     
     <build>
         <plugins>
+             <!-- Configurazione Maven Compiler -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+                 
             <!-- Configurazione Maven Checkstyle -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
