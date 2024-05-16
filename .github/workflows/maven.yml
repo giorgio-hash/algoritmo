@@ -22,9 +22,20 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v2
+        
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11' # Utilizza la versione di Java fornita dalle GitHub Actions
 
       - name: Install Maven
         run: sudo apt-get install maven -y
+
+      - name: Use Amazon Corretto 21 for Maven
+        run: |
+          export JAVA_HOME=/usr/local/amazon-corretto-21-x64-linux-jdk
+          export PATH=$JAVA_HOME/bin:$PATH
+          java -version
 
       - name: Build with Maven and generate Checkstyle report
         run: |
